@@ -5,20 +5,17 @@ pydantic-settings==2.5.2
 python-dotenv==1.0.1
 python-multipart==0.0.9
 
-# LLM
+# LLM (OpenRouter, OpenAI-compatible)
 openai==1.51.0
-tiktoken==0.7.0
 
-# RAG
-sentence-transformers==3.1.1
-FlagEmbedding==1.2.11
+# Embeddings backend (HF Inference API is a plain HTTP call — no torch on prod)
 numpy==1.26.4
+httpx==0.27.2
 
-# Ingestion
+# Ingestion (used only by scripts/seed_kb.py; safe on runtime too)
 pypdf==5.0.1
 beautifulsoup4==4.12.3
 markdown-it-py==3.0.0
-httpx==0.27.2
 
 # Utilities
 langdetect==1.0.9
@@ -29,5 +26,10 @@ tenacity==9.0.0
 # Observability
 mlflow>=2.15,<3.0
 
-# HF Space landing card (only used by space.py — safe to remove for local dev)
-gradio>=5.0,<6.0
+# --- Optional (developer-only) ---
+# Uncomment for local dev if you want fast, offline embeddings & re-ranking.
+# Requires torch → ~600 MB and won't fit Render Free.
+#
+# sentence-transformers==3.1.1
+# FlagEmbedding==1.2.11
+# tiktoken==0.7.0

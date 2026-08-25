@@ -1,118 +1,96 @@
 # Deploying वार्तालाप — free public demo
 
-A live demo needs two hosts. Both are truly free and neither asks for a
-credit card up front:
+A live demo needs two hosts. Both are **truly free forever, with no credit
+card required at signup**:
 
 | Component | Host | Free tier | URL shape |
 | --- | --- | --- | --- |
-| **Backend** (FastAPI + RAG) | [Hugging Face Spaces — Gradio SDK](https://huggingface.co/new-space) | 2 vCPU · 16 GB RAM, sleeps after ~48 h idle | `https://<owner>-<space>.hf.space` |
+| **Backend** (FastAPI + RAG) | [Render — Free Web Service](https://render.com) | 512 MB RAM, 0.1 CPU, sleeps after 15 min idle | `https://<service>.onrender.com` |
 | **Frontend** (Next.js) | [Vercel — Hobby](https://vercel.com) | Free forever, no card | `https://<project>.vercel.app` |
 
-MLflow UI in the public demo is optional and self-hosted — see §3 at the
-bottom.
+> Everything else we looked at — Fly.io, Hugging Face Docker / Gradio SDK,
+> Railway, Modal.com — has moved the truly-free tier behind a payment
+> method for new accounts. Render is currently the exception and stays
+> genuinely free.
 
-> **Why the Gradio SDK, not Docker?** HF moved the **Docker SDK** to paid
-> in 2026. The Gradio SDK is still free and just runs `python <app_file>`,
-> so we shim our full FastAPI backend behind a small Gradio landing card
-> (see [`backend/space.py`](../backend/space.py)) and listen on port 7860.
-> Users hit our real API paths (`/chat`, `/health`, `/docs`, `/feedback`);
-> the Gradio card is only visible at `/_ui`.
->
-> **Why not Fly.io / Render / Railway?** They now require a payment method
-> before you can deploy anything, even on their free tiers.
+## Why this fits Render Free
+
+Render Free is capped at 512 MB RAM. Our runtime steady-state is now
+**~150 MB** because:
+
+- Chunk embeddings are **pre-computed and shipped in the repo**
+  ([`backend/data/chroma/vartalaap_kb.npy`](../backend/data/chroma/README.md)).
+- Query embeddings hit the free **Hugging Face Inference API**
+  (~1 outbound call per chat turn, ~1000 req/day allowance).
+- `sentence-transformers`, `FlagEmbedding` and `torch` are removed from
+  `requirements.txt`. If HF is temporarily unreachable the pipeline falls
+  through to a deterministic hash embedder so requests never 500.
+
+Peak RAM during a chat turn is ~250 MB, well inside the 512 MB envelope.
 
 ---
 
-## 1. Backend → Hugging Face Spaces
+## 1. Backend → Render Free
 
-### 1.1 Create the Space (2 min, web UI)
+### 1.1 Create the Render account (2 min)
 
-1. Go to <https://huggingface.co/new-space>. Sign up if you don't have an
-   account — no credit card needed.
-2. Fill in:
-   - **Owner** — your username or an org you own.
-   - **Space name** — e.g. `vartalaap-api`.
-   - **License** — MIT.
-   - **Space SDK** — **Gradio**. **Template** — **Blank**.
-   - **Hardware** — **CPU basic — 2 vCPU · 16 GB — FREE**.
-   - **Visibility** — Public (so the frontend can call it).
-3. Click **Create Space**. HF gives you an empty Space with its own git repo.
+1. Go to <https://render.com/register>.
+2. Sign up with **GitHub** — no credit card is asked for.
 
-> Ignore the Gradio label — our `backend/space.py` file boots the full
-> FastAPI backend on port 7860 and only mounts a tiny Gradio placeholder at
-> `/_ui`. HF's runtime just runs `python space.py`, so we're free to do
-> whatever we want inside.
+### 1.2 Get a Hugging Face inference token (2 min, free)
 
-### 1.2 Push `backend/` to the Space (5 min)
+Query embeddings use HF's free inference API.
 
-The Space needs `space.py`, `requirements.txt` and everything else at its
-**root**. We use `git subtree` to push our `backend/` subfolder onto the
-Space's `main` branch.
+1. Sign up at <https://huggingface.co/join> (free, no card).
+2. Go to <https://huggingface.co/settings/tokens>.
+3. **New token** → name it `vartalaap`, **Role: Read**, click *Create*.
+4. Copy the `hf_...` token — you'll paste it into Render in a moment.
 
-Create a write-scoped HF token first: <https://huggingface.co/settings/tokens>
-→ **New token** → **Write** scope.
+### 1.3 Create the web service (3 min)
 
-Then from the repo root:
+1. Render dashboard → **New → Web Service**.
+2. **Connect a repository** → pick `XENO2410/ADI` (authorise if prompted).
+3. Fill in:
+   - **Name**: `vartalaap-api` (public URL will be `https://vartalaap-api.onrender.com`).
+   - **Region**: closest to you.
+   - **Branch**: `main`.
+   - **Root Directory**: `backend`.
+   - **Runtime**: **Python 3**.
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+   - **Instance Type**: **Free**.
+4. Scroll to **Environment Variables** and add:
+   - `OPENROUTER_API_KEY` = `sk-or-v1-...`
+   - `HF_INFERENCE_TOKEN` = `hf_...` (from 1.2)
+   - `LLM_MODEL` = `openai/gpt-4o-mini`
+   - `RERANKER_ENABLED` = `false`
+   - `MLFLOW_ENABLED` = `true`
+   - `CORS_ORIGINS` = `https://placeholder.vercel.app` *(updated in step 2.2)*
+5. Click **Create Web Service**.
 
-**PowerShell (Windows)**:
-
-```powershell
-$env:HF_TOKEN = "hf_..."
-.\scripts\push-hf-space.ps1 -SpaceOwner <your-hf-username> -SpaceName vartalaap-api
-```
-
-**Bash (macOS / Linux / WSL)**:
-
-```bash
-export HF_TOKEN=hf_...
-./scripts/push-hf-space.sh <your-hf-username> vartalaap-api
-```
-
-The script:
-
-1. Adds a temporary git remote (`hf-vartalaap-api`) that includes your token.
-2. Runs `git subtree push --prefix=backend hf-vartalaap-api main` — the
-   `backend/` folder becomes the Space's root.
-3. Prints a cleanup command to remove the tokenized remote.
-
-The Space now installs `requirements.txt` and runs `python space.py` — first
-boot is ~5-7 min while `torch` and `sentence-transformers` install and the
-KB seed runs. Watch progress on the Space's **Logs** tab.
-
-Once the log shows `Uvicorn running on http://0.0.0.0:7860`, the API is
-live.
-
-### 1.3 Set the runtime secrets (1 min)
-
-On the Space page → **Settings → Repository secrets → Add secret**:
-
-| Name | Value |
-| --- | --- |
-| `OPENROUTER_API_KEY` | your OpenRouter key |
-| `CORS_ORIGINS` | `https://<placeholder>.vercel.app` (updated after Vercel) |
-| `RERANKER_ENABLED` | `false` (saves ~280 MB download on first boot) |
-
-HF injects them as environment variables at container start — you don't
-need to redeploy after adding them.
+Render builds and deploys. First build takes ~4-6 min (installing numpy,
+mlflow etc.). Follow the **Logs** tab.
 
 ### 1.4 Verify
 
+Once you see `Uvicorn running on http://0.0.0.0:10000` in the logs and the
+service is green:
+
 ```bash
-curl https://<owner>-vartalaap-api.hf.space/health
+curl https://vartalaap-api.onrender.com/health
+# → {"status":"ok","llm_configured":true,...}
 ```
 
-You should see `{"status":"ok", …}`. Take a note of that URL — Vercel needs
-it next.
+Note the URL — Vercel needs it next.
 
-### 1.5 Redeploying on updates
+### 1.5 Free-tier caveats
 
-Every time you change files under `backend/` on your GitHub `main`, re-run
-the same script. `git subtree push` is incremental and only pushes new
-commits.
-
-Optional: automate it with a GitHub Action — sample
-[`.github/workflows/hf-space-sync.yml`](../.github/workflows) is left as an
-exercise (uses `huggingface_hub` CLI + `HF_TOKEN` secret).
+- **Sleeps after 15 min of inactivity.** First request after sleep takes
+  ~30-60 s to wake up (Render shows a spinner in the browser).
+- **Ephemeral filesystem** — MLflow runs stored on the instance are wiped
+  on each redeploy / restart. See §3 if you need a persistent MLflow UI.
+- **750 instance-hours / month** across all your free services. One
+  service always-on = 720 h/month, well within budget.
 
 ---
 
@@ -121,60 +99,58 @@ exercise (uses `huggingface_hub` CLI + `HF_TOKEN` secret).
 ### 2.1 Import the repo (3 min)
 
 1. Sign in at <https://vercel.com> — GitHub SSO, no card.
-2. **Add New → Project → Import Git Repository** → pick `XENO2410/ADI`.
+2. **Add New → Project → Import Git Repository** → `XENO2410/ADI`.
 3. **Root Directory** = `frontend`.
 4. **Framework** = Next.js (auto-detected).
-5. **Environment Variables** — click **Add**:
+5. **Environment Variables**:
    - Name: `NEXT_PUBLIC_API_BASE_URL`
-   - Value: `https://<owner>-vartalaap-api.hf.space` (from step 1.4)
+   - Value: `https://vartalaap-api.onrender.com` (from step 1.4)
    - Environments: **Production**, **Preview**, **Development** (all three).
 6. Click **Deploy**.
 
-The build takes ~90 seconds. Once green, click the URL — you should see
-वार्तालाप ready to chat.
-
 ### 2.2 Point the backend's CORS at the new URL
 
-Back on the HF Space → Settings → Repository secrets → edit `CORS_ORIGINS`:
+Render → your service → **Environment** → edit `CORS_ORIGINS`:
 
 ```env
 https://<project>.vercel.app,https://<project>-*.vercel.app
 ```
 
-The wildcard covers preview deploys. HF restarts the container automatically.
+Render restarts the service automatically. Visit your Vercel URL — chat
+should work end-to-end.
 
-### 2.3 Custom domain (optional)
+### 2.3 Optional — custom domain
 
-Vercel → Project → Settings → Domains → add yours. Update the backend's
+Vercel → Project → Settings → Domains → add yours. Update Render's
 `CORS_ORIGINS` to include it.
 
 ---
 
 ## 3. Optional — hosted MLflow UI
 
-MLflow tracks locally inside the Space's ephemeral filesystem, which HF
-wipes when the machine sleeps. Public MLflow needs a persistent store.
-Two options that stay free:
+MLflow tracks locally inside the Render instance's ephemeral filesystem, so
+runs / traces are wiped on redeploy. Two ways around it, both free:
 
-### 3a. View live via `huggingface_hub` port-forward (dev-only)
+### 3a. View via the local docker-compose stack
+
+The simplest path — nothing to deploy. From the repo root:
 
 ```bash
-huggingface-cli spaces run \
-  --owner <you> --space vartalaap-api -- \
-  mlflow ui --backend-store-uri /app/mlruns --host 0.0.0.0 --port 5000
+docker compose up --build
 ```
 
-Then open a tunnel with `hf-space-proxy` or just `curl` against the Space.
-Fine for admin inspection, not for the public.
+Backend runs at `http://localhost:8000`, MLflow UI at `http://localhost:5000`,
+frontend at `http://localhost:3000`. This is the full experience; use it
+whenever you want to inspect traces / eval metrics / cost roll-ups.
 
-### 3b. Push to a shared cloud store (recommended for a real demo)
+### 3b. Point MLflow at a free cloud store
 
-Point MLflow at a cloud DB + object store — all free tiers, no card:
+For persistent hosted MLflow:
 
 - **Backend store**: Neon.tech PostgreSQL (0.5 GB free, no card).
-- **Artifact store**: Cloudflare R2 (10 GB free, no card).
+- **Artifact store**: Cloudflare R2 (10 GB egress-free, no card).
 
-Set on the HF Space:
+Set on Render → Environment:
 
 ```env
 MLFLOW_TRACKING_URI=postgresql://user:pass@neon-host/vartalaap
@@ -184,19 +160,23 @@ AWS_SECRET_ACCESS_KEY=<r2-secret>
 MLFLOW_S3_ENDPOINT_URL=https://<account>.r2.cloudflarestorage.com
 ```
 
-Then run a second HF Space with just `mlflow ui` pointed at the same
-`MLFLOW_TRACKING_URI` / `MLFLOW_ARTIFACT_ROOT`. Both Spaces share state.
+Then run a second Render Free web service (Python) with:
 
-Skip this if the demo is only for a handful of viewers — locally-run
-`mlflow ui` against the docker-compose volume is a much simpler win.
+- Build: `pip install "mlflow>=2.15,<3.0" psycopg2-binary boto3`
+- Start: `mlflow ui --backend-store-uri "$MLFLOW_TRACKING_URI" --default-artifact-root "$MLFLOW_ARTIFACT_ROOT" --host 0.0.0.0 --port $PORT`
+- Same env vars as above.
+
+Both services now share the same MLflow store.
+
+Skip this unless the demo is going public — locally-run `mlflow ui`
+against the docker-compose volume covers 95 % of use cases.
 
 ---
 
 ## 4. Cutting a release
 
-Container images are built and pushed to GHCR by
-[.github/workflows/release.yml](../.github/workflows/release.yml) on any
-`v*.*.*` tag:
+Container images are built and pushed to GHCR on any `v*.*.*` tag by
+[.github/workflows/release.yml](../.github/workflows/release.yml):
 
 ```bash
 git tag -a v1.0.0 -m "First public release"
@@ -206,13 +186,6 @@ git push origin v1.0.0
 That publishes `ghcr.io/xeno2410/vartalaap-backend:v1.0.0` (+ `:latest`)
 and `ghcr.io/xeno2410/vartalaap-frontend:v1.0.0` (+ `:latest`), then drafts
 a GitHub Release using [docs/RELEASE_NOTES_v1.0.0.md](RELEASE_NOTES_v1.0.0.md).
-
-Anyone can then run:
-
-```bash
-docker run -e OPENROUTER_API_KEY=... -p 8000:8000 \
-  ghcr.io/xeno2410/vartalaap-backend:latest
-```
 
 > **One-time gotcha:** Repo → Settings → Actions → General → **Workflow
 > permissions** must be set to **Read and write permissions** for the
@@ -224,11 +197,10 @@ docker run -e OPENROUTER_API_KEY=... -p 8000:8000 \
 
 | Symptom | Fix |
 | --- | --- |
-| Space stuck on "Building" > 15 min | Check the Logs tab — usually `pip install` OOM on `FlagEmbedding` / `datasets`. Comment those two lines out of `backend/requirements.txt` and set `RERANKER_ENABLED=false`. |
-| `500` from `/chat` on HF | Almost always missing `OPENROUTER_API_KEY` in Space secrets. Re-check Settings → Repository secrets. |
-| CORS error in the browser | `CORS_ORIGINS` must exactly match your Vercel URL (no trailing slash). Include the preview wildcard. |
-| Space sleeps and cold start is slow | HF free tier idles after ~48 h. First request wakes it in ~30 s. Upgrade to CPU-upgrade (~$0.05/h) if you need snappy warm starts. |
-| First run is slow | `sentence-transformers` downloads its ~90 MB model on first boot and the seed script rebuilds the Chroma-free vector store from the bundled markdown/CSV. Subsequent restarts reuse the caches. |
-| `ImportError: gradio` on your local machine | `gradio` is only used by the HF Space entrypoint. Either `pip install gradio` or ignore — the local `python -m app.main` path skips it. |
-| `git subtree push` rejects with non-fast-forward | Someone edited the Space's `main` branch directly. Force it with `git push hf-<name> --force $(git subtree split --prefix=backend main):main`. |
+| Render build fails on `pip install` | Almost always memory pressure — comment out the `# --- Optional (developer-only) ---` block in `requirements.txt` if you enabled it. |
+| `500` from `/chat` on Render | Almost always missing `OPENROUTER_API_KEY` env var. Also check `HF_INFERENCE_TOKEN` — the query embedding call will fail without it and fall back to hash embeddings (retrieval quality drops noticeably). |
+| CORS error in the browser | `CORS_ORIGINS` on Render must exactly match your Vercel URL (no trailing slash). Include the preview wildcard `https://<project>-*.vercel.app` too. |
+| First request after 15 min is very slow | Render Free sleeps aggressively. The wake takes ~30-60 s. Consider Render Starter ($7/mo) if you need always-on for a live demo. |
+| `Falling back to hash pseudo-embeddings` warning in logs | `HF_INFERENCE_TOKEN` is missing / invalid. Retrieval quality drops to keyword-only matches. |
+| `data/chroma/vartalaap_kb.npy not found` on first boot | The pre-computed KB isn't in the repo. Locally: `pip install sentence-transformers && python -m scripts.seed_kb --reset`, then commit the two files under `backend/data/chroma/`. |
 | Vercel build fails on missing env var | Add `NEXT_PUBLIC_API_BASE_URL` to **all three** environments (Prod, Preview, Dev). |

@@ -32,11 +32,13 @@ class Settings(BaseSettings):
     llm_max_tokens: int = Field(default=800, alias="LLM_MAX_TOKENS")
 
     # --- Embeddings / reranker ---
+    embedding_backend: str = Field(default="auto", alias="EMBEDDING_BACKEND")
     embedding_model: str = Field(
         default="sentence-transformers/all-MiniLM-L6-v2", alias="EMBEDDING_MODEL"
     )
     embedding_device: str = Field(default="cpu", alias="EMBEDDING_DEVICE")
-    reranker_enabled: bool = Field(default=True, alias="RERANKER_ENABLED")
+    hf_inference_token: str = Field(default="", alias="HF_INFERENCE_TOKEN")
+    reranker_enabled: bool = Field(default=False, alias="RERANKER_ENABLED")
     reranker_model: str = Field(default="BAAI/bge-reranker-base", alias="RERANKER_MODEL")
 
     # --- Vector store ---

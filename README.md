@@ -86,10 +86,14 @@ If you'd rather run the components directly, see the "Local dev" section below.
 ## Public deployment
 
 The whole thing runs **free with no credit card required** on
-Hugging Face Spaces (backend) + Vercel (frontend). See
+Render Free (backend) + Vercel (frontend). See
 [docs/DEPLOY.md](docs/DEPLOY.md) for the step-by-step guide.
-`backend/README.md` doubles as the HF Space card (Docker SDK), and
-`frontend/vercel.json` sets up the Next.js build on Vercel.
+
+Chunk embeddings are pre-computed and shipped in
+[backend/data/chroma/](backend/data/chroma/); the runtime uses the free
+[Hugging Face Inference API](https://huggingface.co/docs/api-inference) for
+the one query embedding per chat turn. That keeps steady-state RAM at
+~150 MB, inside Render Free's 512 MB envelope.
 
 GitHub Actions builds and publishes container images to GHCR on every
 `v*.*.*` tag — `ghcr.io/xeno2410/vartalaap-backend:latest` and

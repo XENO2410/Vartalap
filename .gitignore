@@ -29,7 +29,11 @@ yarn-error.log*
 pnpm-debug.log*
 
 # --- Data & logs (generated) ---
-backend/data/chroma/
+# Ignore everything under data/chroma except the pre-computed bundled KB.
+backend/data/chroma/*
+!backend/data/chroma/vartalaap_kb.jsonl
+!backend/data/chroma/vartalaap_kb.npy
+!backend/data/chroma/README.md
 backend/data/cache/
 backend/data/downloads/
 backend/logs/

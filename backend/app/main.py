@@ -138,11 +138,14 @@ def reindex(reset: bool = False) -> dict:
 
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
+    import os
     import uvicorn
 
+    # Render (and many PaaS) inject $PORT; honour it if set.
+    port = int(os.environ.get("PORT", settings.api_port))
     uvicorn.run(
         "app.main:app",
         host=settings.api_host,
-        port=settings.api_port,
-        reload=True,
+        port=port,
+        reload=os.environ.get("UVICORN_RELOAD", "1") == "1",
     )
