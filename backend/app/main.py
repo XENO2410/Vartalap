@@ -1,6 +1,7 @@
 """FastAPI entrypoint for वार्तालाप (Vartalaap)."""
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
@@ -8,8 +9,16 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .agents import Supervisor
 from .config import BACKEND_ROOT, get_settings
+from .observability import EventEmitter, log_feedback
 from .rag import VectorStore, ingest
-from .schemas import ChatRequest, ChatResponse
+from .schemas import (
+    ChatRequest,
+    ChatResponse,
+    FeedbackRequest,
+    FeedbackResponse,
+    MessageClass,
+    MessageTag,
+)
 
 
 settings = get_settings()
@@ -53,6 +62,9 @@ def health() -> dict:
         "collection": settings.chroma_collection,
         "collection_size": collection_size,
         "collection_error": error,
+        "mlflow_enabled": settings.mlflow_enabled,
+        "mlflow_tracking_uri": settings.mlflow_tracking_uri_resolved,
+        "mlflow_experiment": settings.mlflow_experiment,
     }
 
 
@@ -73,6 +85,48 @@ def chat(request: ChatRequest) -> ChatResponse:
     if not request.query or not request.query.strip():
         raise HTTPException(status_code=400, detail="query is required")
     return supervisor.handle(request)
+
+
+@app.post("/feedback", response_model=FeedbackResponse)
+def feedback(request: FeedbackRequest) -> FeedbackResponse:
+    if not request.message_id.strip():
+        raise HTTPException(status_code=400, detail="message_id is required")
+
+    emitter = EventEmitter(
+        session_id=request.session_id,
+        user_id=request.user_id,
+    )
+    emitter.emit(
+        MessageTag.USER_FEEDBACK,
+        content=request.comment or request.feedback.value,
+        msg_class=MessageClass.QUERY,
+        apiname="vartalaap.feedback",
+        extra={
+            "additionalinfotags": json.dumps(
+                {
+                    "feedback": request.feedback.value,
+                    "target_message_id": request.message_id,
+                    "parent_mlflow_run_id": request.mlflow_run_id,
+                    "parent_mlflow_trace_id": request.mlflow_trace_id,
+                    "comment": request.comment,
+                }
+            ),
+        },
+    )
+    log_feedback(
+        session_id=request.session_id,
+        user_id=request.user_id,
+        message_id=request.message_id,
+        feedback=request.feedback.value,
+        comment=request.comment,
+        parent_run_id=request.mlflow_run_id,
+        trace_id=request.mlflow_trace_id,
+    )
+    return FeedbackResponse(
+        session_id=request.session_id,
+        message_id=request.message_id,
+        feedback=request.feedback,
+    )
 
 
 @app.post("/kb/reindex")

@@ -193,6 +193,58 @@ def _sink(self, envelope: MessageEnvelope) -> None:
 
 No call-site changes anywhere else.
 
+### MLflow is now wired in
+
+MLflow logging is **on by default** (`MLFLOW_ENABLED=true`, tracking URI
+`file://backend/mlruns/`). Every `/chat` turn opens a run named
+`turn::<sess_id>` and logs:
+
+- **Tags** — `session_id`, `user_id`, `bubble`, `tool_used`, `use_case`,
+  `message_id`, plus one `stage.NN.<TAG>` tag per emitted event so you can
+  see the pipeline order.
+- **Metrics** — `reflexion_iterations`, `num_events`, `num_sources`,
+  `prompt_tokens_total`, `completion_tokens_total`, `total_tokens`.
+- **Artifacts** — `events.json` (full schema-conformant trail),
+  `sources.json`, `answer.md`.
+
+Feedback events (`POST /feedback`) either re-open the parent turn's run (if
+`mlflow_run_id` is passed back) and add `feedback_score` / a `feedback`
+tag, or open a linked run tagged with the target `message_id`.
+
+Open the MLflow UI in a separate terminal:
+
+```powershell
+cd backend
+mlflow ui --backend-store-uri mlruns
+# → http://localhost:5000
+```
+
+Disable with `MLFLOW_ENABLED=false` in `.env`.
+
+### Feedback API
+
+```
+POST /feedback
+{
+  "session_id":   "sess_...",
+  "message_id":   "...",
+  "user_id":      "u_abc123",
+  "feedback":     "up" | "down" | "none",
+  "mlflow_run_id": "..."     // optional; frontend forwards from ChatResponse
+}
+```
+
+The frontend exposes 👍 / 👎 / ⬜ None buttons on every assistant reply and
+tracks the active choice per message.
+
+### Dummy login
+
+On first load the frontend shows a modal asking for a display name. It
+generates a stable `user_id` (e.g. `u_9a3f2b1c…`) stored in
+`localStorage`, and attaches it to every `/chat` and `/feedback` call, so
+each MLflow run and every schema event carries `identifieruserid`. Use the
+**Sign out** button in the header to reset.
+
 ---
 
 ## 6. Try it

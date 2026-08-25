@@ -25,3 +25,6 @@ langdetect==1.0.9
 rapidfuzz==3.9.7
 python-slugify==8.0.4
 tenacity==9.0.0
+
+# Observability
+mlflow>=2.15,<3.0

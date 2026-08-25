@@ -79,7 +79,35 @@ class KnowledgeBaseTool:
             },
         )
 
-        result = self.retriever.retrieve(refined_query, bubble=bubble)
+        with emitter.span(
+            "rag.retrieve",
+            kind="RETRIEVER",
+            inputs={"query": refined_query, "bubble": bubble},
+        ):
+            result = self.retriever.retrieve(refined_query, bubble=bubble)
+            emitter.set_span_attributes(
+                candidates=self.settings.retriever_top_k_candidates,
+                top_k=self.settings.retriever_top_k_final,
+                reranker_used=result.used_reranker,
+                num_returned=len(result.chunks),
+                best_faq_confidence=result.faq_confidence,
+            )
+            emitter.set_span_outputs(
+                {
+                    "chunks": [
+                        {
+                            "id": c.id,
+                            "title": c.metadata.get("title"),
+                            "doc_type": c.metadata.get("doc_type"),
+                            "domain": c.metadata.get("domain"),
+                            "score": c.metadata.get("_score"),
+                            "rerank_score": c.metadata.get("_rerank_score"),
+                        }
+                        for c in result.chunks
+                    ],
+                    "faq_confidence": result.faq_confidence,
+                }
+            )
 
         sources = [
             _chunk_to_source(c, i + 1, self.settings.faq_high_confidence, self.settings.faq_medium_confidence)
@@ -154,24 +182,41 @@ class KnowledgeBaseTool:
             },
         )
 
-        emitter.emit(
-            MessageTag.LLM_QA_REQUEST,
-            content=prompt_builder_output,
-            msg_class=MessageClass.QUERY,
-            apiname="vartalaap.llm",
-            extra={"additionalinfomodel": self.settings.llm_model},
-        )
-        resp: LLMResponse = self.llm.chat(system=_QA_SYSTEM, user=prompt_builder_output)
-        emitter.emit(
-            MessageTag.LLM_QA_RESPONSE,
-            content=resp.content,
-            msg_class=MessageClass.RESPONSE,
-            apiname="vartalaap.llm",
-            extra={
-                "additionalinfomodel": resp.model,
-                "additionalinfotokeninfo": token_info(resp),
+        with emitter.span(
+            "llm.qa",
+            kind="LLM",
+            inputs={
+                "system": _QA_SYSTEM,
+                "user_prompt": prompt_builder_output,
+                "model": self.settings.llm_model,
             },
-        )
+        ):
+            emitter.emit(
+                MessageTag.LLM_QA_REQUEST,
+                content=prompt_builder_output,
+                msg_class=MessageClass.QUERY,
+                apiname="vartalaap.llm",
+                extra={"additionalinfomodel": self.settings.llm_model},
+            )
+            resp: LLMResponse = self.llm.chat(system=_QA_SYSTEM, user=prompt_builder_output)
+            emitter.emit(
+                MessageTag.LLM_QA_RESPONSE,
+                content=resp.content,
+                msg_class=MessageClass.RESPONSE,
+                apiname="vartalaap.llm",
+                extra={
+                    "additionalinfomodel": resp.model,
+                    "additionalinfotokeninfo": token_info(resp),
+                },
+            )
+            emitter.set_span_attributes(
+                model=resp.model,
+                prompt_tokens=resp.prompt_tokens,
+                completion_tokens=resp.completion_tokens,
+                total_tokens=resp.total_tokens,
+                finish_reason=resp.finish_reason,
+            )
+            emitter.set_span_outputs({"answer": resp.content})
 
         emitter.emit(
             MessageTag.KNOWLEDGE_BASE_RESPONSE,

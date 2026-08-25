@@ -63,6 +63,11 @@ class Settings(BaseSettings):
     observability_log_dir: str = Field(default="./logs", alias="OBSERVABILITY_LOG_DIR")
     observability_stdout: bool = Field(default=True, alias="OBSERVABILITY_STDOUT")
 
+    # --- MLflow ---
+    mlflow_enabled: bool = Field(default=True, alias="MLFLOW_ENABLED")
+    mlflow_tracking_uri: str = Field(default="./mlruns", alias="MLFLOW_TRACKING_URI")
+    mlflow_experiment: str = Field(default="vartalaap", alias="MLFLOW_EXPERIMENT")
+
     # --- API ---
     api_host: str = Field(default="0.0.0.0", alias="API_HOST")
     api_port: int = Field(default=8000, alias="API_PORT")
@@ -83,6 +88,18 @@ class Settings(BaseSettings):
     def log_abs_dir(self) -> Path:
         p = Path(self.observability_log_dir)
         return p if p.is_absolute() else (BACKEND_ROOT / p)
+
+    @property
+    def mlflow_tracking_uri_resolved(self) -> str:
+        uri = self.mlflow_tracking_uri
+        # Local path shorthand → absolute file:// URI so mlflow writes under backend/.
+        if uri.startswith(("http://", "https://", "file:", "sqlite:", "databricks:")):
+            return uri
+        p = Path(uri)
+        if not p.is_absolute():
+            p = BACKEND_ROOT / p
+        p.mkdir(parents=True, exist_ok=True)
+        return p.absolute().as_uri()
 
     @property
     def has_llm_key(self) -> bool:

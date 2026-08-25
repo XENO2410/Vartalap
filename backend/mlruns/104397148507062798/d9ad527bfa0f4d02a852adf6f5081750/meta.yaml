@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Github/ADI/backend/mlruns/104397148507062798/d9ad527bfa0f4d02a852adf6f5081750/artifacts
+end_time: 1787655857120
+entry_point_name: ''
+experiment_id: '104397148507062798'
+lifecycle_stage: active
+run_id: d9ad527bfa0f4d02a852adf6f5081750
+run_name: session::sess_3830719d7
+run_uuid: d9ad527bfa0f4d02a852adf6f5081750
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1787655629926
+status: 3
+tags: []
+user_id: tarun

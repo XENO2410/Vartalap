@@ -139,12 +139,24 @@ class Text2SQLTool:
             apiname="vartalaap.text2sql.llm",
             extra={"additionalinfomodel": self.settings.llm_model},
         )
-        resp: LLMResponse = self.llm.chat(
-            system=_T2SQL_SYSTEM,
-            user=query,
-            temperature=0.0,
-            max_tokens=300,
-        )
+        with emitter.span(
+            "llm.text2sql",
+            kind="LLM",
+            inputs={"system": _T2SQL_SYSTEM[:400], "user_prompt": query, "model": self.settings.llm_model},
+        ):
+            resp: LLMResponse = self.llm.chat(
+                system=_T2SQL_SYSTEM,
+                user=query,
+                temperature=0.0,
+                max_tokens=300,
+            )
+            emitter.set_span_attributes(
+                model=resp.model,
+                prompt_tokens=resp.prompt_tokens,
+                completion_tokens=resp.completion_tokens,
+                total_tokens=resp.total_tokens,
+            )
+            emitter.set_span_outputs({"raw_sql": resp.content})
         emitter.emit(
             MessageTag.LLM_QA_RESPONSE,
             content=resp.content,
@@ -160,15 +172,25 @@ class Text2SQLTool:
 
         rows: list[dict] = []
         error: Optional[str] = None
-        if not sql or not _SELECT_ONLY_RE.match(sql) or _FORBIDDEN_RE.search(sql):
-            error = "Generated SQL was blocked by guardrails or is not a SELECT."
-        else:
-            try:
-                cur = _get_conn().execute(sql)
-                cols = [d[0] for d in cur.description or []]
-                rows = [dict(zip(cols, row)) for row in cur.fetchall()]
-            except Exception as exc:  # noqa: BLE001
-                error = f"SQL execution error: {exc}"
+        with emitter.span(
+            "db.execute",
+            kind="TOOL",
+            inputs={"sql": sql},
+        ):
+            if not sql or not _SELECT_ONLY_RE.match(sql) or _FORBIDDEN_RE.search(sql):
+                error = "Generated SQL was blocked by guardrails or is not a SELECT."
+            else:
+                try:
+                    cur = _get_conn().execute(sql)
+                    cols = [d[0] for d in cur.description or []]
+                    rows = [dict(zip(cols, row)) for row in cur.fetchall()]
+                except Exception as exc:  # noqa: BLE001
+                    error = f"SQL execution error: {exc}"
+            emitter.set_span_attributes(
+                row_count=len(rows),
+                error=error or "",
+            )
+            emitter.set_span_outputs({"rows": rows[:5], "error": error})
 
         formatted = _format_rows(rows) if not error else error
         answer = f"Ran the following SQL:\n\n```sql\n{sql}\n```\n\n{formatted}"

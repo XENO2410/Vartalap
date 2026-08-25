@@ -1,9 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-import type { ChatMessage } from '@/types/chat';
+import type { ChatMessage, FeedbackValue } from '@/types/chat';
 import { SourceCard } from './SourceCard';
 import { SuggestionChips } from './SuggestionChips';
 import { TypingDots } from './TypingDots';
@@ -12,11 +13,20 @@ type Props = {
   message: ChatMessage;
   isLoading?: boolean;
   onPickSuggestion?: (value: string) => void;
+  onFeedback?: (message: ChatMessage, feedback: FeedbackValue) => Promise<void> | void;
   activeBubble?: string;
 };
 
-export function MessageBubble({ message, isLoading, onPickSuggestion, activeBubble }: Props) {
+export function MessageBubble({
+  message,
+  isLoading,
+  onPickSuggestion,
+  onFeedback,
+  activeBubble,
+}: Props) {
   const isUser = message.role === 'user';
+  const [copied, setCopied] = useState(false);
+  const [feedbackBusy, setFeedbackBusy] = useState<FeedbackValue | null>(null);
 
   if (isUser) {
     return (
@@ -31,16 +41,52 @@ export function MessageBubble({ message, isLoading, onPickSuggestion, activeBubb
     );
   }
 
+  const copyAnswer = async () => {
+    try {
+      await navigator.clipboard.writeText(message.content);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1200);
+    } catch {
+      /* clipboard denied — ignore */
+    }
+  };
+
+  const submitFeedback = async (value: FeedbackValue) => {
+    if (!onFeedback || feedbackBusy) return;
+    setFeedbackBusy(value);
+    try {
+      await onFeedback(message, value);
+    } finally {
+      setFeedbackBusy(null);
+    }
+  };
+
+  const currentFeedback = message.feedback ?? 'none';
+
+  const feedbackButtonClass = (value: FeedbackValue) => {
+    const isActive = currentFeedback === value;
+    const base = 'rounded-full border px-2.5 py-1 text-xs font-semibold transition';
+    if (isActive) {
+      if (value === 'up') return `${base} border-emerald-500 bg-emerald-50 text-emerald-700`;
+      if (value === 'down') return `${base} border-rose-500 bg-rose-50 text-rose-700`;
+      return `${base} border-axis bg-axis-soft text-axis`;
+    }
+    return `${base} border-axis-softer bg-white text-axis-ink/70 hover:border-axis/40`;
+  };
+
   return (
     <div className="flex items-start gap-3">
       <span className="grid h-8 w-8 place-items-center rounded-lg bg-axis text-xs font-semibold text-white">
         वा
       </span>
       <div className="flex-1">
-        <div className="mb-1 flex items-baseline gap-2">
+        <div className="mb-1 flex flex-wrap items-baseline gap-2">
           <span className="deva font-semibold text-axis">वार्तालाप</span>
           <span className="text-[11px] text-axis-ink/60">
-            {new Date(message.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+            {new Date(message.createdAt).toLocaleTimeString([], {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
           </span>
           {message.toolUsed && (
             <span className="rounded-full bg-axis-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-axis">
@@ -50,6 +96,22 @@ export function MessageBubble({ message, isLoading, onPickSuggestion, activeBubb
           {message.useCase && (
             <span className="rounded-full bg-axis-softer px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-axis-dark">
               {message.useCase.replaceAll('_', ' ')}
+            </span>
+          )}
+          {message.messageId && (
+            <span
+              className="rounded-full bg-slate-100 px-2 py-0.5 font-mono text-[10px] text-slate-600"
+              title={`Message ID: ${message.messageId}`}
+            >
+              #{message.messageId.slice(0, 8)}
+            </span>
+          )}
+          {message.mlflowRunId && (
+            <span
+              className="rounded-full bg-amber-50 px-2 py-0.5 font-mono text-[10px] text-amber-700"
+              title={`MLflow run: ${message.mlflowRunId}`}
+            >
+              mlflow: {message.mlflowRunId.slice(0, 8)}
             </span>
           )}
         </div>
@@ -96,18 +158,51 @@ export function MessageBubble({ message, isLoading, onPickSuggestion, activeBubb
         )}
 
         {!isLoading && (
-          <div className="mt-3 flex items-center justify-end gap-3 text-xs text-axis-ink/60">
+          <div className="mt-3 flex flex-wrap items-center justify-end gap-2 text-xs text-axis-ink/70">
             {activeBubble && (
               <span className="rounded-full bg-axis px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
                 {activeBubble}
               </span>
             )}
-            <button title="Copy answer" className="hover:text-axis" onClick={() => navigator.clipboard.writeText(message.content)}>
-              📋
+            <button
+              type="button"
+              title="Copy answer"
+              onClick={copyAnswer}
+              className="rounded-full border border-axis-softer bg-white px-2.5 py-1 hover:border-axis/40"
+            >
+              {copied ? '✅ Copied' : '📋 Copy'}
             </button>
-            <button title="Suggest edit" className="hover:text-axis">💡</button>
-            <button title="Helpful" className="hover:text-axis">👍</button>
-            <button title="Not helpful" className="hover:text-axis">👎</button>
+            {onFeedback && (
+              <>
+                <button
+                  type="button"
+                  title="Helpful"
+                  onClick={() => submitFeedback('up')}
+                  disabled={feedbackBusy !== null}
+                  className={feedbackButtonClass('up')}
+                >
+                  👍
+                </button>
+                <button
+                  type="button"
+                  title="Not helpful"
+                  onClick={() => submitFeedback('down')}
+                  disabled={feedbackBusy !== null}
+                  className={feedbackButtonClass('down')}
+                >
+                  👎
+                </button>
+                <button
+                  type="button"
+                  title="Clear feedback"
+                  onClick={() => submitFeedback('none')}
+                  disabled={feedbackBusy !== null}
+                  className={feedbackButtonClass('none')}
+                >
+                  ⬜ None
+                </button>
+              </>
+            )}
           </div>
         )}
       </div>

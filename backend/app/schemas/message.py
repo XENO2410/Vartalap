@@ -34,6 +34,7 @@ class MessageTag(str, Enum):
     KNOWLEDGE_BASE_RESPONSE = "KNOWLEDGE_BASE_RESPONSE"
     KNOWLEDGE_BASE_RESPONSE_DOC = "KNOWLEDGE_BASE_RESPONSE_DOC"
     CHAT_RESPONSE = "CHAT_RESPONSE"
+    USER_FEEDBACK = "USER_FEEDBACK"
 
 
 class MessageClass(str, Enum):
@@ -157,3 +158,28 @@ class ChatResponse(BaseModel):
     tool_used: str
     reflexion_iterations: int = 0
     events: list[MessageEnvelope] = Field(default_factory=list)
+    mlflow_run_id: Optional[str] = None
+    mlflow_trace_id: Optional[str] = None
+
+
+class FeedbackValue(str, Enum):
+    UP = "up"
+    DOWN = "down"
+    NONE = "none"
+
+
+class FeedbackRequest(BaseModel):
+    session_id: str
+    message_id: str
+    feedback: FeedbackValue
+    user_id: Optional[str] = None
+    comment: Optional[str] = None
+    mlflow_run_id: Optional[str] = None
+    mlflow_trace_id: Optional[str] = None
+
+
+class FeedbackResponse(BaseModel):
+    ok: bool = True
+    session_id: str
+    message_id: str
+    feedback: FeedbackValue

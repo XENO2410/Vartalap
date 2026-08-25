@@ -2,7 +2,15 @@
 
 import Link from 'next/link';
 
-export function Header() {
+import { initials } from '@/lib/session';
+import type { SessionUser } from '@/types/chat';
+
+type Props = {
+  user: SessionUser | null;
+  onSignOut: () => void;
+};
+
+export function Header({ user, onSignOut }: Props) {
   return (
     <header className="sticky top-0 z-30 border-b border-axis-softer bg-axis text-white shadow-card">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-8">
@@ -20,8 +28,7 @@ export function Header() {
             </span>
           </div>
         </Link>
-        <div className="hidden items-center gap-6 text-sm sm:flex">
-          <a href="/docs-hub" className="text-white/85 hover:text-white">Docs</a>
+        <div className="hidden items-center gap-5 text-sm sm:flex">
           <a
             href={`${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'}/docs`}
             target="_blank"
@@ -30,12 +37,42 @@ export function Header() {
           >
             API
           </a>
-          <span
-            className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-xs font-semibold"
-            title="Session user"
+          <a
+            href="http://localhost:5000"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white/85 hover:text-white"
+            title="MLflow tracking UI (start with: mlflow ui --backend-store-uri backend/mlruns)"
           >
-            SM
-          </span>
+            MLflow
+          </a>
+          {user ? (
+            <div className="flex items-center gap-3">
+              <div className="flex flex-col items-end leading-tight">
+                <span className="text-sm font-semibold">{user.displayName}</span>
+                <span className="font-mono text-[10px] text-white/70">{user.userId}</span>
+              </div>
+              <span
+                className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-xs font-semibold"
+                title={user.userId}
+              >
+                {initials(user.displayName)}
+              </span>
+              <button
+                onClick={onSignOut}
+                className="rounded-full border border-white/30 px-3 py-1 text-xs font-semibold text-white/85 hover:bg-white/10"
+              >
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <span
+              className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-xs font-semibold"
+              title="Not signed in"
+            >
+              ??
+            </span>
+          )}
         </div>
       </div>
     </header>

@@ -1,9 +1,10 @@
 """Central event emitter.
 
 Every stage of the runtime funnels through `EventEmitter.emit(...)`. Today it
-writes JSONL to a per-day file and (optionally) mirrors to stdout. Later, an
-MLflow tracer and the Kytee SDK can be plugged in inside this single module
-without touching any call-sites.
+writes JSONL to a per-day file, optionally mirrors to stdout, and (when
+`MLFLOW_ENABLED=true`) tees each event to the current MLflow span while the
+supervisor wraps each pipeline stage in `emitter.span(...)`. The Kytee SDK
+can be plugged in inside this single module without touching any call-sites.
 """
 from __future__ import annotations
 
@@ -11,12 +12,14 @@ import json
 import sys
 import threading
 import uuid
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Iterator, Optional
 
 from ..config import get_settings
 from ..schemas import MessageClass, MessageEnvelope, MessageTag
+from .mlflow_sink import MLflowSink
 
 
 _SETTINGS = get_settings()
@@ -35,12 +38,63 @@ class EventEmitter:
         *,
         session_id: Optional[str] = None,
         user_id: Optional[str] = None,
+        bubble: Optional[str] = None,
     ) -> None:
         self.session_id = session_id or f"sess_{uuid.uuid4().hex[:12]}"
         self.user_id = user_id or "anonymous"
+        self.bubble = bubble
         self.events: list[MessageEnvelope] = []
         self._log_dir: Path = _SETTINGS.log_abs_dir
         self._log_dir.mkdir(parents=True, exist_ok=True)
+        self.mlflow = MLflowSink(
+            session_id=self.session_id,
+            user_id=self.user_id,
+            bubble=bubble,
+        )
+
+    # ------------------------------------------------------------------
+    def start_turn(self, query: str) -> None:
+        """Open the MLflow run for this turn (no-op if MLflow disabled)."""
+        self.mlflow.start_turn(query=query)
+
+    @property
+    def mlflow_run_id(self) -> Optional[str]:
+        return self.mlflow.run_id
+
+    @property
+    def mlflow_trace_id(self) -> Optional[str]:
+        return self.mlflow.trace_id
+
+    def finalize(self, response, *, quality=None, retrieval_scores=None) -> None:
+        """Log rollup metrics + artifacts and close the MLflow run."""
+        self.mlflow.finalize(
+            response=response,
+            events=self.events,
+            quality=quality,
+            retrieval_scores=retrieval_scores,
+        )
+
+    # ------------------------------------------------------------------
+    @contextmanager
+    def span(
+        self,
+        name: str,
+        *,
+        kind: str = "CHAIN",
+        inputs: Optional[dict[str, Any]] = None,
+        attributes: Optional[dict[str, Any]] = None,
+    ) -> Iterator[Any]:
+        """Wrap a pipeline stage in an MLflow span."""
+        with self.mlflow.span(
+            name=name, kind=kind, inputs=inputs, attributes=attributes
+        ) as span:
+            yield span
+
+    def set_span_outputs(self, outputs: dict[str, Any]) -> None:
+        self.mlflow.set_current_outputs(outputs)
+
+    def set_span_attributes(self, **attributes: Any) -> None:
+        self.mlflow.set_current_attributes(attributes)
 
     # ------------------------------------------------------------------
     def emit(
@@ -77,6 +131,7 @@ class EventEmitter:
 
         self.events.append(envelope)
         self._sink(envelope)
+        self.mlflow.log_event(envelope)
         return envelope
 
     # ------------------------------------------------------------------
