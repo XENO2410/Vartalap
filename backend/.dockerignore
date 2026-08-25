@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+data/chroma/
+data/cache/
+data/downloads/
+mlruns/
+logs/
+.env
+.env.local

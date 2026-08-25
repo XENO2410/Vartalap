@@ -1,20 +1,85 @@
 # वार्तालाप (Vartalaap)
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Backend: FastAPI](https://img.shields.io/badge/backend-FastAPI-009485)
+![Frontend: Next.js 14](https://img.shields.io/badge/frontend-Next.js%2014-black)
+![Observability: MLflow](https://img.shields.io/badge/observability-MLflow-0194E2)
+
 A dummy conversational assistant that **mirrors the ADI (Axis Deep Intelligence)
-architecture** end-to-end, purpose-built so you can later attach
-**MLflow** and **Kytee** for observability.
+architecture** end-to-end — purpose-built to exercise
+**MLflow-based GenAI observability** (traces, per-turn eval metrics, cost tracking,
+cross-session roll-ups, feedback attached to traces) on a realistic multi-stage
+RAG pipeline.
 
 - Preprocessing (language detect → translate → spell correct → glossary)
 - Input & output **guardrails**
 - **Supervisor Agent** with **Reactive** tool selection and **Reflexion** review loop
 - Three tools: **RAG Knowledge Base** (FAQ + docs), **Status Retrieval** (mock ESB/DB),
   **Text2SQL** (SQLite mock of bank tables)
-- Every stage emits a **schema-conformant event** (matches the message table in the
-  architecture doc) via a single `EventEmitter` — that is the seam MLflow/Kytee will
-  plug into.
+- Every stage is wrapped in an **MLflow span** and emits a **schema-conformant
+  event** (matches the message table in the architecture doc)
+- Heuristic **eval metrics** per turn: context relevance, faithfulness, answer
+  relevance, tone, toxicity, composite RAG score
+- **Per-session run** (one MLflow run) + a shared **`system::vartalaap` run**
+  with cross-session totals + rolling averages
+- **👍 / 👎 / None feedback** attached as tags on the **existing trace** — no
+  spawned traces
 
 > The bot's public name is **वार्तालाप** ("conversation"). Everything below is
 > synthetic sample data — not real Axis Bank content.
+
+---
+
+## Screenshots
+
+| Landing / chat | MLflow trace tree | Per-turn eval metrics |
+| --- | --- | --- |
+| ![landing](docs/screenshots/landing.png) | ![trace tree](docs/screenshots/mlflow-traces.png) | ![metrics](docs/screenshots/mlflow-metrics.png) |
+
+(Place your PNGs under [docs/screenshots](docs/screenshots/) using the file names
+above — GitHub will render them here automatically.)
+
+---
+
+## Quick start — with Docker (one command)
+
+Prerequisites: **Docker Desktop 4.x** (or any Docker Engine ≥ 20.10 + Docker Compose v2).
+
+```powershell
+git clone https://github.com/XENO2410/ADI.git
+cd ADI
+Copy-Item .env.example .env
+# Open .env and paste your OpenRouter API key:
+#   OPENROUTER_API_KEY=sk-or-v1-...
+docker compose up --build
+```
+
+That builds and runs three containers on the following ports:
+
+| URL | Service |
+| --- | --- |
+| http://localhost:3000 | **वार्तालाप** frontend (Next.js) |
+| http://localhost:8000/docs | Backend Swagger UI (FastAPI) |
+| http://localhost:5000 | **MLflow UI** with the `vartalaap` experiment |
+
+The backend seeds the Chroma index automatically on first boot (about 60 s while
+`sentence-transformers` downloads the embedding model). Subsequent starts are
+instant. Volumes persist the KB (`chroma`), the MLflow store (`mlruns`), the
+event JSONL log (`logs`) and the HuggingFace cache (`hf-cache`).
+
+Stop everything with `docker compose down`. Wipe state with
+`docker compose down -v`.
+
+> **Note:** the OpenRouter key you set via `.env` is loaded into the backend
+> container's environment — it is not baked into the image. If no key is set,
+> the LLM falls through to a deterministic offline stub and every stage still
+> runs so you can exercise the pipeline.
+
+---
+
+## Quick start — local development (no Docker)
+
+If you'd rather run the components directly, see the "Local dev" section below.
 
 ---
 
@@ -44,16 +109,20 @@ ADI/
 │   ├── app/                           # App router entry
 │   ├── components/                    # Header, BubbleTabs, ChatWindow, SourceCard, ...
 │   ├── lib/api.ts                     # backend client
-│   └── types/chat.ts
+│   ├── types/chat.ts
+│   └── Dockerfile
+├── docs/screenshots/        # drop your PNGs here
 ├── .env.example
+├── docker-compose.yml
+├── LICENSE                  # MIT
 └── .gitignore
 ```
 
 ---
 
-## Prerequisites
+## Local dev — prerequisites
 
-- **Python 3.11+**
+- **Python 3.12+** (3.11 works too)
 - **Node.js 20+ / npm** (or pnpm / yarn)
 - An **OpenRouter API key** (optional — a deterministic offline stub is used
   when no key is present, so every stage still runs)
@@ -268,3 +337,36 @@ each MLflow run and every schema event carries `identifieruserid`. Use the
 - The two Wikipedia-derived files under
   `backend/data/documents/GENERAL` are redistributed under CC-BY-SA 4.0
   (attribution included in each file).
+- Eval scores are heuristics computed inline — retrieval-score-based context
+  relevance, citation-based faithfulness, keyword-overlap answer relevance,
+  lexicon-based tone / toxicity. Good enough to exercise the dashboards; drop
+  an LLM-as-judge in `backend/app/metrics/evaluators.py` when you need real numbers.
+- Cost estimates use the OpenRouter list prices in
+  `backend/app/metrics/costs.py` — update the table when you switch models.
+
+---
+
+## Security
+
+- Never commit `.env`. `.gitignore` already excludes it.
+- If you accidentally paste your OpenRouter key in a public log, rotate it on
+  [openrouter.ai/keys](https://openrouter.ai/keys) — this repo does not persist
+  keys anywhere and reads them only from environment variables at boot.
+- Guardrails (input + output) are heuristic and meant for a demo. Do not deploy
+  this as a customer-facing assistant without a proper safety layer.
+
+---
+
+## Contributing
+
+PRs welcome — issues even more so. Please keep the schema in
+`backend/app/schemas/message.py` in sync with any new pipeline stages you add,
+and prefer wrapping new stages in `emitter.span(...)` so they show up in the
+MLflow trace tree.
+
+---
+
+## License
+
+[MIT](LICENSE) © 2026 XENO2410 and contributors.
+

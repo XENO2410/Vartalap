@@ -1,0 +1,70 @@
+name: vartalaap
+
+services:
+  backend:
+    build:
+      context: ./backend
+    image: vartalaap-backend:latest
+    container_name: vartalaap-backend
+    environment:
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_BASE_URL: ${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      LLM_MODEL: ${LLM_MODEL:-openai/gpt-4o-mini}
+      LLM_FALLBACK_MODEL: ${LLM_FALLBACK_MODEL:-google/gemini-flash-1.5}
+      RERANKER_ENABLED: ${RERANKER_ENABLED:-true}
+      MLFLOW_ENABLED: "true"
+      MLFLOW_TRACKING_URI: /app/mlruns
+      MLFLOW_EXPERIMENT: vartalaap
+      CORS_ORIGINS: http://localhost:3000
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma:/app/data/chroma
+      - mlruns:/app/mlruns
+      - logs:/app/logs
+      - hf-cache:/root/.cache/huggingface
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 6
+      start_period: 60s
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+    image: vartalaap-frontend:latest
+    container_name: vartalaap-frontend
+    depends_on:
+      backend:
+        condition: service_started
+    ports:
+      - "3000:3000"
+
+  mlflow-ui:
+    image: vartalaap-backend:latest
+    container_name: vartalaap-mlflow-ui
+    depends_on:
+      - backend
+    entrypoint: []
+    command:
+      - mlflow
+      - ui
+      - --backend-store-uri
+      - /app/mlruns
+      - --host
+      - 0.0.0.0
+      - --port
+      - "5000"
+    volumes:
+      - mlruns:/app/mlruns
+    ports:
+      - "5000:5000"
+
+volumes:
+  chroma:
+  mlruns:
+  logs:
+  hf-cache:
