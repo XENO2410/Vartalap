@@ -1,198 +1,206 @@
-# Deploying वार्तालाप
+# Deploying वार्तालाप — free public demo
 
-A live public demo needs two hosts:
+A live demo needs two hosts. Both are truly free and neither asks for a
+credit card up front:
 
-| Component | Recommended host | Cost | Cold start |
+| Component | Host | Free tier | URL shape |
 | --- | --- | --- | --- |
-| **Frontend** (Next.js) | [Vercel](https://vercel.com) — Hobby | Free | ~200 ms |
-| **Backend** (FastAPI) | [Fly.io](https://fly.io) — free tier | Free (auto-stop) | ~5 s |
-| **MLflow UI** | Local for now (see notes at the bottom) | — | — |
+| **Backend** (FastAPI + RAG) | [Hugging Face Spaces — Docker](https://huggingface.co/new-space) | 16 GB RAM, 2 vCPU, sleeps after ~48 h idle | `https://<owner>-<space>.hf.space` |
+| **Frontend** (Next.js) | [Vercel — Hobby](https://vercel.com) | Free forever, no card | `https://<project>.vercel.app` |
 
-The whole thing takes ~20 minutes end-to-end the first time. Instructions below
-assume the repo is already on GitHub (it is — [XENO2410/ADI](https://github.com/XENO2410/ADI)).
+MLflow UI in the public demo is optional and self-hosted — see §3 at the
+bottom.
+
+> **Why not Fly.io / Render / Railway?** They now require a payment method
+> before you can deploy anything, even on their free tiers. Hugging Face
+> Spaces + Vercel remain no-card.
 
 ---
 
-## 1. Backend → Fly.io
+## 1. Backend → Hugging Face Spaces
 
-### Fly prereqs
+### 1.1 Create the Space (2 min, web UI)
 
-- Install `flyctl`: <https://fly.io/docs/hands-on/install-flyctl/>
-- `flyctl auth signup` (or `login`).
-- A working OpenRouter key.
+1. Go to <https://huggingface.co/new-space>. Sign up if you don't have an
+   account — no credit card needed.
+2. Fill in:
+   - **Owner** — your username or an org you own.
+   - **Space name** — e.g. `vartalaap-api`.
+   - **License** — MIT.
+   - **Space SDK** — **Docker**. **Template** — **Blank**.
+   - **Hardware** — **CPU basic — 2 vCPU · 16 GB — FREE**.
+   - **Visibility** — Public (so the frontend can call it).
+3. Click **Create Space**. HF gives you an empty Space with its own git repo.
 
-### Fly deploy
+### 1.2 Push `backend/` to the Space (5 min)
 
-```bash
-cd backend
-flyctl launch --copy-config --no-deploy       # picks up the existing fly.toml
+The Space needs the backend Dockerfile at its **root**. We use `git subtree`
+to push our `backend/` subfolder onto the Space's `main` branch.
+
+Create a write-scoped HF token first: <https://huggingface.co/settings/tokens>
+→ **New token** → **Write** scope.
+
+Then from the repo root:
+
+**PowerShell (Windows)**:
+
+```powershell
+$env:HF_TOKEN = "hf_..."
+.\scripts\push-hf-space.ps1 -SpaceOwner <your-hf-username> -SpaceName vartalaap-api
 ```
 
-`launch` will ask for:
-
-- **App name** — pick something unique like `vartalaap-<yourhandle>`. Update the
-  `app = "..."` line in `fly.toml` to match.
-- **Region** — pick closest to you and your users; e.g. `iad`, `sin`, `bom`, `fra`.
-- **Postgres / Redis** — say **no** to both.
-- **Deploy now?** — say **no**; we need to create a volume first.
-
-Create the persistent volume that will hold `mlruns/`, `chroma/`, `logs/`:
+**Bash (macOS / Linux / WSL)**:
 
 ```bash
-flyctl volumes create vartalaap_data --size 3 --region <same-region-as-above>
+export HF_TOKEN=hf_...
+./scripts/push-hf-space.sh <your-hf-username> vartalaap-api
 ```
 
-Set the runtime secrets:
+The script:
+
+1. Adds a temporary git remote (`hf-vartalaap-api`) that includes your token.
+2. Runs `git subtree push --prefix=backend hf-vartalaap-api main` — the
+   `backend/` folder becomes the Space's root.
+3. Prints a cleanup command to remove the tokenized remote.
+
+The Space now builds the image (~5-10 min on first push, then cached).
+Watch progress on the Space's **Logs** tab.
+
+### 1.3 Set the runtime secrets (1 min)
+
+On the Space page → **Settings → Repository secrets → Add secret**:
+
+| Name | Value |
+| --- | --- |
+| `OPENROUTER_API_KEY` | your OpenRouter key |
+| `CORS_ORIGINS` | `https://<placeholder>.vercel.app` (updated after Vercel) |
+| `RERANKER_ENABLED` | `false` (saves ~280 MB download on first boot) |
+
+HF injects them as environment variables at container start — you don't
+need to redeploy after adding them.
+
+### 1.4 Verify
 
 ```bash
-flyctl secrets set \
-  OPENROUTER_API_KEY=sk-or-v1-... \
-  CORS_ORIGINS=https://<your-frontend>.vercel.app
+curl https://<owner>-vartalaap-api.hf.space/health
 ```
 
-Deploy:
+You should see `{"status":"ok", …}`. Take a note of that URL — Vercel needs
+it next.
 
-```bash
-flyctl deploy
-```
+### 1.5 Redeploying on updates
 
-The first deploy pushes ~2 GB of image (torch + sentence-transformers) and
-takes 5–10 min. Subsequent deploys are incremental.
+Every time you change files under `backend/` on your GitHub `main`, re-run
+the same script. `git subtree push` is incremental and only pushes new
+commits.
 
-Once done, `flyctl status` shows the public URL — typically
-`https://<app-name>.fly.dev`. Verify:
-
-```bash
-curl https://<app-name>.fly.dev/health
-```
-
-Take note of that URL — it goes into Vercel next.
-
-### Free-tier tips
-
-- `auto_stop_machines = "stop"` + `min_machines_running = 0` (already set in
-  `fly.toml`) means the VM sleeps after ~5 min idle and wakes on the next
-  request. Cold wake ≈ 5–10 s.
-- If you want the demo always-warm, set `min_machines_running = 1` (costs a
-  couple of dollars a month).
+Optional: automate it with a GitHub Action — sample
+[`.github/workflows/hf-space-sync.yml`](../.github/workflows) is left as an
+exercise (uses `huggingface_hub` CLI + `HF_TOKEN` secret).
 
 ---
 
 ## 2. Frontend → Vercel
 
-### Vercel prereqs
+### 2.1 Import the repo (3 min)
 
-- Free account at <https://vercel.com>.
-- `npm i -g vercel` (optional — the web UI works too).
+1. Sign in at <https://vercel.com> — GitHub SSO, no card.
+2. **Add New → Project → Import Git Repository** → pick `XENO2410/ADI`.
+3. **Root Directory** = `frontend`.
+4. **Framework** = Next.js (auto-detected).
+5. **Environment Variables** — click **Add**:
+   - Name: `NEXT_PUBLIC_API_BASE_URL`
+   - Value: `https://<owner>-vartalaap-api.hf.space` (from step 1.4)
+   - Environments: **Production**, **Preview**, **Development** (all three).
+6. Click **Deploy**.
 
-### One-time setup
+The build takes ~90 seconds. Once green, click the URL — you should see
+वार्तालाप ready to chat.
 
-The `frontend/vercel.json` uses a shared env var `@vartalaap_api_url`. Set it
-first so both preview and production builds pick it up:
+### 2.2 Point the backend's CORS at the new URL
 
-```bash
-vercel env add vartalaap_api_url production
-# When prompted, paste: https://<your-fly-app>.fly.dev
+Back on the HF Space → Settings → Repository secrets → edit `CORS_ORIGINS`:
+
+```env
+https://<project>.vercel.app,https://<project>-*.vercel.app
 ```
 
-(Or set it via the Vercel UI: Project → Settings → Environment Variables →
-add `NEXT_PUBLIC_API_BASE_URL` = `https://<your-fly-app>.fly.dev` for
-Production, Preview and Development.)
+The wildcard covers preview deploys. HF restarts the container automatically.
 
-### Vercel deploy
+### 2.3 Custom domain (optional)
 
-Either link and deploy from CLI:
-
-```bash
-cd frontend
-vercel link
-vercel --prod
-```
-
-…or point Vercel at the GitHub repo (recommended):
-
-1. New Project → **Import Git Repository** → pick `XENO2410/ADI`.
-2. **Root Directory** = `frontend`.
-3. **Framework** = Next.js (auto-detected).
-4. **Environment Variables** → add `NEXT_PUBLIC_API_BASE_URL` =
-   `https://<your-fly-app>.fly.dev` for all environments.
-5. Deploy. Every push to `main` now redeploys automatically.
-
-Once live, come back to Fly and update `CORS_ORIGINS`:
-
-```bash
-flyctl secrets set CORS_ORIGINS=https://<vercel-project>.vercel.app,https://<vercel-project>-*.vercel.app
-```
-
-Refresh the Vercel URL — you should see वार्तालाप ready to chat.
+Vercel → Project → Settings → Domains → add yours. Update the backend's
+`CORS_ORIGINS` to include it.
 
 ---
 
 ## 3. Optional — hosted MLflow UI
 
-Getting the MLflow UI publicly reachable requires a shared store because
-Fly volumes are per-app. Two workable approaches:
+MLflow tracks locally inside the Space's ephemeral filesystem, which HF
+wipes when the machine sleeps. Public MLflow needs a persistent store.
+Two options that stay free:
 
-### 3a. Simple: view via `flyctl ssh`
-
-```bash
-flyctl ssh console
-mlflow ui --backend-store-uri /data/mlruns --host 0.0.0.0 --port 5000
-```
-
-Then locally:
+### 3a. View live via `huggingface_hub` port-forward (dev-only)
 
 ```bash
-flyctl proxy 5000:5000 -a <your-fly-app>
-open http://localhost:5000
+huggingface-cli spaces run \
+  --owner <you> --space vartalaap-api -- \
+  mlflow ui --backend-store-uri /app/mlruns --host 0.0.0.0 --port 5000
 ```
 
-Zero extra services. Fine for admin-only inspection.
+Then open a tunnel with `hf-space-proxy` or just `curl` against the Space.
+Fine for admin inspection, not for the public.
 
-### 3b. Proper: SQLite + object store
+### 3b. Push to a shared cloud store (recommended for a real demo)
 
-Point MLflow at a SQLite DB for the backend store and an S3-compatible object
-store for artifacts:
+Point MLflow at a cloud DB + object store — all free tiers, no card:
 
-```bash
-flyctl secrets set \
-  MLFLOW_TRACKING_URI=sqlite:////data/mlflow.db \
-  MLFLOW_ARTIFACT_ROOT=s3://<bucket>/mlflow \
-  AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=... \
-  MLFLOW_S3_ENDPOINT_URL=https://<your-r2-endpoint>
+- **Backend store**: Neon.tech PostgreSQL (0.5 GB free, no card).
+- **Artifact store**: Cloudflare R2 (10 GB free, no card).
+
+Set on the HF Space:
+
+```env
+MLFLOW_TRACKING_URI=postgresql://user:pass@neon-host/vartalaap
+MLFLOW_ARTIFACT_ROOT=s3://vartalaap-mlflow/
+AWS_ACCESS_KEY_ID=<r2-access-key>
+AWS_SECRET_ACCESS_KEY=<r2-secret>
+MLFLOW_S3_ENDPOINT_URL=https://<account>.r2.cloudflarestorage.com
 ```
 
-Then deploy a second tiny Fly app running `mlflow ui` with the same env
-vars — both apps point at the same SQLite (from the volume) and S3.
-Cloudflare R2 free tier (10 GB egress-free) works well here.
+Then run a second HF Space with just `mlflow ui` pointed at the same
+`MLFLOW_TRACKING_URI` / `MLFLOW_ARTIFACT_ROOT`. Both Spaces share state.
 
-Skip this if the demo is only for a handful of viewers — `3a` is enough.
+Skip this if the demo is only for a handful of viewers — locally-run
+`mlflow ui` against the docker-compose volume is a much simpler win.
 
 ---
 
 ## 4. Cutting a release
 
-Container images are built automatically by
-[.github/workflows/release.yml](../.github/workflows/release.yml) whenever
-you push a tag matching `v*.*.*`.
+Container images are built and pushed to GHCR by
+[.github/workflows/release.yml](../.github/workflows/release.yml) on any
+`v*.*.*` tag:
 
 ```bash
 git tag -a v1.0.0 -m "First public release"
 git push origin v1.0.0
 ```
 
-The workflow builds `ghcr.io/xeno2410/vartalaap-backend:v1.0.0` and
-`ghcr.io/xeno2410/vartalaap-frontend:v1.0.0`, tags them `:latest` too, and
-opens a draft GitHub Release with the notes from
-[`docs/RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTES_v1.0.0.md).
-
-Go to **Releases** → the draft → click **Publish**.
+That publishes `ghcr.io/xeno2410/vartalaap-backend:v1.0.0` (+ `:latest`)
+and `ghcr.io/xeno2410/vartalaap-frontend:v1.0.0` (+ `:latest`), then drafts
+a GitHub Release using [docs/RELEASE_NOTES_v1.0.0.md](RELEASE_NOTES_v1.0.0.md).
 
 Anyone can then run:
 
 ```bash
-docker run -e OPENROUTER_API_KEY=... -p 8000:8000 ghcr.io/xeno2410/vartalaap-backend:latest
+docker run -e OPENROUTER_API_KEY=... -p 8000:8000 \
+  ghcr.io/xeno2410/vartalaap-backend:latest
 ```
+
+> **One-time gotcha:** Repo → Settings → Actions → General → **Workflow
+> permissions** must be set to **Read and write permissions** for the
+> release workflow to publish to GHCR.
 
 ---
 
@@ -200,9 +208,10 @@ docker run -e OPENROUTER_API_KEY=... -p 8000:8000 ghcr.io/xeno2410/vartalaap-bac
 
 | Symptom | Fix |
 | --- | --- |
-| `500` from `/chat` on Fly | `flyctl logs` → almost always missing `OPENROUTER_API_KEY` secret. |
-| CORS error in the browser | Set `CORS_ORIGINS` on Fly to your exact Vercel URL (no trailing slash). |
-| Long cold starts | Bump `min_machines_running` to `1` in `fly.toml`. |
-| First deploy fails on OOM | Raise the VM to `4gb` in `[[vm]]`, or keep `RERANKER_ENABLED=false`. |
-| Vercel build fails on missing env var | Add `NEXT_PUBLIC_API_BASE_URL` to **all** environments (Prod, Preview, Dev). |
-| `bad interpreter: /bin/sh^M` on Docker | Make sure `.gitattributes` is committed and the entrypoint has LF endings. |
+| Space stuck on "Building" > 15 min | Check the Logs tab — usually `pip install` OOM. Cut `FlagEmbedding` from `requirements.txt` and set `RERANKER_ENABLED=false`. |
+| `500` from `/chat` on HF | Almost always missing `OPENROUTER_API_KEY` in Space secrets. Re-check Settings → Repository secrets. |
+| CORS error in the browser | `CORS_ORIGINS` must exactly match your Vercel URL (no trailing slash). Include the preview wildcard. |
+| Space sleeps and cold start is slow | HF free tier idles after ~48 h. First request wakes it in ~30 s. Upgrade to CPU-upgrade (~$0.05/h) if you need snappy warm starts. |
+| First run is slow | Sentence-transformers downloads its 90 MB model on first boot. Subsequent restarts reuse `/root/.cache/huggingface`. |
+| `git subtree push` rejects with non-fast-forward | Someone edited the Space's `main` branch directly. Force it with `git push hf-<name> --force $(git subtree split --prefix=backend main):main`. |
+| Vercel build fails on missing env var | Add `NEXT_PUBLIC_API_BASE_URL` to **all three** environments (Prod, Preview, Dev). |

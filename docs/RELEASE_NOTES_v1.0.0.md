@@ -46,8 +46,8 @@ docker compose up --build
   `ghcr.io/xeno2410/vartalaap-backend:v1.0.0` and
   `ghcr.io/xeno2410/vartalaap-frontend:v1.0.0`
   (built and pushed automatically by the release workflow).
-- **Live demo (optional)** — see [docs/DEPLOY.md](docs/DEPLOY.md) for
-  Vercel (frontend) + Fly.io (backend) instructions.
+- **Live demo (optional)** — free hosting on Hugging Face Spaces (backend) +
+  Vercel (frontend). See [docs/DEPLOY.md](docs/DEPLOY.md).
 
 ## What's next
 

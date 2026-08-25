@@ -85,12 +85,14 @@ If you'd rather run the components directly, see the "Local dev" section below.
 
 ## Public deployment
 
-A live demo is one Vercel deploy + one Fly.io deploy away — see
-[docs/DEPLOY.md](docs/DEPLOY.md) for step-by-step instructions,
-`backend/fly.toml` for the backend Fly config, and `frontend/vercel.json`
-for the frontend Vercel config. GitHub Actions builds and publishes
-container images to GHCR on every `v*.*.*` tag —
-`ghcr.io/xeno2410/vartalaap-backend:latest` and
+The whole thing runs **free with no credit card required** on
+Hugging Face Spaces (backend) + Vercel (frontend). See
+[docs/DEPLOY.md](docs/DEPLOY.md) for the step-by-step guide.
+`backend/README.md` doubles as the HF Space card (Docker SDK), and
+`frontend/vercel.json` sets up the Next.js build on Vercel.
+
+GitHub Actions builds and publishes container images to GHCR on every
+`v*.*.*` tag — `ghcr.io/xeno2410/vartalaap-backend:latest` and
 `ghcr.io/xeno2410/vartalaap-frontend:latest`.
 
 ---
