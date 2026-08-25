@@ -129,7 +129,7 @@ Vercel → Project → Settings → Domains → add yours. Update Render's
 ## 3. Optional — hosted MLflow UI
 
 MLflow tracks locally inside the Render instance's ephemeral filesystem, so
-runs / traces are wiped on redeploy. Two ways around it, both free:
+runs / traces are wiped on redeploy. Here are three ways around it, all free.
 
 ### 3a. View via the local docker-compose stack
 
@@ -143,33 +143,88 @@ Backend runs at `http://localhost:8000`, MLflow UI at `http://localhost:5000`,
 frontend at `http://localhost:3000`. This is the full experience; use it
 whenever you want to inspect traces / eval metrics / cost roll-ups.
 
-### 3b. Point MLflow at a free cloud store
+### 3b. Free hosted MLflow — Neon Postgres + a second Render service
 
-For persistent hosted MLflow:
+This is what runs behind the public demo's **MLflow** link in the header.
+It's genuinely free (no credit card at any step) and takes ~15 min end-to-end.
 
-- **Backend store**: Neon.tech PostgreSQL (0.5 GB free, no card).
-- **Artifact store**: Cloudflare R2 (10 GB egress-free, no card).
+**Step 1 — Create a free Neon Postgres (~3 min)**
 
-Set on Render → Environment:
+1. <https://console.neon.tech/signup> → **Continue with GitHub** (no card).
+2. **New Project**:
+   - Name: `vartalaap-mlflow`
+   - Postgres version: default is fine
+   - Region: closest to your Render region
+3. On the project dashboard, copy the **Connection string** — the one
+   labelled "Pooled connection" if it exists, otherwise "Direct". It looks
+   like:
+   ```
+   postgresql://<user>:<pass>@ep-xxx.us-east-2.aws.neon.tech/vartalaap-mlflow?sslmode=require
+   ```
+
+**Step 2 — Deploy the MLflow tracking server (~7 min)**
+
+1. Render dashboard → **New +** → **Web Service** → pick `XENO2410/ADI`.
+2. Fill in:
+
+   | Field | Value |
+   | --- | --- |
+   | **Name** | `vartalaap-mlflow` |
+   | **Region** | same as the backend |
+   | **Branch** | `main` |
+   | **Root Directory** | `mlflow_server` |
+   | **Runtime** | **Python 3** |
+   | **Build Command** | `pip install -r requirements.txt` |
+   | **Start Command** | `mlflow server --backend-store-uri "$MLFLOW_BACKEND_STORE_URI" --artifacts-destination /tmp/mlflow-artifacts --serve-artifacts --host 0.0.0.0 --port $PORT` |
+   | **Instance Type** | **Free** |
+
+3. **Environment Variables**:
+
+   | Key | Value |
+   | --- | --- |
+   | `MLFLOW_BACKEND_STORE_URI` | Neon connection string from step 1.3 |
+
+4. **Create Web Service**. Watch the Logs — first boot runs a one-time
+   `alembic` migration that creates all the MLflow tables in Postgres.
+   Look for `Listening at: http://0.0.0.0:...` — takes ~2 min.
+5. Verify: open the service URL (e.g. `https://vartalaap-mlflow-XXXX.onrender.com`).
+   You should see MLflow's UI with an empty "Default" experiment.
+
+**Step 3 — Point the backend at it (~1 min)**
+
+Render → your **backend** service → **Environment**:
+
+- Add / edit `MLFLOW_TRACKING_URI` = the MLflow service URL from step 2.5.
+- Save. Backend restarts automatically.
+
+Send a chat query on the Vercel URL, then reload the MLflow UI — the
+`vartalaap` experiment appears with your first session run + trace.
+
+**Step 4 — Show it in the frontend header (~1 min)**
+
+Vercel → your project → **Settings → Environment Variables** →
+add `NEXT_PUBLIC_MLFLOW_URL` = the MLflow service URL for all three
+environments. Redeploy the frontend; the **MLflow** link in the header
+now opens the live UI.
+
+### 3c. Persistent artifacts (extra, only if you need them)
+
+The MLflow server writes artifacts to `/tmp/mlflow-artifacts` on Render's
+ephemeral disk. In वार्तालाप, the only artifact ever written is an optional
+`feedback_<id>.md` when a user submits a comment — everything else
+(traces, runs, metrics, tags) lives safely in Postgres.
+
+If you want durable artifacts too, add a free Cloudflare R2 bucket:
 
 ```env
-MLFLOW_TRACKING_URI=postgresql://user:pass@neon-host/vartalaap
 MLFLOW_ARTIFACT_ROOT=s3://vartalaap-mlflow/
 AWS_ACCESS_KEY_ID=<r2-access-key>
 AWS_SECRET_ACCESS_KEY=<r2-secret>
 MLFLOW_S3_ENDPOINT_URL=https://<account>.r2.cloudflarestorage.com
 ```
 
-Then run a second Render Free web service (Python) with:
-
-- Build: `pip install "mlflow>=2.15,<3.0" psycopg2-binary boto3`
-- Start: `mlflow ui --backend-store-uri "$MLFLOW_TRACKING_URI" --default-artifact-root "$MLFLOW_ARTIFACT_ROOT" --host 0.0.0.0 --port $PORT`
-- Same env vars as above.
-
-Both services now share the same MLflow store.
-
-Skip this unless the demo is going public — locally-run `mlflow ui`
-against the docker-compose volume covers 95 % of use cases.
+Set those on the **MLflow service** and change the start command's
+`--artifacts-destination` to `"$MLFLOW_ARTIFACT_ROOT"`.
 
 ---
 
