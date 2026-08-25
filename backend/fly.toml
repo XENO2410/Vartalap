@@ -1,0 +1,61 @@
+# Fly.io config for the Vartalaap backend.
+# Change `app` to your own name (must be unique across Fly.io).
+# Deploy:
+#   fly launch --copy-config --no-deploy
+#   fly volumes create vartalaap_data --size 3 --region iad
+#   fly secrets set OPENROUTER_API_KEY=sk-or-v1-... CORS_ORIGINS=https://your-frontend.vercel.app
+#   fly deploy
+
+app = "vartalaap-api"
+primary_region = "iad"                        # change to your closest region
+
+kill_signal = "SIGINT"
+kill_timeout = "30s"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  API_HOST = "0.0.0.0"
+  API_PORT = "8000"
+  # Everything persistent goes onto the mounted volume so the container
+  # image stays stateless.
+  CHROMA_PATH = "/data/chroma"
+  OBSERVABILITY_LOG_DIR = "/data/logs"
+  MLFLOW_TRACKING_URI = "/data/mlruns"
+  MLFLOW_EXPERIMENT = "vartalaap"
+  # Skip the reranker on the free tier to save memory + boot time.
+  RERANKER_ENABLED = "false"
+  # Runtime secrets that MUST be set via `fly secrets set`:
+  #   OPENROUTER_API_KEY
+  #   CORS_ORIGINS   (set to your Vercel URL, comma-separated for multiple)
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 200
+    soft_limit = 100
+
+[[http_service.checks]]
+  grace_period = "60s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/health"
+
+[[mounts]]
+  source = "vartalaap_data"
+  destination = "/data"
+  initial_size = "3gb"
+
+[[vm]]
+  memory = "2gb"
+  cpu_kind = "shared"
+  cpus = 1

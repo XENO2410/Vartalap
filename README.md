@@ -1,5 +1,7 @@
 # वार्तालाप (Vartalaap)
 
+[![CI](https://github.com/XENO2410/ADI/actions/workflows/ci.yml/badge.svg)](https://github.com/XENO2410/ADI/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/XENO2410/ADI?sort=semver&display_name=tag)](https://github.com/XENO2410/ADI/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Backend: FastAPI](https://img.shields.io/badge/backend-FastAPI-009485)
 ![Frontend: Next.js 14](https://img.shields.io/badge/frontend-Next.js%2014-black)
@@ -80,6 +82,16 @@ Stop everything with `docker compose down`. Wipe state with
 ## Quick start — local development (no Docker)
 
 If you'd rather run the components directly, see the "Local dev" section below.
+
+## Public deployment
+
+A live demo is one Vercel deploy + one Fly.io deploy away — see
+[docs/DEPLOY.md](docs/DEPLOY.md) for step-by-step instructions,
+`backend/fly.toml` for the backend Fly config, and `frontend/vercel.json`
+for the frontend Vercel config. GitHub Actions builds and publishes
+container images to GHCR on every `v*.*.*` tag —
+`ghcr.io/xeno2410/vartalaap-backend:latest` and
+`ghcr.io/xeno2410/vartalaap-frontend:latest`.
 
 ---
 
