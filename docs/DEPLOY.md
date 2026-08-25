@@ -5,15 +5,21 @@ credit card up front:
 
 | Component | Host | Free tier | URL shape |
 | --- | --- | --- | --- |
-| **Backend** (FastAPI + RAG) | [Hugging Face Spaces — Docker](https://huggingface.co/new-space) | 16 GB RAM, 2 vCPU, sleeps after ~48 h idle | `https://<owner>-<space>.hf.space` |
+| **Backend** (FastAPI + RAG) | [Hugging Face Spaces — Gradio SDK](https://huggingface.co/new-space) | 2 vCPU · 16 GB RAM, sleeps after ~48 h idle | `https://<owner>-<space>.hf.space` |
 | **Frontend** (Next.js) | [Vercel — Hobby](https://vercel.com) | Free forever, no card | `https://<project>.vercel.app` |
 
 MLflow UI in the public demo is optional and self-hosted — see §3 at the
 bottom.
 
+> **Why the Gradio SDK, not Docker?** HF moved the **Docker SDK** to paid
+> in 2026. The Gradio SDK is still free and just runs `python <app_file>`,
+> so we shim our full FastAPI backend behind a small Gradio landing card
+> (see [`backend/space.py`](../backend/space.py)) and listen on port 7860.
+> Users hit our real API paths (`/chat`, `/health`, `/docs`, `/feedback`);
+> the Gradio card is only visible at `/_ui`.
+>
 > **Why not Fly.io / Render / Railway?** They now require a payment method
-> before you can deploy anything, even on their free tiers. Hugging Face
-> Spaces + Vercel remain no-card.
+> before you can deploy anything, even on their free tiers.
 
 ---
 
@@ -27,15 +33,21 @@ bottom.
    - **Owner** — your username or an org you own.
    - **Space name** — e.g. `vartalaap-api`.
    - **License** — MIT.
-   - **Space SDK** — **Docker**. **Template** — **Blank**.
+   - **Space SDK** — **Gradio**. **Template** — **Blank**.
    - **Hardware** — **CPU basic — 2 vCPU · 16 GB — FREE**.
    - **Visibility** — Public (so the frontend can call it).
 3. Click **Create Space**. HF gives you an empty Space with its own git repo.
 
+> Ignore the Gradio label — our `backend/space.py` file boots the full
+> FastAPI backend on port 7860 and only mounts a tiny Gradio placeholder at
+> `/_ui`. HF's runtime just runs `python space.py`, so we're free to do
+> whatever we want inside.
+
 ### 1.2 Push `backend/` to the Space (5 min)
 
-The Space needs the backend Dockerfile at its **root**. We use `git subtree`
-to push our `backend/` subfolder onto the Space's `main` branch.
+The Space needs `space.py`, `requirements.txt` and everything else at its
+**root**. We use `git subtree` to push our `backend/` subfolder onto the
+Space's `main` branch.
 
 Create a write-scoped HF token first: <https://huggingface.co/settings/tokens>
 → **New token** → **Write** scope.
@@ -63,8 +75,12 @@ The script:
    `backend/` folder becomes the Space's root.
 3. Prints a cleanup command to remove the tokenized remote.
 
-The Space now builds the image (~5-10 min on first push, then cached).
-Watch progress on the Space's **Logs** tab.
+The Space now installs `requirements.txt` and runs `python space.py` — first
+boot is ~5-7 min while `torch` and `sentence-transformers` install and the
+KB seed runs. Watch progress on the Space's **Logs** tab.
+
+Once the log shows `Uvicorn running on http://0.0.0.0:7860`, the API is
+live.
 
 ### 1.3 Set the runtime secrets (1 min)
 
@@ -208,10 +224,11 @@ docker run -e OPENROUTER_API_KEY=... -p 8000:8000 \
 
 | Symptom | Fix |
 | --- | --- |
-| Space stuck on "Building" > 15 min | Check the Logs tab — usually `pip install` OOM. Cut `FlagEmbedding` from `requirements.txt` and set `RERANKER_ENABLED=false`. |
+| Space stuck on "Building" > 15 min | Check the Logs tab — usually `pip install` OOM on `FlagEmbedding` / `datasets`. Comment those two lines out of `backend/requirements.txt` and set `RERANKER_ENABLED=false`. |
 | `500` from `/chat` on HF | Almost always missing `OPENROUTER_API_KEY` in Space secrets. Re-check Settings → Repository secrets. |
 | CORS error in the browser | `CORS_ORIGINS` must exactly match your Vercel URL (no trailing slash). Include the preview wildcard. |
 | Space sleeps and cold start is slow | HF free tier idles after ~48 h. First request wakes it in ~30 s. Upgrade to CPU-upgrade (~$0.05/h) if you need snappy warm starts. |
-| First run is slow | Sentence-transformers downloads its 90 MB model on first boot. Subsequent restarts reuse `/root/.cache/huggingface`. |
+| First run is slow | `sentence-transformers` downloads its ~90 MB model on first boot and the seed script rebuilds the Chroma-free vector store from the bundled markdown/CSV. Subsequent restarts reuse the caches. |
+| `ImportError: gradio` on your local machine | `gradio` is only used by the HF Space entrypoint. Either `pip install gradio` or ignore — the local `python -m app.main` path skips it. |
 | `git subtree push` rejects with non-fast-forward | Someone edited the Space's `main` branch directly. Force it with `git push hf-<name> --force $(git subtree split --prefix=backend main):main`. |
 | Vercel build fails on missing env var | Add `NEXT_PUBLIC_API_BASE_URL` to **all three** environments (Prod, Preview, Dev). |

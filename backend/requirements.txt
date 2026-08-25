@@ -28,3 +28,6 @@ tenacity==9.0.0
 
 # Observability
 mlflow>=2.15,<3.0
+
+# HF Space landing card (only used by space.py — safe to remove for local dev)
+gradio>=5.0,<6.0

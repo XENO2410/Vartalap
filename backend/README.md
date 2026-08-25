@@ -3,8 +3,9 @@ title: वार्तालाप — Backend
 emoji: 🌸
 colorFrom: red
 colorTo: pink
-sdk: docker
-app_port: 8000
+sdk: gradio
+sdk_version: 5.0.0
+app_file: space.py
 pinned: false
 license: mit
 short_description: "RAG + agents + MLflow observability backend for वार्तालाप"
@@ -20,8 +21,9 @@ tags:
 # वार्तालाप — Backend
 
 FastAPI + RAG backend for the [Vartalaap](https://github.com/XENO2410/ADI)
-demo assistant. This folder is designed to double as a **Hugging Face Space**
-(Docker SDK) so the same source builds and runs unchanged on the public demo.
+demo assistant. On Hugging Face Spaces this folder runs under the free
+**Gradio SDK** — the `space.py` shim launches the full FastAPI stack on
+port 7860 and mounts a tiny Gradio landing card at `/_ui`.
 
 ## Endpoints
 
