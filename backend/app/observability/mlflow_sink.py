@@ -363,6 +363,56 @@ class MLflowSink:
         except Exception:  # noqa: BLE001
             pass
 
+    def set_current_chat(
+        self,
+        *,
+        messages: Optional[list[dict[str, Any]]] = None,
+        input_tokens: Optional[int] = None,
+        output_tokens: Optional[int] = None,
+        model: Optional[str] = None,
+    ) -> None:
+        """Attach MLflow GenAI conventions to the current LLM span.
+
+        MLflow's tracing UI aggregates `mlflow.chat.tokenUsage` (into the
+        "Token Usage" / "Tokens per Trace" panels) and renders
+        `mlflow.chat.messages` in the trace inspector. Setting these keys is
+        what turns a plain span into a first-class LLM call in the dashboard.
+        """
+        span = self._current_span()
+        if span is None:
+            return
+        try:
+            if messages is not None:
+                span.set_attribute("mlflow.chat.messages", messages)
+            if input_tokens is not None or output_tokens is not None:
+                total = int((input_tokens or 0) + (output_tokens or 0))
+                span.set_attribute(
+                    "mlflow.chat.tokenUsage",
+                    {
+                        "input_tokens": int(input_tokens or 0),
+                        "output_tokens": int(output_tokens or 0),
+                        "total_tokens": total,
+                    },
+                )
+            if model:
+                span.set_attribute("mlflow.chat.model", model)
+        except Exception:  # noqa: BLE001
+            pass
+
+    def mark_current_error(self, message: str) -> None:
+        span = self._current_span()
+        if span is None:
+            return
+        try:
+            from mlflow.entities import SpanStatusCode  # type: ignore
+
+            span.set_status(SpanStatusCode.ERROR, description=message[:300])
+        except Exception:  # noqa: BLE001
+            try:
+                span.set_attribute("error.message", message[:300])
+            except Exception:  # noqa: BLE001
+                pass
+
     # ------------------------------------------------------------------
     def log_event(self, envelope) -> None:
         if not self.enabled:
@@ -428,6 +478,22 @@ class MLflowSink:
                 if quality:
                     attrs.update(quality.to_metric_dict(prefix="eval."))
                 self._root_span.set_attributes(_stringify(attrs))
+                # GenAI conventions — these are what MLflow's tracing
+                # dashboard reads for the "Token Usage" / "Tokens per Trace"
+                # / "Requests" panels. Same values as the plain attrs above,
+                # but under keys MLflow understands.
+                try:
+                    self._root_span.set_attribute(
+                        "mlflow.chat.tokenUsage",
+                        {
+                            "input_tokens": int(prompt_tokens),
+                            "output_tokens": int(completion_tokens),
+                            "total_tokens": int(total_tokens),
+                        },
+                    )
+                    self._root_span.set_attribute("mlflow.chat.model", primary_model)
+                except Exception:  # noqa: BLE001
+                    pass
                 self._root_span.set_outputs(
                     {
                         "answer": response.answer,

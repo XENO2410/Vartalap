@@ -216,6 +216,17 @@ class KnowledgeBaseTool:
                 total_tokens=resp.total_tokens,
                 finish_reason=resp.finish_reason,
             )
+            # MLflow GenAI conventions — powers the Token Usage / Traces dashboard.
+            emitter.set_span_chat(
+                messages=[
+                    {"role": "system", "content": _QA_SYSTEM},
+                    {"role": "user", "content": prompt_builder_output},
+                    {"role": "assistant", "content": resp.content},
+                ],
+                input_tokens=resp.prompt_tokens,
+                output_tokens=resp.completion_tokens,
+                model=resp.model,
+            )
             emitter.set_span_outputs({"answer": resp.content})
 
         emitter.emit(

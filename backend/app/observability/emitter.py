@@ -96,6 +96,25 @@ class EventEmitter:
     def set_span_attributes(self, **attributes: Any) -> None:
         self.mlflow.set_current_attributes(attributes)
 
+    def set_span_chat(
+        self,
+        *,
+        messages: Optional[list[dict[str, Any]]] = None,
+        input_tokens: Optional[int] = None,
+        output_tokens: Optional[int] = None,
+        model: Optional[str] = None,
+    ) -> None:
+        """Attach MLflow GenAI conventions to the currently active LLM span."""
+        self.mlflow.set_current_chat(
+            messages=messages,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            model=model,
+        )
+
+    def mark_span_error(self, message: str) -> None:
+        self.mlflow.mark_current_error(message)
+
     # ------------------------------------------------------------------
     def emit(
         self,

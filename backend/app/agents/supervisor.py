@@ -102,6 +102,23 @@ class Supervisor:
                 model=lang.model or "-",
                 token_info=lang.token_info_json or "",
             )
+            # If translation actually invoked the LLM (query wasn't English)
+            # pass the messages + tokens through the GenAI convention too.
+            if lang.translation_needed and lang.token_info_json:
+                try:
+                    _lang_tokens = json.loads(lang.token_info_json)
+                except Exception:  # noqa: BLE001
+                    _lang_tokens = {}
+                emitter.set_span_chat(
+                    messages=[
+                        {"role": "system", "content": "translate to English"},
+                        {"role": "user", "content": request.query},
+                        {"role": "assistant", "content": lang.translated_text},
+                    ],
+                    input_tokens=int(_lang_tokens.get("prompt_tokens") or 0),
+                    output_tokens=int(_lang_tokens.get("completion_tokens") or 0),
+                    model=lang.model,
+                )
             emitter.set_span_outputs(
                 {
                     "translated_text": lang.translated_text,

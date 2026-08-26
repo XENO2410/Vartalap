@@ -76,6 +76,18 @@ class ReflexionReviewer:
                 "additionalinfomodel": resp.model,
             },
         )
+        # Feed the same chat trio to MLflow's LLM span so token / model
+        # aggregates roll up correctly on the Reflexion iteration too.
+        emitter.set_span_chat(
+            messages=[
+                {"role": "system", "content": _REVIEW_SYSTEM},
+                {"role": "user", "content": payload},
+                {"role": "assistant", "content": resp.content},
+            ],
+            input_tokens=resp.prompt_tokens,
+            output_tokens=resp.completion_tokens,
+            model=resp.model,
+        )
         verdict = _parse_verdict(resp.content, fallback_query=question)
         return ReflexionVerdict(
             valid=verdict["valid"],

@@ -156,6 +156,16 @@ class Text2SQLTool:
                 completion_tokens=resp.completion_tokens,
                 total_tokens=resp.total_tokens,
             )
+            emitter.set_span_chat(
+                messages=[
+                    {"role": "system", "content": _T2SQL_SYSTEM[:400]},
+                    {"role": "user", "content": query},
+                    {"role": "assistant", "content": resp.content},
+                ],
+                input_tokens=resp.prompt_tokens,
+                output_tokens=resp.completion_tokens,
+                model=resp.model,
+            )
             emitter.set_span_outputs({"raw_sql": resp.content})
         emitter.emit(
             MessageTag.LLM_QA_RESPONSE,
@@ -190,6 +200,8 @@ class Text2SQLTool:
                 row_count=len(rows),
                 error=error or "",
             )
+            if error:
+                emitter.mark_span_error(error)
             emitter.set_span_outputs({"rows": rows[:5], "error": error})
 
         formatted = _format_rows(rows) if not error else error
