@@ -1,0 +1,20 @@
+﻿criterion,LLM judge,JEV,better,winner,note
+Accuracy vs gold (mean of 5 metrics),0.9457,0.9857,higher,JEV,JEV better by 0.040
+Failure-detection F1 vs gold (mean),0.8522,0.9639,higher,JEV,JEV better by 0.112
+AUC vs gold (mean),0.9712,0.9985,higher,JEV,JEV better by 0.027
+Brier score vs gold (mean),0.0312,0.0184,lower,JEV,JEV better by 0.013
+Hallucination recall (unfaithful answers caught),0.5,1.0,higher,JEV,JEV better by 0.500
+Hallucination precision,0.6696,0.8712,higher,JEV,JEV better by 0.202
+Answer-correctness band accuracy,0.8,0.7333,higher,LLM judge,LLM judge better by 0.067
+SME agreement accuracy,0.7857,0.8857,higher,JEV,JEV better by 0.100
+SME-incorrect answers caught (recall),0.5667,0.8667,higher,JEV,JEV better by 0.300
+SME AUC,0.8817,0.9158,higher,JEV,JEV better by 0.034
+Wall time for the dataset (s),14.9826,4.6783,lower,JEV,JEV 3.2x better
+Throughput (rows/s),2.3421,7.4814,higher,JEV,JEV 3.2x better
+Median call latency (s),4.1127,0.346,lower,JEV,JEV 11.9x better
+p95 call latency (s),5.1501,0.495,lower,JEV,JEV 10.4x better
+"Cost per 1,000 rows (USD)",2.2281,0.0461,lower,JEV,JEV 48.3x better
+Failed calls (all runs),0.0,0.0,lower,tie,
+Rows with missing scores (all runs),0.0,0.0,lower,tie,
+Run-to-run verdict flip rate,0.0048,0.0048,lower,tie,
+Run-to-run mean score change,0.0121,0.0056,lower,JEV,JEV better by 0.006
