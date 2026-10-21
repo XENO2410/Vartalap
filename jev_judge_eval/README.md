@@ -12,9 +12,13 @@ and output format as the LLM evaluator, so JEV can be tested on its own.
 | `adi_gt_evaluator.py` | Existing LLM judge: GPT-4o via OpenRouter, 5 rows per call, plus deterministic metrics |
 | `jev_judge.py` | JEV judge: same sheet in, same metric columns out, plus a confidence per metric |
 | `compare_judges.py` | Runs both judges on the same rows and writes the comparison workbook |
+| `build_presentation.py` | Builds the eight-slide leadership PowerPoint from the saved comparison workbook and synthetic cases; no API calls |
 | `data/build_synthetic_dataset.py` | Regenerates the 35-row synthetic sheet and its designer labels |
 | `data/synthetic_adi_gt_35.csv` | Synthetic ground-truth sheet in the SME layout (12 columns) |
 | `data/synthetic_adi_gt_35_gold.csv` | The label each row was designed to have; used to measure judge accuracy |
+| `data/build_session_dataset.py` | Regenerates 100 synthetic sessions / 250 query turns and aligned gold labels |
+| `data/synthetic_adi_gt_100_sessions_250_queries.csv` | 250 SME-format query rows with session/turn metadata and serialized history |
+| `data/synthetic_adi_gt_100_sessions_250_queries_gold.csv` | Per-query designer labels aligned by row_id and session_id |
 | `results/` | Outputs (see below) |
 
 ## Setup
@@ -58,6 +62,37 @@ A CSV with the SME columns: `User Query`, `Response by ADI`, `Content Retrieved 
 Product/subproduct match also needs `Product as per SME` and `Subproduct as per SME` columns;
 without them those rates show 0%.
 
+## 100-session synthetic dataset
+
+Generate the 100-session / 250-query sample and its gold labels with:
+
+```powershell
+python data/build_session_dataset.py
+```
+
+The fixed split is 50 two-turn sessions plus 50 three-turn sessions. Rows are grouped by
+synthetic topic, with SME-style columns plus `Product as per SME`, `Subproduct as per SME`,
+`Session ID`, `Session Turn`, `Session Length`, and `Prior Conversation (JSON)`. The generator
+checks session counts, unique queries, history serialization, SME corrections, and row-for-row
+gold alignment. The sample mixes correct answers with unsupported claims, wrong key figures,
+off-topic replies, and rude-but-factually-correct answers.
+
+The existing judges score **each query row independently**. They currently ignore the added
+`Prior Conversation (JSON)` when constructing their judge input, and `compare_judges.py` reports
+rows rather than session-level metrics. The queries are independently understandable; use this
+file for a larger row-level benchmark and session grouping. For follow-up/history-aware scoring,
+extend both judge inputs before interpreting results as a conversational-memory test. The records
+and policy references are fabricated; this is not a factual banking knowledge set.
+
+To compare both judges (requires JEV and OpenRouter keys):
+
+```powershell
+python compare_judges.py --input data/synthetic_adi_gt_100_sessions_250_queries.csv --gold data/synthetic_adi_gt_100_sessions_250_queries_gold.csv --repeats 2
+```
+
+The default report folder is `results/`; use `--out results/session_benchmark` to keep its files
+separate from the 35-row exploratory run.
+
 ## How JEV judges
 
 JEV does not generate text. Each row is one request: the row is the `state`
@@ -83,6 +118,38 @@ SME's corrected answer inside that question only, so it cannot influence the oth
 | `llm_judge_run<N>.csv` | Full `adi_gt_evaluator.py` output for each GPT-4o run, including its written reasons |
 | `jev_raw_responses.jsonl` | Raw JEV answers per row and run: level probabilities, confidence, latency, tokens, model version |
 | `jev_eval.csv` / `jev_eval.xlsx` | `jev_judge.py` output: evaluator columns with JEV scores and confidences, plus a summary sheet |
+
+## Leadership presentation
+
+`results/ADI_JEV_Leadership_Review_v2.pptx` is an eight-slide executive deck with presenter notes:
+decision context, approach differences, scoring mathematics, a separate non-ground-truth metric
+table, per-metric strengths and weaknesses, two worked examples, cost/latency/repeatability, and
+ADI pilot recommendations. A PDF export is also supplied as
+`results/ADI_JEV_Leadership_Review_v2.pdf`. The original six-slide PowerPoint and PDF are retained.
+
+Slides 5 and 6 add the leadership-requested comparisons. JEV trails on correctness-band accuracy;
+GPT-4o trails on unsupported-claim recall and toxicity verdict accuracy. Ties are also shown.
+Case 03 (ATM limit, `row_id=2`) illustrates JEV's faithfulness advantage at the current cut-off;
+case 09 (VPN reset, `row_id=8`) illustrates GPT-4o's closer match to the designer correctness grade,
+while both judges reject the tone. Scores shown are from run 1; both contrasts persist in run 2.
+Full queries, responses and references are included in presenter notes.
+
+GPT-4o-mini and SLMs are explicitly marked as **not benchmarked**. The recommendation is to
+validate JEV for bounded evaluation tasks, not to replace ADI answer generation. All measured
+figures are drawn from the saved 35-row, two-run comparison workbook.
+
+To regenerate the PowerPoint, install the optional presentation dependency and run:
+
+```powershell
+pip install "python-pptx>=1.0,<2"
+python build_presentation.py
+```
+
+The generator makes no API calls and does not load credentials. It validates slide count, notes,
+shape bounds and the source-data alignment of the worked examples. It is intentionally scoped to
+this exploratory benchmark; it rejects a changed
+row count, run count or concurrency rather than silently reusing the old narrative. PDF export
+requires a presentation application; the supplied PDF was rendered using Microsoft PowerPoint.
 
 ## Results so far (35 synthetic rows, 2 runs per judge, 2026-10-12)
 
