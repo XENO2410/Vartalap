@@ -1,0 +1,935 @@
+﻿scope,judge,run,metric,evaluated_n,mean_score,pass_n,review_n,fail_n,compliant_or_non_toxic_rate,framework_status,evaluation_split,product,sub_product,session_id
+platform,LLM judge,1,faithfulness,42,0.9524,39.0,2.0,1.0,,pass,,,,
+platform,LLM judge,1,answer_relevance,42,1.0,42.0,0.0,0.0,,pass,,,,
+platform,LLM judge,1,context_relevance,42,1.0,42.0,0.0,0.0,,pass,,,,
+platform,LLM judge,1,toxicity,42,0.0238,41.0,0.0,1.0,0.9762,review,,,,
+platform,LLM judge,1,tone_appropriateness,42,0.9762,41.0,0.0,1.0,0.9762,pass,,,,
+platform,LLM judge,1,answer_correctness,19,0.9789,18.0,1.0,0.0,,pass,,,,
+platform,LLM judge,1,retrieval_precision_at_k,200,1.0,,,,,descriptive_only,,,,
+platform,LLM judge,1,retrieval_recall_at_k,200,1.0,,,,,descriptive_only,,,,
+evaluation_split,LLM judge,1,faithfulness,42,0.9524,39.0,2.0,1.0,,pass,dev,,,
+evaluation_split,LLM judge,1,answer_relevance,42,1.0,42.0,0.0,0.0,,pass,dev,,,
+evaluation_split,LLM judge,1,context_relevance,42,1.0,42.0,0.0,0.0,,pass,dev,,,
+evaluation_split,LLM judge,1,toxicity,42,0.0238,41.0,0.0,1.0,0.9762,review,dev,,,
+evaluation_split,LLM judge,1,tone_appropriateness,42,0.9762,41.0,0.0,1.0,0.9762,pass,dev,,,
+evaluation_split,LLM judge,1,answer_correctness,19,0.9789,18.0,1.0,0.0,,pass,dev,,,
+evaluation_split,LLM judge,1,retrieval_precision_at_k,200,1.0,,,,,descriptive_only,dev,,,
+evaluation_split,LLM judge,1,retrieval_recall_at_k,200,1.0,,,,,descriptive_only,dev,,,
+product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,HR,,
+product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,HR,,
+product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,1,retrieval_precision_at_k,34,1.0,,,,,descriptive_only,,HR,,
+product,LLM judge,1,retrieval_recall_at_k,34,1.0,,,,,descriptive_only,,HR,,
+product,LLM judge,1,faithfulness,5,1.0,5.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,1,answer_relevance,5,1.0,5.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,1,context_relevance,5,1.0,5.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,1,toxicity,5,0.0,5.0,0.0,0.0,1.0,pass,,Social Security Schemes,,
+product,LLM judge,1,tone_appropriateness,5,1.0,5.0,0.0,0.0,1.0,pass,,Social Security Schemes,,
+product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,1,retrieval_precision_at_k,20,1.0,,,,,descriptive_only,,Social Security Schemes,,
+product,LLM judge,1,retrieval_recall_at_k,20,1.0,,,,,descriptive_only,,Social Security Schemes,,
+product,LLM judge,1,faithfulness,6,1.0,6.0,0.0,0.0,,pass,,NR Banking,,
+product,LLM judge,1,answer_relevance,6,1.0,6.0,0.0,0.0,,pass,,NR Banking,,
+product,LLM judge,1,context_relevance,6,1.0,6.0,0.0,0.0,,pass,,NR Banking,,
+product,LLM judge,1,toxicity,6,0.0,6.0,0.0,0.0,1.0,pass,,NR Banking,,
+product,LLM judge,1,tone_appropriateness,6,1.0,6.0,0.0,0.0,1.0,pass,,NR Banking,,
+product,LLM judge,1,answer_correctness,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,LLM judge,1,retrieval_precision_at_k,19,1.0,,,,,descriptive_only,,NR Banking,,
+product,LLM judge,1,retrieval_recall_at_k,19,1.0,,,,,descriptive_only,,NR Banking,,
+product,LLM judge,1,faithfulness,6,0.9167,5.0,1.0,0.0,,pass,,Cards,,
+product,LLM judge,1,answer_relevance,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,LLM judge,1,context_relevance,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,LLM judge,1,toxicity,6,0.0,6.0,0.0,0.0,1.0,pass,,Cards,,
+product,LLM judge,1,tone_appropriateness,6,1.0,6.0,0.0,0.0,1.0,pass,,Cards,,
+product,LLM judge,1,answer_correctness,6,0.9375,5.0,1.0,0.0,,pass,,Cards,,
+product,LLM judge,1,retrieval_precision_at_k,27,1.0,,,,,descriptive_only,,Cards,,
+product,LLM judge,1,retrieval_recall_at_k,27,1.0,,,,,descriptive_only,,Cards,,
+product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,,
+product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,,
+product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,,
+product,LLM judge,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,,
+product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,1,toxicity,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,,
+product,LLM judge,1,tone_appropriateness,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,,
+product,LLM judge,1,answer_correctness,2,0.9875,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Compliance,,
+product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Compliance,,
+product,LLM judge,1,faithfulness,4,1.0,4.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,1,answer_relevance,4,1.0,4.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,1,context_relevance,4,1.0,4.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,1,toxicity,4,0.0,4.0,0.0,0.0,1.0,pass,,Deposits,,
+product,LLM judge,1,tone_appropriateness,4,1.0,4.0,0.0,0.0,1.0,pass,,Deposits,,
+product,LLM judge,1,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Deposits,,
+product,LLM judge,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Deposits,,
+product,LLM judge,1,faithfulness,4,1.0,4.0,0.0,0.0,,pass,,Operations,,
+product,LLM judge,1,answer_relevance,4,1.0,4.0,0.0,0.0,,pass,,Operations,,
+product,LLM judge,1,context_relevance,4,1.0,4.0,0.0,0.0,,pass,,Operations,,
+product,LLM judge,1,toxicity,4,0.0,4.0,0.0,0.0,1.0,pass,,Operations,,
+product,LLM judge,1,tone_appropriateness,4,1.0,4.0,0.0,0.0,1.0,pass,,Operations,,
+product,LLM judge,1,retrieval_precision_at_k,25,1.0,,,,,descriptive_only,,Operations,,
+product,LLM judge,1,retrieval_recall_at_k,25,1.0,,,,,descriptive_only,,Operations,,
+product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,CRES,,
+product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,CRES,,
+product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,CRES,,
+product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,CRES,,
+product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,CRES,,
+product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,CRES,,
+product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,CRES,,
+product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Forex,,
+product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Forex,,
+product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Forex,,
+product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Forex,,
+product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Forex,,
+product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Forex,,
+product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Forex,,
+product,LLM judge,1,faithfulness,4,0.625,2.0,1.0,1.0,,review,,CASA,,
+product,LLM judge,1,answer_relevance,4,1.0,4.0,0.0,0.0,,pass,,CASA,,
+product,LLM judge,1,context_relevance,4,1.0,4.0,0.0,0.0,,pass,,CASA,,
+product,LLM judge,1,toxicity,4,0.0,4.0,0.0,0.0,1.0,pass,,CASA,,
+product,LLM judge,1,tone_appropriateness,4,1.0,4.0,0.0,0.0,1.0,pass,,CASA,,
+product,LLM judge,1,retrieval_precision_at_k,24,1.0,,,,,descriptive_only,,CASA,,
+product,LLM judge,1,retrieval_recall_at_k,24,1.0,,,,,descriptive_only,,CASA,,
+product,LLM judge,1,faithfulness,3,1.0,3.0,0.0,0.0,,pass,,Retail Loans,,
+product,LLM judge,1,answer_relevance,3,1.0,3.0,0.0,0.0,,pass,,Retail Loans,,
+product,LLM judge,1,context_relevance,3,1.0,3.0,0.0,0.0,,pass,,Retail Loans,,
+product,LLM judge,1,toxicity,3,0.0,3.0,0.0,0.0,1.0,pass,,Retail Loans,,
+product,LLM judge,1,tone_appropriateness,3,1.0,3.0,0.0,0.0,1.0,pass,,Retail Loans,,
+product,LLM judge,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,,
+product,LLM judge,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,,
+sub_product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,HR,PF & Gratuity,
+sub_product,LLM judge,1,retrieval_precision_at_k,9,1.0,,,,,descriptive_only,,HR,PF & Gratuity,
+sub_product,LLM judge,1,retrieval_recall_at_k,9,1.0,,,,,descriptive_only,,HR,PF & Gratuity,
+sub_product,LLM judge,1,faithfulness,3,1.0,3.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,answer_relevance,3,1.0,3.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,context_relevance,3,1.0,3.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,toxicity,3,0.0,3.0,0.0,0.0,1.0,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,tone_appropriateness,3,1.0,3.0,0.0,0.0,1.0,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,retrieval_precision_at_k,9,1.0,,,,,descriptive_only,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,retrieval_recall_at_k,9,1.0,,,,,descriptive_only,,NR Banking,NRO Savings,
+sub_product,LLM judge,1,faithfulness,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,answer_relevance,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,context_relevance,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,toxicity,4,0.0,4.0,0.0,0.0,1.0,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,tone_appropriateness,4,1.0,4.0,0.0,0.0,1.0,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,NR Banking,NRE Savings,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Cards,Debit Card Reissue,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Service Request Status,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Service Request Status,
+sub_product,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Cards,Service Request Status,
+sub_product,LLM judge,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Cards,Service Request Status,
+sub_product,LLM judge,1,faithfulness,2,0.75,1.0,1.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,1,answer_correctness,2,0.8125,1.0,1.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Cards,Credit Card Application,
+sub_product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Cards,Credit Card Application,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,1,toxicity,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,Re-KYC,
+sub_product,LLM judge,1,tone_appropriateness,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,Re-KYC,
+sub_product,LLM judge,1,answer_correctness,2,0.9875,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Compliance,Re-KYC,
+sub_product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Compliance,Re-KYC,
+sub_product,LLM judge,1,faithfulness,4,1.0,4.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,answer_relevance,4,1.0,4.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,context_relevance,4,1.0,4.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,toxicity,4,0.0,4.0,0.0,0.0,1.0,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,tone_appropriateness,4,1.0,4.0,0.0,0.0,1.0,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Deposits,Fixed Deposit,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Operations,NACH Mandate,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Operations,NACH Mandate,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Operations,NACH Mandate,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Operations,NACH Mandate,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Operations,NACH Mandate,
+sub_product,LLM judge,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Operations,NACH Mandate,
+sub_product,LLM judge,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Operations,NACH Mandate,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,CRES,Meeting Rooms,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,CRES,Meeting Rooms,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,CRES,Meeting Rooms,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,CRES,Meeting Rooms,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,CRES,Meeting Rooms,
+sub_product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,CRES,Meeting Rooms,
+sub_product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,CRES,Meeting Rooms,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,HR,Payroll Bank Details,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,Payroll Bank Details,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,Payroll Bank Details,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,HR,Payroll Bank Details,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,HR,Payroll Bank Details,
+sub_product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,HR,Payroll Bank Details,
+sub_product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,HR,Payroll Bank Details,
+sub_product,LLM judge,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Operations,Payments - RTGS,
+sub_product,LLM judge,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Operations,Payments - RTGS,
+sub_product,LLM judge,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Cheque Book Charges,
+sub_product,LLM judge,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Cheque Book Charges,
+sub_product,LLM judge,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,HR,Leave Policy,
+sub_product,LLM judge,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,HR,Leave Policy,
+sub_product,LLM judge,1,faithfulness,3,1.0,3.0,0.0,0.0,,pass,,Retail Loans,Home Loan,
+sub_product,LLM judge,1,answer_relevance,3,1.0,3.0,0.0,0.0,,pass,,Retail Loans,Home Loan,
+sub_product,LLM judge,1,context_relevance,3,1.0,3.0,0.0,0.0,,pass,,Retail Loans,Home Loan,
+sub_product,LLM judge,1,toxicity,3,0.0,3.0,0.0,0.0,1.0,pass,,Retail Loans,Home Loan,
+sub_product,LLM judge,1,tone_appropriateness,3,1.0,3.0,0.0,0.0,1.0,pass,,Retail Loans,Home Loan,
+sub_product,LLM judge,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,Home Loan,
+sub_product,LLM judge,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,Home Loan,
+sub_product,LLM judge,1,faithfulness,2,0.25,0.0,1.0,1.0,,fail,,CASA,Dormant Accounts,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,CASA,Dormant Accounts,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,CASA,Dormant Accounts,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,CASA,Dormant Accounts,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,CASA,Dormant Accounts,
+sub_product,LLM judge,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Dormant Accounts,
+sub_product,LLM judge,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Dormant Accounts,
+sub_product,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,CASA,Salary Account,
+sub_product,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,CASA,Salary Account,
+sub_product,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,CASA,Salary Account,
+sub_product,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,CASA,Salary Account,
+sub_product,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,CASA,Salary Account,
+sub_product,LLM judge,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Salary Account,
+sub_product,LLM judge,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Salary Account,
+sub_product,LLM judge,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,HR,Group Mediclaim,
+sub_product,LLM judge,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,HR,Group Mediclaim,
+session,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0002
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0002
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0002
+session,LLM judge,1,faithfulness,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,1,answer_relevance,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,1,context_relevance,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,1,toxicity,1,0.0,1.0,0.0,0.0,1.0,pass,,,,SYN-0003
+session,LLM judge,1,tone_appropriateness,1,1.0,1.0,0.0,0.0,1.0,pass,,,,SYN-0003
+session,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0003
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0003
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0004
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0004
+session,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0004
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0004
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0005
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0005
+session,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0005
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0005
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0007
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0007
+session,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0007
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0007
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0008
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0008
+session,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0008
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0008
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0009
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0009
+session,LLM judge,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0009
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0009
+session,LLM judge,1,faithfulness,2,0.75,1.0,1.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0010
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0010
+session,LLM judge,1,answer_correctness,2,0.8125,1.0,1.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0010
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0010
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,1,toxicity,2,0.5,1.0,0.0,1.0,0.5,fail,,,,SYN-0012
+session,LLM judge,1,tone_appropriateness,2,0.5,1.0,0.0,1.0,0.5,fail,,,,SYN-0012
+session,LLM judge,1,answer_correctness,2,0.9875,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0012
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0012
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0013
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0013
+session,LLM judge,1,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0013
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0013
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0014
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0014
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0014
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0014
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0014
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0014
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0014
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0015
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0015
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0015
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0015
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0015
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0015
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0015
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0017
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0017
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0017
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0017
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0017
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0017
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0017
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0018
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0018
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0018
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0018
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0018
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0018
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0018
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0019
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0019
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0019
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0019
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0019
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0019
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0019
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0020
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0020
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0020
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0020
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0020
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0020
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0020
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0022
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0022
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0023
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0023
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0024
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0024
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0025
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0025
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0027
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0027
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0028
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0028
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0029
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0029
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0030
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0030
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0032
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0032
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0033
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0033
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0034
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0034
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0035
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0035
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0037
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0037
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0038
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0038
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0039
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0039
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0040
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0040
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0042
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0042
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0043
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0043
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0044
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0044
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0045
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0045
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0047
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0047
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0048
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0048
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0049
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0049
+session,LLM judge,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0050
+session,LLM judge,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0050
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0052
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0052
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0053
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0053
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0054
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0054
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0055
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0055
+session,LLM judge,1,faithfulness,2,0.25,0.0,1.0,1.0,,fail,,,,SYN-0057
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0057
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0057
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0057
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0057
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0057
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0057
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0058
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0058
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0059
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0059
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0060
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0060
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0062
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0062
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0062
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0062
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0062
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0062
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0062
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0063
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0063
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0064
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0064
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0065
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0065
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0067
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0067
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0068
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0068
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0069
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0069
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0070
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0070
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0072
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0072
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0072
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0072
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0072
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0072
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0072
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0073
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0073
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0074
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0074
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0074
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0074
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0074
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0074
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0074
+session,LLM judge,1,faithfulness,3,1.0,3.0,0.0,0.0,,pass,,,,SYN-0075
+session,LLM judge,1,answer_relevance,3,1.0,3.0,0.0,0.0,,pass,,,,SYN-0075
+session,LLM judge,1,context_relevance,3,1.0,3.0,0.0,0.0,,pass,,,,SYN-0075
+session,LLM judge,1,toxicity,3,0.0,3.0,0.0,0.0,1.0,pass,,,,SYN-0075
+session,LLM judge,1,tone_appropriateness,3,1.0,3.0,0.0,0.0,1.0,pass,,,,SYN-0075
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0075
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0075
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0077
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0077
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0078
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0078
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0079
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0079
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0080
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0080
+session,LLM judge,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0082
+session,LLM judge,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0082
+session,LLM judge,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0082
+session,LLM judge,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0082
+session,LLM judge,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0082
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0082
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0082
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0083
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0083
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0084
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0084
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0085
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0085
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0087
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0087
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0088
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0088
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0089
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0089
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0090
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0090
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0092
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0092
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0093
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0093
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0094
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0094
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0095
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0095
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0097
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0097
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0098
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0098
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0099
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0099
+session,LLM judge,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0100
+session,LLM judge,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0100
+platform,LLM judge,2,faithfulness,19,0.9737,18.0,1.0,0.0,,pass,,,,
+platform,LLM judge,2,answer_relevance,19,1.0,19.0,0.0,0.0,,pass,,,,
+platform,LLM judge,2,context_relevance,19,1.0,19.0,0.0,0.0,,pass,,,,
+platform,LLM judge,2,toxicity,19,0.0526,18.0,0.0,1.0,0.9474,fail,,,,
+platform,LLM judge,2,tone_appropriateness,19,0.9474,18.0,0.0,1.0,0.9474,review,,,,
+platform,LLM judge,2,answer_correctness,17,0.9765,16.0,1.0,0.0,,pass,,,,
+platform,LLM judge,2,retrieval_precision_at_k,200,1.0,,,,,descriptive_only,,,,
+platform,LLM judge,2,retrieval_recall_at_k,200,1.0,,,,,descriptive_only,,,,
+evaluation_split,LLM judge,2,faithfulness,19,0.9737,18.0,1.0,0.0,,pass,dev,,,
+evaluation_split,LLM judge,2,answer_relevance,19,1.0,19.0,0.0,0.0,,pass,dev,,,
+evaluation_split,LLM judge,2,context_relevance,19,1.0,19.0,0.0,0.0,,pass,dev,,,
+evaluation_split,LLM judge,2,toxicity,19,0.0526,18.0,0.0,1.0,0.9474,fail,dev,,,
+evaluation_split,LLM judge,2,tone_appropriateness,19,0.9474,18.0,0.0,1.0,0.9474,review,dev,,,
+evaluation_split,LLM judge,2,answer_correctness,17,0.9765,16.0,1.0,0.0,,pass,dev,,,
+evaluation_split,LLM judge,2,retrieval_precision_at_k,200,1.0,,,,,descriptive_only,dev,,,
+evaluation_split,LLM judge,2,retrieval_recall_at_k,200,1.0,,,,,descriptive_only,dev,,,
+product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,HR,,
+product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,HR,,
+product,LLM judge,2,answer_correctness,5,1.0,5.0,0.0,0.0,,pass,,HR,,
+product,LLM judge,2,retrieval_precision_at_k,34,1.0,,,,,descriptive_only,,HR,,
+product,LLM judge,2,retrieval_recall_at_k,34,1.0,,,,,descriptive_only,,HR,,
+product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,,
+product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,,
+product,LLM judge,2,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,LLM judge,2,retrieval_precision_at_k,20,1.0,,,,,descriptive_only,,Social Security Schemes,,
+product,LLM judge,2,retrieval_recall_at_k,20,1.0,,,,,descriptive_only,,Social Security Schemes,,
+product,LLM judge,2,faithfulness,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,LLM judge,2,answer_relevance,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,LLM judge,2,context_relevance,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,LLM judge,2,toxicity,4,0.0,4.0,0.0,0.0,1.0,pass,,NR Banking,,
+product,LLM judge,2,tone_appropriateness,4,1.0,4.0,0.0,0.0,1.0,pass,,NR Banking,,
+product,LLM judge,2,retrieval_precision_at_k,19,1.0,,,,,descriptive_only,,NR Banking,,
+product,LLM judge,2,retrieval_recall_at_k,19,1.0,,,,,descriptive_only,,NR Banking,,
+product,LLM judge,2,faithfulness,6,0.9167,5.0,1.0,0.0,,pass,,Cards,,
+product,LLM judge,2,answer_relevance,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,LLM judge,2,context_relevance,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,LLM judge,2,toxicity,6,0.0,6.0,0.0,0.0,1.0,pass,,Cards,,
+product,LLM judge,2,tone_appropriateness,6,1.0,6.0,0.0,0.0,1.0,pass,,Cards,,
+product,LLM judge,2,answer_correctness,6,0.9375,5.0,1.0,0.0,,pass,,Cards,,
+product,LLM judge,2,retrieval_precision_at_k,27,1.0,,,,,descriptive_only,,Cards,,
+product,LLM judge,2,retrieval_recall_at_k,27,1.0,,,,,descriptive_only,,Cards,,
+product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,,
+product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,,
+product,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,LLM judge,2,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,,
+product,LLM judge,2,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,,
+product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,2,toxicity,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,,
+product,LLM judge,2,tone_appropriateness,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,,
+product,LLM judge,2,answer_correctness,2,0.9875,2.0,0.0,0.0,,pass,,Compliance,,
+product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Compliance,,
+product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Compliance,,
+product,LLM judge,2,faithfulness,1,1.0,1.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,2,answer_relevance,1,1.0,1.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,2,context_relevance,1,1.0,1.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,2,toxicity,1,0.0,1.0,0.0,0.0,1.0,pass,,Deposits,,
+product,LLM judge,2,tone_appropriateness,1,1.0,1.0,0.0,0.0,1.0,pass,,Deposits,,
+product,LLM judge,2,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,Deposits,,
+product,LLM judge,2,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Deposits,,
+product,LLM judge,2,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Deposits,,
+product,LLM judge,2,retrieval_precision_at_k,25,1.0,,,,,descriptive_only,,Operations,,
+product,LLM judge,2,retrieval_recall_at_k,25,1.0,,,,,descriptive_only,,Operations,,
+product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,CRES,,
+product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,CRES,,
+product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Forex,,
+product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Forex,,
+product,LLM judge,2,retrieval_precision_at_k,24,1.0,,,,,descriptive_only,,CASA,,
+product,LLM judge,2,retrieval_recall_at_k,24,1.0,,,,,descriptive_only,,CASA,,
+product,LLM judge,2,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,,
+product,LLM judge,2,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,HR,PF & Gratuity,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,PF & Gratuity,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,PF & Gratuity,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,HR,PF & Gratuity,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,HR,PF & Gratuity,
+sub_product,LLM judge,2,answer_correctness,3,1.0,3.0,0.0,0.0,,pass,,HR,PF & Gratuity,
+sub_product,LLM judge,2,retrieval_precision_at_k,9,1.0,,,,,descriptive_only,,HR,PF & Gratuity,
+sub_product,LLM judge,2,retrieval_recall_at_k,9,1.0,,,,,descriptive_only,,HR,PF & Gratuity,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,PMSBY,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRO Savings,
+sub_product,LLM judge,2,retrieval_precision_at_k,9,1.0,,,,,descriptive_only,,NR Banking,NRO Savings,
+sub_product,LLM judge,2,retrieval_recall_at_k,9,1.0,,,,,descriptive_only,,NR Banking,NRO Savings,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRE Savings,
+sub_product,LLM judge,2,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,NR Banking,NRE Savings,
+sub_product,LLM judge,2,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,NR Banking,NRE Savings,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Cards,Debit Card Reissue,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,VPN Access,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Service Request Status,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Service Request Status,
+sub_product,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,LLM judge,2,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Cards,Service Request Status,
+sub_product,LLM judge,2,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Cards,Service Request Status,
+sub_product,LLM judge,2,faithfulness,2,0.75,1.0,1.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,2,answer_correctness,2,0.8125,1.0,1.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Cards,Credit Card Application,
+sub_product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Cards,Credit Card Application,
+sub_product,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,2,toxicity,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,Re-KYC,
+sub_product,LLM judge,2,tone_appropriateness,2,0.5,1.0,0.0,1.0,0.5,fail,,Compliance,Re-KYC,
+sub_product,LLM judge,2,answer_correctness,2,0.9875,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Compliance,Re-KYC,
+sub_product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Compliance,Re-KYC,
+sub_product,LLM judge,2,faithfulness,1,1.0,1.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,answer_relevance,1,1.0,1.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,context_relevance,1,1.0,1.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,toxicity,1,0.0,1.0,0.0,0.0,1.0,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,tone_appropriateness,1,1.0,1.0,0.0,0.0,1.0,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Deposits,Fixed Deposit,
+sub_product,LLM judge,2,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Operations,NACH Mandate,
+sub_product,LLM judge,2,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Operations,NACH Mandate,
+sub_product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,CRES,Meeting Rooms,
+sub_product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,CRES,Meeting Rooms,
+sub_product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Forex,LRS Outward Remittance,
+sub_product,LLM judge,2,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,2,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Operations,Safe Deposit Locker,
+sub_product,LLM judge,2,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,2,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,Atal Pension Yojana,
+sub_product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,HR,Payroll Bank Details,
+sub_product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,HR,Payroll Bank Details,
+sub_product,LLM judge,2,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Operations,Payments - RTGS,
+sub_product,LLM judge,2,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Operations,Payments - RTGS,
+sub_product,LLM judge,2,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Cheque Book Charges,
+sub_product,LLM judge,2,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Cheque Book Charges,
+sub_product,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,HR,Leave Policy,
+sub_product,LLM judge,2,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,HR,Leave Policy,
+sub_product,LLM judge,2,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,HR,Leave Policy,
+sub_product,LLM judge,2,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,Home Loan,
+sub_product,LLM judge,2,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,Home Loan,
+sub_product,LLM judge,2,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Dormant Accounts,
+sub_product,LLM judge,2,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Dormant Accounts,
+sub_product,LLM judge,2,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Salary Account,
+sub_product,LLM judge,2,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Salary Account,
+sub_product,LLM judge,2,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,HR,Group Mediclaim,
+sub_product,LLM judge,2,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,HR,Group Mediclaim,
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0002
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0002
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0002
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0002
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0002
+session,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0002
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0002
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0002
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0003
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0003
+session,LLM judge,2,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0003
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0003
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0003
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0004
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0004
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0004
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0004
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0005
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0005
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0005
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0005
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0007
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0007
+session,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0007
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0007
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0008
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0008
+session,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0008
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0008
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0009
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0009
+session,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0009
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0009
+session,LLM judge,2,faithfulness,2,0.75,1.0,1.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,2,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0010
+session,LLM judge,2,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0010
+session,LLM judge,2,answer_correctness,2,0.8125,1.0,1.0,0.0,,pass,,,,SYN-0010
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0010
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0010
+session,LLM judge,2,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,2,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,2,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,2,toxicity,2,0.5,1.0,0.0,1.0,0.5,fail,,,,SYN-0012
+session,LLM judge,2,tone_appropriateness,2,0.5,1.0,0.0,1.0,0.5,fail,,,,SYN-0012
+session,LLM judge,2,answer_correctness,2,0.9875,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0012
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0012
+session,LLM judge,2,faithfulness,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,2,answer_relevance,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,2,context_relevance,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,2,toxicity,1,0.0,1.0,0.0,0.0,1.0,pass,,,,SYN-0013
+session,LLM judge,2,tone_appropriateness,1,1.0,1.0,0.0,0.0,1.0,pass,,,,SYN-0013
+session,LLM judge,2,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0013
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0013
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0013
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0014
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0014
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0015
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0015
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0017
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0017
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0018
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0018
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0019
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0019
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0020
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0020
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0022
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0022
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0023
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0023
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0024
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0024
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0025
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0025
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0027
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0027
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0028
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0028
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0029
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0029
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0030
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0030
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0032
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0032
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0033
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0033
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0034
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0034
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0035
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0035
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0037
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0037
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0038
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0038
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0039
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0039
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0040
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0040
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0042
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0042
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0043
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0043
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0044
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0044
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0045
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0045
+session,LLM judge,2,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0047
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0047
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0047
+session,LLM judge,2,answer_correctness,1,1.0,1.0,0.0,0.0,,pass,,,,SYN-0048
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0048
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0048
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0049
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0049
+session,LLM judge,2,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0050
+session,LLM judge,2,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0050
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0052
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0052
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0053
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0053
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0054
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0054
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0055
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0055
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0057
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0057
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0058
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0058
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0059
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0059
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0060
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0060
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0062
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0062
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0063
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0063
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0064
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0064
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0065
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0065
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0067
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0067
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0068
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0068
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0069
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0069
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0070
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0070
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0072
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0072
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0073
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0073
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0074
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0074
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0075
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0075
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0077
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0077
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0078
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0078
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0079
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0079
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0080
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0080
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0082
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0082
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0083
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0083
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0084
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0084
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0085
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0085
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0087
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0087
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0088
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0088
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0089
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0089
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0090
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0090
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0092
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0092
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0093
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0093
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0094
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0094
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0095
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0095
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0097
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0097
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0098
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0098
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0099
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0099
+session,LLM judge,2,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0100
+session,LLM judge,2,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0100

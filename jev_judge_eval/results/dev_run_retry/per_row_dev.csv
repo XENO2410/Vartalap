@@ -1,0 +1,201 @@
+﻿row_id,scenario,user_query,sme_correct,gold_faithfulness,llm_faithfulness,gold_answer_relevance,llm_answer_relevance,gold_context_relevance,llm_context_relevance,gold_toxicity,llm_toxicity,gold_tone_appropriateness,llm_tone_appropriateness,gold_factual_precision,llm_factual_precision,gold_factual_recall,llm_factual_recall,gold_factual_correctness,llm_factual_correctness,gold_semantic_similarity,llm_semantic_similarity,gold_answer_correctness,llm_answer_correctness,llm_wrong_vs_gold_on,llm_faithfulness_reason,llm_answer_correctness_reason
+2,off_topic_answer,How long must an employee serve to qualify for gratuity?,0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,Not evaluated,No GT answer provided
+3,rude_tone_correct_facts,How is gratuity calculated for each completed year?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+4,correct_faithful,What is the age eligibility for PMSBY?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+5,correct_faithful,What is the annual PMSBY premium and when is it debited?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+6,correct_faithful,What is the NRO savings AMB in metro branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+7,correct_faithful,What NRO savings AMB applies in semi-urban branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+8,correct_faithful,What is the NRE savings AMB in metro branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+9,correct_faithful,What is the NRE savings minimum in rural branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+12,correct_faithful,How long does a branch duplicate debit card request take?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+13,correct_faithful,What fee applies to a duplicate debit card?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+14,correct_faithful,How do I reset my VPN password?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+15,correct_faithful,Where is the OTP sent during an SSPR reset?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+16,correct_faithful,What is the current status of SR SR-000009?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+17,correct_faithful,Which team owns SR SR-000009?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+18,correct_faithful,What is the status of application SR-000010?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+19,correct_faithful,Who owns the review for application SR-000010?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+22,correct_faithful,What can a customer submit if their KYC details are unchanged?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+23,correct_faithful,What is needed if the customer's address has changed?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+24,correct_faithful,What penalty applies to premature closure below Rs. 5 crore?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+25,unsupported_added_claim,Is there a penalty on Senior Citizen Care FD closure after 5 years?,0,0,,1,,1,,0,,1,,0.67,,1.0,,0.8024,,0.9,,0.8268,,,Not evaluated,No GT answer provided
+26,unsupported_added_claim,How do I register a NACH mandate at the branch?,0,0,,1,,1,,0,,1,,0.67,,1.0,,0.8024,,0.9,,0.8268,,,Not evaluated,No GT answer provided
+27,off_topic_answer,Where is the signed NACH form uploaded?,0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,Not evaluated,No GT answer provided
+28,rude_tone_correct_facts,Where do I book a corporate meeting room?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+29,correct_faithful,How early can I book and how long is each meeting slot?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+32,correct_faithful,What is the annual LRS remittance limit?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+33,correct_faithful,Can LRS be used for education abroad?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+34,correct_faithful,What is the annual medium-locker rent in a metro branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+35,correct_faithful,When is locker rent payable?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+36,correct_faithful,What is the age range for joining APY?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+37,correct_faithful,When does the APY pension begin?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+38,correct_faithful,Where do I change the salary-credit account in HRMS?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+39,correct_faithful,What proof should I upload for a new salary account?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+42,correct_faithful,What is the minimum amount for RTGS?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+43,correct_faithful,Is there an upper limit for an RTGS transfer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+44,correct_faithful,How many cheque leaves are free each financial year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+45,correct_faithful,What does each additional cheque leaf cost?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+46,correct_faithful,Please clarify: how many casual leave days do employees receive each year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+47,correct_faithful,Please clarify: can unused casual leave be carried forward or encashed?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+48,correct_faithful,Please clarify: how long must an employee serve to qualify for gratuity?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+49,correct_faithful,Please clarify: how is gratuity calculated for each completed year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+52,off_topic_answer,Please clarify: what is the NRO savings AMB in metro branches?,0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,Not evaluated,No GT answer provided
+53,rude_tone_correct_facts,Please clarify: what NRO savings AMB applies in semi-urban branches?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+54,correct_faithful,Please clarify: what is the NRE savings AMB in metro branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+55,correct_faithful,Please clarify: what is the NRE savings minimum in rural branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+56,correct_faithful,Please clarify: are floating-rate home loans subject to prepayment charges?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+57,correct_faithful,Please clarify: does the no-charge rule also cover a balance transfer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+58,correct_faithful,Please clarify: how long does a branch duplicate debit card request take?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+59,correct_faithful,Please clarify: what fee applies to a duplicate debit card?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+62,correct_faithful,Please clarify: what is the current status of SR SR-000032?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+63,correct_faithful,Please clarify: which team owns SR SR-000032?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+64,correct_faithful,Please clarify: what is the status of application SR-000033?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+65,correct_faithful,Please clarify: who owns the review for application SR-000033?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+66,correct_faithful,Please clarify: how many dormant savings accounts are in Mumbai-Fort?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+67,correct_faithful,Please clarify: how many savings accounts are active in the test data?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+68,correct_faithful,Please clarify: what can a customer submit if their KYC details are unchanged?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+69,correct_faithful,Please clarify: what is needed if the customer's address has changed?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+72,correct_faithful,Please clarify: how do I register a NACH mandate at the branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+73,correct_faithful,Please clarify: where is the signed NACH form uploaded?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+74,correct_faithful,Please clarify: where do I book a corporate meeting room?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+75,unsupported_added_claim,Please clarify: how early can I book and how long is each meeting slot?,0,0,,1,,1,,0,,1,,0.67,,1.0,,0.8024,,0.9,,0.8268,,,Not evaluated,No GT answer provided
+76,contradicted_key_number,Please clarify: when does a salary account become a regular savings account?,0,0,,1,,1,,0,,1,,0.0,,0.0,,0.0,,0.5,,0.125,,,Not evaluated,No GT answer provided
+77,off_topic_answer,Please clarify: what minimum balance applies after salary-account conversion?,0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,Not evaluated,No GT answer provided
+78,rude_tone_correct_facts,Please clarify: what is the annual LRS remittance limit?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+79,correct_faithful,Please clarify: can LRS be used for education abroad?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+82,correct_faithful,Please clarify: what is the age range for joining APY?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+83,correct_faithful,Please clarify: when does the APY pension begin?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+84,correct_faithful,Please clarify: where do I change the salary-credit account in HRMS?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+85,correct_faithful,Please clarify: what proof should I upload for a new salary account?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+86,correct_faithful,Please clarify: who is covered under the base group mediclaim policy?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+87,correct_faithful,Please clarify: can I add my parents to group mediclaim?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+88,correct_faithful,Please clarify: what is the minimum amount for RTGS?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+89,correct_faithful,Please clarify: is there an upper limit for an RTGS transfer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+92,correct_faithful,I need guidance on this: how many casual leave days do employees receive each year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+93,correct_faithful,I need guidance on this: can unused casual leave be carried forward or encashed?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+94,correct_faithful,I need guidance on this: how long must an employee serve to qualify for gratuity?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+95,correct_faithful,I need guidance on this: how is gratuity calculated for each completed year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+96,correct_faithful,I need guidance on this: what is the age eligibility for PMSBY?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+97,correct_faithful,I need guidance on this: what is the annual PMSBY premium and when is it debited?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+98,correct_faithful,I need guidance on this: what is the NRO savings AMB in metro branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+99,correct_faithful,I need guidance on this: what NRO savings AMB applies in semi-urban branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+103,rude_tone_correct_facts,I need guidance on this: are floating-rate home loans subject to prepayment charges?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+104,correct_faithful,I need guidance on this: does the no-charge rule also cover a balance transfer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+105,correct_faithful,I need guidance on this: what foreclosure charge applies to fixed-rate balance transfer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+106,correct_faithful,I need guidance on this: how long does a branch duplicate debit card request take?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+107,correct_faithful,I need guidance on this: what fee applies to a duplicate debit card?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+108,correct_faithful,I need guidance on this: do Burgundy customers pay the debit-card reissue charge?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+109,correct_faithful,I need guidance on this: how do I reset my VPN password?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+110,correct_faithful,I need guidance on this: where is the OTP sent during an SSPR reset?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+111,correct_faithful,I need guidance on this: how long should I wait for the reset password to sync to VPN?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+112,correct_faithful,I need guidance on this: what is the current status of SR SR-000055?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+113,correct_faithful,I need guidance on this: which team owns SR SR-000055?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+114,correct_faithful,I need guidance on this: what is the expected closure date for SR SR-000055?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+118,correct_faithful,I need guidance on this: how many dormant savings accounts are in Mumbai-Fort?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+119,correct_faithful,I need guidance on this: how many savings accounts are active in the test data?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+120,correct_faithful,I need guidance on this: what is the total number of savings accounts in that test branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+121,correct_faithful,I need guidance on this: what can a customer submit if their KYC details are unchanged?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+122,correct_faithful,I need guidance on this: what is needed if the customer's address has changed?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+123,correct_faithful,I need guidance on this: how soon must the new-address OVD be verified?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+124,correct_faithful,I need guidance on this: what penalty applies to premature closure below Rs. 5 crore?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+125,unsupported_added_claim,I need guidance on this: is there a penalty on Senior Citizen Care FD closure after 5 years?,0,0,,1,,1,,0,,1,,0.67,,1.0,,0.8024,,0.9,,0.8268,,,Not evaluated,No GT answer provided
+126,contradicted_key_number,I need guidance on this: what deposit size does this premature-closure rule cover?,0,0,,1,,1,,0,,1,,0.0,,0.0,,0.0,,0.5,,0.125,,,Not evaluated,No GT answer provided
+127,off_topic_answer,I need guidance on this: how do I register a NACH mandate at the branch?,0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,Not evaluated,No GT answer provided
+128,rude_tone_correct_facts,I need guidance on this: where is the signed NACH form uploaded?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+129,correct_faithful,I need guidance on this: how long does NACH registration status take to update?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+133,correct_faithful,I need guidance on this: when does a salary account become a regular savings account?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+134,correct_faithful,I need guidance on this: what minimum balance applies after salary-account conversion?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+135,correct_faithful,I need guidance on this: can I request salary-account conversion at a branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+136,correct_faithful,I need guidance on this: what is the annual LRS remittance limit?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+137,correct_faithful,I need guidance on this: can LRS be used for education abroad?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+138,correct_faithful,I need guidance on this: does education-loan funding affect LRS TCS?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+139,correct_faithful,I need guidance on this: what is the annual medium-locker rent in a metro branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+140,correct_faithful,I need guidance on this: when is locker rent payable?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+141,correct_faithful,I need guidance on this: when can customers access a branch locker?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+142,correct_faithful,I need guidance on this: what is the age range for joining APY?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+143,correct_faithful,I need guidance on this: when does the APY pension begin?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+144,correct_faithful,I need guidance on this: what monthly pension amount does APY provide?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+148,correct_faithful,I need guidance on this: who is covered under the base group mediclaim policy?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+149,correct_faithful,I need guidance on this: can I add my parents to group mediclaim?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+150,unsupported_added_claim,I need guidance on this: when can I enrol parents under the optional cover?,0,0,,1,,1,,0,,1,,0.67,,1.0,,0.8024,,0.9,,0.8268,,,Not evaluated,No GT answer provided
+151,contradicted_key_number,I need guidance on this: what is the minimum amount for RTGS?,0,0,,1,,1,,0,,1,,0.0,,0.0,,0.0,,0.5,,0.125,,,Not evaluated,No GT answer provided
+152,off_topic_answer,I need guidance on this: is there an upper limit for an RTGS transfer?,0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,Not evaluated,No GT answer provided
+153,rude_tone_correct_facts,I need guidance on this: what is the branch cut-off for physical RTGS requests?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+154,correct_faithful,I need guidance on this: how many cheque leaves are free each financial year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+155,correct_faithful,I need guidance on this: what does each additional cheque leaf cost?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+156,correct_faithful,I need guidance on this: do Burgundy customers receive free cheque leaves?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+157,correct_faithful,Could you confirm: how many casual leave days do employees receive each year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+158,correct_faithful,Could you confirm: can unused casual leave be carried forward or encashed?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+159,correct_faithful,Could you confirm: what is the longest continuous casual-leave period?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+163,correct_faithful,Could you confirm: what is the age eligibility for PMSBY?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+164,correct_faithful,Could you confirm: what is the annual PMSBY premium and when is it debited?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+165,correct_faithful,Could you confirm: what should branch staff collect before enrolling a customer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+166,correct_faithful,Could you confirm: what is the NRO savings AMB in metro branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+167,correct_faithful,Could you confirm: what NRO savings AMB applies in semi-urban branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+168,correct_faithful,Could you confirm: how are NRO non-maintenance charges calculated?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+169,correct_faithful,Could you confirm: what is the NRE savings AMB in metro branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+170,correct_faithful,Could you confirm: what is the NRE savings minimum in rural branches?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+171,correct_faithful,Could you confirm: can NRE savings funds be repatriated?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+172,correct_faithful,Could you confirm: are floating-rate home loans subject to prepayment charges?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+173,correct_faithful,Could you confirm: does the no-charge rule also cover a balance transfer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+174,correct_faithful,Could you confirm: what foreclosure charge applies to fixed-rate balance transfer?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+178,rude_tone_correct_facts,Could you confirm: how do I reset my VPN password?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+179,correct_faithful,Could you confirm: where is the OTP sent during an SSPR reset?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+180,correct_faithful,Could you confirm: how long should I wait for the reset password to sync to VPN?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+181,correct_faithful,Could you confirm: what is the current status of SR SR-000078?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+182,correct_faithful,Could you confirm: which team owns SR SR-000078?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+183,correct_faithful,Could you confirm: what is the expected closure date for SR SR-000078?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+184,correct_faithful,Could you confirm: what is the status of application SR-000079?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+185,correct_faithful,Could you confirm: who owns the review for application SR-000079?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+186,correct_faithful,Could you confirm: what action is pending for application SR-000079?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+187,correct_faithful,Could you confirm: how many dormant savings accounts are in Mumbai-Fort?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+188,correct_faithful,Could you confirm: how many savings accounts are active in the test data?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+189,correct_faithful,Could you confirm: what is the total number of savings accounts in that test branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+193,correct_faithful,Could you confirm: what penalty applies to premature closure below Rs. 5 crore?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+194,correct_faithful,Could you confirm: is there a penalty on Senior Citizen Care FD closure after 5 years?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+195,correct_faithful,Could you confirm: what deposit size does this premature-closure rule cover?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+196,correct_faithful,Could you confirm: how do I register a NACH mandate at the branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+197,correct_faithful,Could you confirm: where is the signed NACH form uploaded?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+198,correct_faithful,Could you confirm: how long does NACH registration status take to update?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+199,correct_faithful,Could you confirm: where do I book a corporate meeting room?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,Not evaluated,No GT answer provided
+200,unsupported_added_claim,Could you confirm: how early can I book and how long is each meeting slot?,0,0,,1,,1,,0,,1,,0.67,,1.0,,0.8024,,0.9,,0.8268,,,,
+201,contradicted_key_number,Could you confirm: when is a meeting-room reservation auto-released?,0,0,,1,,1,,0,,1,,0.0,,0.0,,0.0,,0.5,,0.125,,,,
+202,off_topic_answer,Could you confirm: when does a salary account become a regular savings account?,0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,,
+203,rude_tone_correct_facts,Could you confirm: what minimum balance applies after salary-account conversion?,0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+204,correct_faithful,Could you confirm: can I request salary-account conversion at a branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+208,correct_faithful,Could you confirm: what is the annual medium-locker rent in a metro branch?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+209,correct_faithful,Could you confirm: when is locker rent payable?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+210,correct_faithful,Could you confirm: when can customers access a branch locker?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+211,correct_faithful,Could you confirm: what is the age range for joining APY?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+212,correct_faithful,Could you confirm: when does the APY pension begin?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+213,correct_faithful,Could you confirm: what monthly pension amount does APY provide?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+214,correct_faithful,Could you confirm: where do I change the salary-credit account in HRMS?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+215,correct_faithful,Could you confirm: what proof should I upload for a new salary account?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+216,correct_faithful,Could you confirm: when do changes submitted after the 20th take effect?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+217,correct_faithful,Could you confirm: who is covered under the base group mediclaim policy?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+218,correct_faithful,Could you confirm: can I add my parents to group mediclaim?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+219,correct_faithful,Could you confirm: when can I enrol parents under the optional cover?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+223,correct_faithful,Could you confirm: how many cheque leaves are free each financial year?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+224,correct_faithful,Could you confirm: what does each additional cheque leaf cost?,1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+225,unsupported_added_claim,Could you confirm: do Burgundy customers receive free cheque leaves?,0,0,,1,,1,,0,,1,,0.67,,1.0,,0.8024,,0.9,,0.8268,,,,
+226,contradicted_key_number,"For my situation, how many casual leave days do employees receive each year?",0,0,,1,,1,,0,,1,,0.0,,0.0,,0.0,,0.5,,0.125,,,,
+227,off_topic_answer,"For my situation, can unused casual leave be carried forward or encashed?",0,0,,0,,1,,0,,1,,0.0,,0.0,,0.0,,0.0,,0.0,,,,
+228,rude_tone_correct_facts,"For my situation, what is the longest continuous casual-leave period?",0,1,,1,,1,,1,,0,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+229,correct_faithful,"For my situation, how long must an employee serve to qualify for gratuity?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+230,correct_faithful,"For my situation, how is gratuity calculated for each completed year?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+231,correct_faithful,"For my situation, does the 5-year condition apply in a disablement case?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+232,correct_faithful,"For my situation, what is the age eligibility for PMSBY?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+233,correct_faithful,"For my situation, what is the annual PMSBY premium and when is it debited?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+234,correct_faithful,"For my situation, what should branch staff collect before enrolling a customer?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+238,correct_faithful,"For my situation, what is the NRE savings AMB in metro branches?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+239,correct_faithful,"For my situation, what is the NRE savings minimum in rural branches?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+240,correct_faithful,"For my situation, can NRE savings funds be repatriated?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+241,correct_faithful,"For my situation, are floating-rate home loans subject to prepayment charges?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+242,correct_faithful,"For my situation, does the no-charge rule also cover a balance transfer?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+243,correct_faithful,"For my situation, what foreclosure charge applies to fixed-rate balance transfer?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+244,correct_faithful,"For my situation, how long does a branch duplicate debit card request take?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+245,correct_faithful,"For my situation, what fee applies to a duplicate debit card?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+246,correct_faithful,"For my situation, do Burgundy customers pay the debit-card reissue charge?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+247,correct_faithful,"For my situation, how do I reset my VPN password?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+248,correct_faithful,"For my situation, where is the OTP sent during an SSPR reset?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,
+249,correct_faithful,"For my situation, how long should I wait for the reset password to sync to VPN?",1,1,,1,,1,,0,,1,,1.0,,1.0,,1.0,,1.0,,1.0,,,,

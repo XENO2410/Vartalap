@@ -1,0 +1,5 @@
+# Optional, HHEM-2.1-Open only. Install after requirements.txt.
+torch>=2.2
+transformers>=4.40,<6
+sentencepiece>=0.2
+safetensors>=0.4

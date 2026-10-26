@@ -1,0 +1,409 @@
+﻿scope,judge,run,metric,evaluated_n,mean_score,pass_n,review_n,fail_n,compliant_or_non_toxic_rate,framework_status,evaluation_split,product,sub_product,session_id
+platform,Matched-rubric GPT-4o,1,faithfulness,20,0.9017,18.0,0.0,2.0,,pass,,,,
+platform,Matched-rubric GPT-4o,1,answer_relevance,20,0.9483,19.0,0.0,1.0,,pass,,,,
+platform,Matched-rubric GPT-4o,1,context_relevance,20,1.0,20.0,0.0,0.0,,pass,,,,
+platform,Matched-rubric GPT-4o,1,toxicity,20,0.0333,19.0,0.0,1.0,0.95,review,,,,
+platform,Matched-rubric GPT-4o,1,tone_appropriateness,20,0.9817,20.0,0.0,0.0,1.0,pass,,,,
+platform,Matched-rubric GPT-4o,1,answer_correctness,20,0.905,18.0,0.0,2.0,,pass,,,,
+platform,Matched-rubric GPT-4o,1,retrieval_precision_at_k,200,1.0,,,,,descriptive_only,,,,
+platform,Matched-rubric GPT-4o,1,retrieval_recall_at_k,200,1.0,,,,,descriptive_only,,,,
+evaluation_split,Matched-rubric GPT-4o,1,faithfulness,20,0.9017,18.0,0.0,2.0,,pass,dev,,,
+evaluation_split,Matched-rubric GPT-4o,1,answer_relevance,20,0.9483,19.0,0.0,1.0,,pass,dev,,,
+evaluation_split,Matched-rubric GPT-4o,1,context_relevance,20,1.0,20.0,0.0,0.0,,pass,dev,,,
+evaluation_split,Matched-rubric GPT-4o,1,toxicity,20,0.0333,19.0,0.0,1.0,0.95,review,dev,,,
+evaluation_split,Matched-rubric GPT-4o,1,tone_appropriateness,20,0.9817,20.0,0.0,0.0,1.0,pass,dev,,,
+evaluation_split,Matched-rubric GPT-4o,1,answer_correctness,20,0.905,18.0,0.0,2.0,,pass,dev,,,
+evaluation_split,Matched-rubric GPT-4o,1,retrieval_precision_at_k,200,1.0,,,,,descriptive_only,dev,,,
+evaluation_split,Matched-rubric GPT-4o,1,retrieval_recall_at_k,200,1.0,,,,,descriptive_only,dev,,,
+product,Matched-rubric GPT-4o,1,faithfulness,2,0.5,1.0,0.0,1.0,,review,,HR,,
+product,Matched-rubric GPT-4o,1,answer_relevance,2,0.5,1.0,0.0,1.0,,review,,HR,,
+product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,,
+product,Matched-rubric GPT-4o,1,toxicity,2,0.3333,1.0,0.0,1.0,0.5,fail,,HR,,
+product,Matched-rubric GPT-4o,1,tone_appropriateness,2,0.8333,2.0,0.0,0.0,1.0,pass,,HR,,
+product,Matched-rubric GPT-4o,1,answer_correctness,2,0.5,1.0,0.0,1.0,,review,,HR,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,34,1.0,,,,,descriptive_only,,HR,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,34,1.0,,,,,descriptive_only,,HR,,
+product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,20,1.0,,,,,descriptive_only,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,20,1.0,,,,,descriptive_only,,Social Security Schemes,,
+product,Matched-rubric GPT-4o,1,faithfulness,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,Matched-rubric GPT-4o,1,answer_relevance,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,Matched-rubric GPT-4o,1,context_relevance,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,Matched-rubric GPT-4o,1,toxicity,4,0.0,4.0,0.0,0.0,1.0,pass,,NR Banking,,
+product,Matched-rubric GPT-4o,1,tone_appropriateness,4,1.0,4.0,0.0,0.0,1.0,pass,,NR Banking,,
+product,Matched-rubric GPT-4o,1,answer_correctness,4,1.0,4.0,0.0,0.0,,pass,,NR Banking,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,19,1.0,,,,,descriptive_only,,NR Banking,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,19,1.0,,,,,descriptive_only,,NR Banking,,
+product,Matched-rubric GPT-4o,1,faithfulness,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,Matched-rubric GPT-4o,1,answer_relevance,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,Matched-rubric GPT-4o,1,context_relevance,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,Matched-rubric GPT-4o,1,toxicity,6,0.0,6.0,0.0,0.0,1.0,pass,,Cards,,
+product,Matched-rubric GPT-4o,1,tone_appropriateness,6,1.0,6.0,0.0,0.0,1.0,pass,,Cards,,
+product,Matched-rubric GPT-4o,1,answer_correctness,6,1.0,6.0,0.0,0.0,,pass,,Cards,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,27,1.0,,,,,descriptive_only,,Cards,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,27,1.0,,,,,descriptive_only,,Cards,,
+product,Matched-rubric GPT-4o,1,faithfulness,2,0.9667,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,,
+product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Compliance,,
+product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Compliance,,
+product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Compliance,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Compliance,,
+product,Matched-rubric GPT-4o,1,faithfulness,2,0.55,1.0,0.0,1.0,,review,,Deposits,,
+product,Matched-rubric GPT-4o,1,answer_relevance,2,0.9833,2.0,0.0,0.0,,pass,,Deposits,,
+product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Deposits,,
+product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Deposits,,
+product,Matched-rubric GPT-4o,1,tone_appropriateness,2,0.9833,2.0,0.0,0.0,1.0,pass,,Deposits,,
+product,Matched-rubric GPT-4o,1,answer_correctness,2,0.55,1.0,0.0,1.0,,review,,Deposits,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Deposits,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Deposits,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,25,1.0,,,,,descriptive_only,,Operations,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,25,1.0,,,,,descriptive_only,,Operations,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,CRES,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,CRES,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Forex,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Forex,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,24,1.0,,,,,descriptive_only,,CASA,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,24,1.0,,,,,descriptive_only,,CASA,,
+product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,,
+product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,0.5,1.0,0.0,1.0,,review,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,0.5,1.0,0.0,1.0,,review,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.3333,1.0,0.0,1.0,0.5,fail,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,0.8333,2.0,0.0,0.0,1.0,pass,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,0.5,1.0,0.0,1.0,,review,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,9,1.0,,,,,descriptive_only,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,9,1.0,,,,,descriptive_only,,HR,PF & Gratuity,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,PMSBY,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,9,1.0,,,,,descriptive_only,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,9,1.0,,,,,descriptive_only,,NR Banking,NRO Savings,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,NR Banking,NRE Savings,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Cards,Debit Card Reissue,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,0.9667,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,IT Helpdesk,VPN Access,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Cards,Service Request Status,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Cards,Credit Card Application,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Compliance,Re-KYC,
+sub_product,Matched-rubric GPT-4o,1,faithfulness,2,0.55,1.0,0.0,1.0,,review,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,answer_relevance,2,0.9833,2.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,tone_appropriateness,2,0.9833,2.0,0.0,0.0,1.0,pass,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,answer_correctness,2,0.55,1.0,0.0,1.0,,review,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Deposits,Fixed Deposit,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Operations,NACH Mandate,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Operations,NACH Mandate,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,CRES,Meeting Rooms,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,CRES,Meeting Rooms,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Forex,LRS Outward Remittance,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Forex,LRS Outward Remittance,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,Operations,Safe Deposit Locker,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,Operations,Safe Deposit Locker,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,Atal Pension Yojana,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,Social Security Schemes,Atal Pension Yojana,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,HR,Payroll Bank Details,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,HR,Payroll Bank Details,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,7,1.0,,,,,descriptive_only,,Operations,Payments - RTGS,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,7,1.0,,,,,descriptive_only,,Operations,Payments - RTGS,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Cheque Book Charges,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Cheque Book Charges,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,10,1.0,,,,,descriptive_only,,HR,Leave Policy,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,10,1.0,,,,,descriptive_only,,HR,Leave Policy,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,Home Loan,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,11,1.0,,,,,descriptive_only,,Retail Loans,Home Loan,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Dormant Accounts,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Dormant Accounts,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,CASA,Salary Account,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,CASA,Salary Account,
+sub_product,Matched-rubric GPT-4o,1,retrieval_precision_at_k,8,1.0,,,,,descriptive_only,,HR,Group Mediclaim,
+sub_product,Matched-rubric GPT-4o,1,retrieval_recall_at_k,8,1.0,,,,,descriptive_only,,HR,Group Mediclaim,
+session,Matched-rubric GPT-4o,1,faithfulness,2,0.5,1.0,0.0,1.0,,review,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,answer_relevance,2,0.5,1.0,0.0,1.0,,review,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,toxicity,2,0.3333,1.0,0.0,1.0,0.5,fail,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,0.8333,2.0,0.0,0.0,1.0,pass,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,answer_correctness,2,0.5,1.0,0.0,1.0,,review,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0002
+session,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0003
+session,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0004
+session,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0005
+session,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0007
+session,Matched-rubric GPT-4o,1,faithfulness,2,0.9667,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0008
+session,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0009
+session,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0010
+session,Matched-rubric GPT-4o,1,faithfulness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,answer_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,1.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,answer_correctness,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0012
+session,Matched-rubric GPT-4o,1,faithfulness,2,0.55,1.0,0.0,1.0,,review,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,answer_relevance,2,0.9833,2.0,0.0,0.0,,pass,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,context_relevance,2,1.0,2.0,0.0,0.0,,pass,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,toxicity,2,0.0,2.0,0.0,0.0,1.0,pass,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,tone_appropriateness,2,0.9833,2.0,0.0,0.0,1.0,pass,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,answer_correctness,2,0.55,1.0,0.0,1.0,,review,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0013
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0014
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0014
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0015
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0015
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0017
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0017
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0018
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0018
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0019
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0019
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0020
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0020
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0022
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0022
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0023
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0023
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0024
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0024
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0025
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0025
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0027
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0027
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0028
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0028
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0029
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0029
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0030
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0030
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0032
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0032
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0033
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0033
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0034
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0034
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0035
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0035
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0037
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0037
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0038
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0038
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0039
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0039
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0040
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0040
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0042
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0042
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0043
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0043
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0044
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0044
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0045
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0045
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0047
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0047
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0048
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0048
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0049
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0049
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0050
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,2,1.0,,,,,descriptive_only,,,,SYN-0050
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0052
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0052
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0053
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0053
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0054
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0054
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0055
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0055
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0057
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0057
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0058
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0058
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0059
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0059
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0060
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0060
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0062
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0062
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0063
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0063
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0064
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0064
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0065
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0065
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0067
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0067
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0068
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0068
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0069
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0069
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0070
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0070
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0072
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0072
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0073
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0073
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0074
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0074
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0075
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0075
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0077
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0077
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0078
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0078
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0079
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0079
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0080
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0080
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0082
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0082
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0083
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0083
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0084
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0084
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0085
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0085
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0087
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0087
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0088
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0088
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0089
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0089
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0090
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0090
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0092
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0092
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0093
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0093
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0094
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0094
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0095
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0095
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0097
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0097
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0098
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0098
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0099
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0099
+session,Matched-rubric GPT-4o,1,retrieval_precision_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0100
+session,Matched-rubric GPT-4o,1,retrieval_recall_at_k,3,1.0,,,,,descriptive_only,,,,SYN-0100

@@ -20,7 +20,12 @@ from __future__ import annotations
 import csv
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from evaluation_policy import combined_correctness
 
 HERE = Path(__file__).resolve().parent
 DATA_CSV = HERE / "synthetic_adi_gt_100_sessions_250_queries.csv"
@@ -43,7 +48,9 @@ SME_COLUMNS = [
 EXTRA_COLUMNS = [
     "Product as per SME",
     "Subproduct as per SME",
+    "Ground Truth Answer (for evaluation)",
     "Session ID",
+    "Evaluation Split",
     "Session Turn",
     "Session Length",
     "Prior Conversation (JSON)",
@@ -52,6 +59,7 @@ DATA_COLUMNS = SME_COLUMNS + EXTRA_COLUMNS
 GOLD_COLUMNS = [
     "row_id",
     "session_id",
+    "split",
     "session_turn",
     "user_query",
     "scenario",
@@ -60,6 +68,10 @@ GOLD_COLUMNS = [
     "gold_context_relevant",
     "gold_toxic",
     "gold_tone_professional",
+    "gold_factual_precision",
+    "gold_factual_recall",
+    "gold_factual_correctness",
+    "gold_semantic_similarity",
     "gold_answer_correctness",
 ]
 
@@ -371,6 +383,7 @@ def _build_rows() -> tuple[list[dict[str, str]], list[dict[str, object]]]:
         variant = session_index // len(TOPICS)
         session_number += 1
         session_id = f"SYN-{session_number:04d}"
+        evaluation_split = "test" if session_index % 5 == 0 else "dev"
         session_turns = 2 if session_index < 50 else 3
         variables = {"reference": f"SR-{session_number:06d}"}
         history: list[dict[str, str]] = []
@@ -387,7 +400,10 @@ def _build_rows() -> tuple[list[dict[str, str]], list[dict[str, object]]]:
                 sme_correct = "Yes"
                 correction = ""
                 comment = "Correct"
-                labels = (1, 1, 1, 0, 1, None)
+                labels = (1, 1, 1, 0, 1)
+                factual_precision = 1.0
+                factual_recall = 1.0
+                semantic_similarity = 1.0
 
                 if mode == 0:
                     response = f"{good_answer} {topic['false_fact'].format(**variables)}"
@@ -395,7 +411,10 @@ def _build_rows() -> tuple[list[dict[str, str]], list[dict[str, object]]]:
                     sme_correct = "No"
                     correction = good_answer
                     comment = "Incorrect - includes an unsupported claim"
-                    labels = (0, 1, 1, 0, 1, 0.5)
+                    labels = (0, 1, 1, 0, 1)
+                    factual_precision = 0.67
+                    factual_recall = 1.0
+                    semantic_similarity = 0.90
                 elif mode == 1:
                     response, numeric_contradiction = _change_first_number(
                         good_answer, topic["false_fact"].format(**variables)
@@ -407,21 +426,30 @@ def _build_rows() -> tuple[list[dict[str, str]], list[dict[str, object]]]:
                         "Incorrect - key figure differs from reference"
                         if numeric_contradiction else "Incorrect - includes an unsupported claim"
                     )
-                    labels = (0, 1, 1, 0, 1, 0.0 if numeric_contradiction else 0.5)
+                    labels = (0, 1, 1, 0, 1)
+                    factual_precision = 0.0 if numeric_contradiction else 0.67
+                    factual_recall = 0.0 if numeric_contradiction else 1.0
+                    semantic_similarity = 0.50 if numeric_contradiction else 0.90
                 elif mode == 2:
                     response = BAD_OFF_TOPIC
                     scenario = "off_topic_answer"
                     sme_correct = "No"
                     correction = good_answer
                     comment = "Incorrect - answer is off topic"
-                    labels = (0, 0, 1, 0, 1, 0.0)
+                    labels = (0, 0, 1, 0, 1)
+                    factual_precision = 0.0
+                    factual_recall = 0.0
+                    semantic_similarity = 0.0
                 elif mode == 3:
                     response = f"{RUDE_PREFIX}{good_answer}{RUDE_SUFFIX}"
                     scenario = "rude_tone_correct_facts"
                     sme_correct = "No"
                     correction = good_answer
                     comment = "Factually correct - tone is not professional"
-                    labels = (1, 1, 1, 1, 0, 1.0)
+                    labels = (1, 1, 1, 1, 0)
+                    factual_precision = 1.0
+                    factual_recall = 1.0
+                    semantic_similarity = 1.0
 
                 row = {
                     "User Query": query,
@@ -438,15 +466,22 @@ def _build_rows() -> tuple[list[dict[str, str]], list[dict[str, object]]]:
                     "Document Name(s) Expected to be Referred": source_name,
                     "Product as per SME": topic["product"],
                     "Subproduct as per SME": topic["subproduct"],
+                    "Ground Truth Answer (for evaluation)": good_answer,
                     "Session ID": session_id,
+                    "Evaluation Split": evaluation_split,
                     "Session Turn": str(turn_index + 1),
                     "Session Length": str(session_turns),
                     "Prior Conversation (JSON)": json.dumps(history, ensure_ascii=False),
                 }
                 rows.append(row)
+                factual_correctness = (
+                    0.0 if factual_precision + factual_recall == 0
+                    else 2 * factual_precision * factual_recall / (factual_precision + factual_recall)
+                )
                 gold_rows.append({
                     "row_id": row_number,
                     "session_id": session_id,
+                    "split": evaluation_split,
                     "session_turn": turn_index + 1,
                     "user_query": query,
                     "scenario": scenario,
@@ -456,8 +491,14 @@ def _build_rows() -> tuple[list[dict[str, str]], list[dict[str, object]]]:
                         "gold_context_relevant",
                         "gold_toxic",
                         "gold_tone_professional",
-                        "gold_answer_correctness",
                     ), labels)),
+                    "gold_factual_precision": factual_precision,
+                    "gold_factual_recall": factual_recall,
+                    "gold_factual_correctness": factual_correctness,
+                    "gold_semantic_similarity": semantic_similarity,
+                    "gold_answer_correctness": combined_correctness(
+                        factual_correctness, semantic_similarity
+                    ),
                 })
                 history.extend([
                     {"role": "user", "content": query},
@@ -473,8 +514,10 @@ def _build_rows() -> tuple[list[dict[str, str]], list[dict[str, object]]]:
 
 def _validate(rows: list[dict[str, str]], gold_rows: list[dict[str, object]]) -> None:
     session_counts: dict[str, int] = {}
+    session_splits: dict[str, set[str]] = {}
     for row in rows:
         session_counts[row["Session ID"]] = session_counts.get(row["Session ID"], 0) + 1
+        session_splits.setdefault(row["Session ID"], set()).add(row["Evaluation Split"])
     if len(session_counts) != 100:
         raise AssertionError(f"Expected 100 unique sessions; got {len(session_counts)}.")
     if sorted(session_counts.values()).count(2) != 50 or sorted(session_counts.values()).count(3) != 50:
@@ -483,14 +526,25 @@ def _validate(rows: list[dict[str, str]], gold_rows: list[dict[str, object]]) ->
         raise AssertionError("Expected every query row to have distinct query text.")
     if len(gold_rows) != len(rows):
         raise AssertionError("Gold rows must align one-to-one with query rows.")
+    if any(len(splits) != 1 for splits in session_splits.values()):
+        raise AssertionError("A session may not span development and test splits.")
+    if sum(next(iter(splits)) == "test" for splits in session_splits.values()) != 20:
+        raise AssertionError("Expected 80 development sessions and 20 held-out test sessions.")
     for row_id, (row, gold) in enumerate(zip(rows, gold_rows)):
-        if gold["row_id"] != row_id or gold["session_id"] != row["Session ID"]:
+        if (gold["row_id"] != row_id or gold["session_id"] != row["Session ID"]
+            or gold["split"] != row["Evaluation Split"]):
             raise AssertionError(f"Gold/data row alignment failed at row_id {row_id}.")
         needs_gt = row["Is ADI response Correct? (Yes/No)"] == "No"
         if needs_gt != bool(row["If ADI response incorrect(Enter right response)"].strip()):
             raise AssertionError(f"SME correction missing/misapplied at row_id {row_id}.")
-        if needs_gt != (gold["gold_answer_correctness"] is not None):
-            raise AssertionError(f"Correctness gold should only be populated for SME-No row_id {row_id}.")
+        if not row["Ground Truth Answer (for evaluation)"].strip():
+            raise AssertionError(f"Reference answer is required for every query row_id {row_id}.")
+        expected_correctness = combined_correctness(
+            float(gold["gold_factual_correctness"]),
+            float(gold["gold_semantic_similarity"]),
+        )
+        if abs(float(gold["gold_answer_correctness"]) - expected_correctness) > 1e-9:
+            raise AssertionError(f"75/25 correctness composite mismatch at row_id {row_id}.")
         expected_history = [] if int(row["Session Turn"]) == 1 else None
         if expected_history == [] and json.loads(row["Prior Conversation (JSON)"]):
             raise AssertionError(f"First turn must have empty history at row_id {row_id}.")
@@ -510,15 +564,18 @@ def main() -> None:
         writer.writerows(gold_rows)
 
     session_counts: dict[str, int] = {}
+    session_splits: dict[str, str] = {}
     for row in rows:
         session_counts[row["Session ID"]] = session_counts.get(row["Session ID"], 0) + 1
+        session_splits[row["Session ID"]] = row["Evaluation Split"]
     sme_no = sum(row["Is ADI response Correct? (Yes/No)"] == "No" for row in rows)
     modes: dict[str, int] = {}
     for row in gold_rows:
         modes[row["scenario"]] = modes.get(row["scenario"], 0) + 1
     print(f"Wrote {DATA_CSV.name}: {len(session_counts)} sessions, {len(rows)} queries")
     print(f"Session lengths: {sum(n == 2 for n in session_counts.values())} x 2 turns; "
-          f"{sum(n == 3 for n in session_counts.values())} x 3 turns")
+            f"{sum(n == 3 for n in session_counts.values())} x 3 turns")
+    print("Session split: 80 dev / 20 test sessions")
     print(f"SME Yes: {len(rows) - sme_no}; SME No: {sme_no}")
     print(f"Wrote {GOLD_CSV.name}; scenario counts: {json.dumps(modes, sort_keys=True)}")
 

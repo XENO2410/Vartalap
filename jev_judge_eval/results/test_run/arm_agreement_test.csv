@@ -1,0 +1,19 @@
+﻿metric,n,mean_llm,mean_jev,mean_abs_diff,pearson,spearman,verdict_agreement,kappa,run,judge_a,judge_b
+faithfulness,50,0.8667,0.84,0.044,0.9355,0.9219,0.88,0.5161,1,RAGAS-style GPT-4o,Matched-rubric GPT-4o
+answer_relevance,50,0.9067,0.952,0.0493,0.8095,0.6662,0.98,0.7899,1,RAGAS-style GPT-4o,Matched-rubric GPT-4o
+context_relevance,50,1.0,1.0,0.0,,,1.0,,1,RAGAS-style GPT-4o,Matched-rubric GPT-4o
+toxicity,50,0.0,0.0,0.0,,,1.0,,1,RAGAS-style GPT-4o,Matched-rubric GPT-4o
+tone_appropriateness,50,1.0,0.9973,0.0027,,,1.0,,1,RAGAS-style GPT-4o,Matched-rubric GPT-4o
+answer_correctness,50,0.8867,0.9302,0.0457,0.8765,0.9481,0.9,0.6459,1,RAGAS-style GPT-4o,Matched-rubric GPT-4o
+faithfulness,50,0.8667,0.8253,0.0605,0.922,0.6964,0.88,0.5161,1,RAGAS-style GPT-4o,JEV
+answer_relevance,50,0.9067,0.9207,0.0511,0.8744,0.6246,0.98,0.7899,1,RAGAS-style GPT-4o,JEV
+context_relevance,50,1.0,0.9826,0.0174,,,1.0,,1,RAGAS-style GPT-4o,JEV
+toxicity,50,0.0,0.0002,0.0002,,,1.0,,1,RAGAS-style GPT-4o,JEV
+tone_appropriateness,50,1.0,0.9921,0.0079,,,1.0,,1,RAGAS-style GPT-4o,JEV
+answer_correctness,50,0.8867,0.9117,0.0338,0.9293,0.7097,0.98,0.9403,1,RAGAS-style GPT-4o,JEV
+faithfulness,50,0.84,0.8253,0.048,0.9537,0.7427,1.0,1.0,1,Matched-rubric GPT-4o,JEV
+answer_relevance,50,0.952,0.9207,0.0322,0.947,0.6519,1.0,1.0,1,Matched-rubric GPT-4o,JEV
+context_relevance,50,1.0,0.9826,0.0174,,,1.0,,1,Matched-rubric GPT-4o,JEV
+toxicity,50,0.0,0.0002,0.0002,,,1.0,,1,Matched-rubric GPT-4o,JEV
+tone_appropriateness,50,0.9973,0.9921,0.0094,-0.0152,0.0539,1.0,,1,Matched-rubric GPT-4o,JEV
+answer_correctness,50,0.9302,0.9117,0.0351,0.9131,0.6549,0.92,0.7159,1,Matched-rubric GPT-4o,JEV

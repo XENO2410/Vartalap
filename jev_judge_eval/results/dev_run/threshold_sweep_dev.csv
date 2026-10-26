@@ -1,0 +1,326 @@
+﻿judge,metric,development_threshold,n,recall_failure,precision_failure,f1_failure,balanced_accuracy
+RAGAS-style GPT-4o,faithfulness,0.3,200,0.65,1.0,0.7879,0.825
+RAGAS-style GPT-4o,faithfulness,0.35,200,0.65,0.5909,0.619,0.8
+RAGAS-style GPT-4o,faithfulness,0.4,200,0.65,0.5909,0.619,0.8
+RAGAS-style GPT-4o,faithfulness,0.45,200,0.65,0.5909,0.619,0.8
+RAGAS-style GPT-4o,faithfulness,0.5,200,0.65,0.5909,0.619,0.8
+RAGAS-style GPT-4o,faithfulness,0.55,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,faithfulness,0.6,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,faithfulness,0.65,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,faithfulness,0.7,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,faithfulness,0.75,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,faithfulness,0.8,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,faithfulness,0.85,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,faithfulness,0.9,200,1.0,0.6667,0.8,0.9722
+RAGAS-style GPT-4o,answer_relevance,0.3,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,answer_relevance,0.35,200,1.0,0.4706,0.64,0.9766
+RAGAS-style GPT-4o,answer_relevance,0.4,200,1.0,0.4706,0.64,0.9766
+RAGAS-style GPT-4o,answer_relevance,0.45,200,1.0,0.4706,0.64,0.9766
+RAGAS-style GPT-4o,answer_relevance,0.5,200,1.0,0.4706,0.64,0.9766
+RAGAS-style GPT-4o,answer_relevance,0.55,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,answer_relevance,0.6,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,answer_relevance,0.65,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,answer_relevance,0.7,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,answer_relevance,0.75,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,answer_relevance,0.8,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,answer_relevance,0.85,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,answer_relevance,0.9,200,1.0,0.3077,0.4706,0.9531
+RAGAS-style GPT-4o,context_relevance,0.3,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.35,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.4,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.45,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.5,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.55,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.6,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.65,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.7,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.75,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.8,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.85,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,context_relevance,0.9,200,0.0,0.0,0.0,0.5
+RAGAS-style GPT-4o,toxicity,0.3,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.35,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.4,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.45,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.5,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.55,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.6,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.65,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.7,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.75,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.8,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.85,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,toxicity,0.9,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.3,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.35,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.4,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.45,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.5,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.55,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.6,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.65,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.7,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.75,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.8,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.85,200,1.0,1.0,1.0,1.0
+RAGAS-style GPT-4o,tone_appropriateness,0.9,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,faithfulness,0.3,200,0.8,1.0,0.8889,0.9
+Matched-rubric GPT-4o,faithfulness,0.35,200,0.95,0.95,0.95,0.9722
+Matched-rubric GPT-4o,faithfulness,0.4,200,0.95,0.95,0.95,0.9722
+Matched-rubric GPT-4o,faithfulness,0.45,200,0.95,0.95,0.95,0.9722
+Matched-rubric GPT-4o,faithfulness,0.5,200,0.95,0.95,0.95,0.9722
+Matched-rubric GPT-4o,faithfulness,0.55,200,0.95,0.95,0.95,0.9722
+Matched-rubric GPT-4o,faithfulness,0.6,200,0.95,0.95,0.95,0.9722
+Matched-rubric GPT-4o,faithfulness,0.65,200,0.95,0.95,0.95,0.9722
+Matched-rubric GPT-4o,faithfulness,0.7,200,1.0,0.8333,0.9091,0.9889
+Matched-rubric GPT-4o,faithfulness,0.75,200,1.0,0.8333,0.9091,0.9889
+Matched-rubric GPT-4o,faithfulness,0.8,200,1.0,0.8,0.8889,0.9861
+Matched-rubric GPT-4o,faithfulness,0.85,200,1.0,0.7407,0.8511,0.9806
+Matched-rubric GPT-4o,faithfulness,0.9,200,1.0,0.7407,0.8511,0.9806
+Matched-rubric GPT-4o,answer_relevance,0.3,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.35,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.4,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.45,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.5,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.55,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.6,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.65,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.7,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.75,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,answer_relevance,0.8,200,1.0,0.8889,0.9412,0.9974
+Matched-rubric GPT-4o,answer_relevance,0.85,200,1.0,0.7273,0.8421,0.9922
+Matched-rubric GPT-4o,answer_relevance,0.9,200,1.0,0.5,0.6667,0.9792
+Matched-rubric GPT-4o,context_relevance,0.3,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.35,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.4,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.45,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.5,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.55,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.6,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.65,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.7,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.75,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.8,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,context_relevance,0.85,200,0.0,0.0,0.0,0.4925
+Matched-rubric GPT-4o,context_relevance,0.9,200,0.0,0.0,0.0,0.4925
+Matched-rubric GPT-4o,toxicity,0.3,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,toxicity,0.35,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,toxicity,0.4,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,toxicity,0.45,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,toxicity,0.5,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,toxicity,0.55,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,toxicity,0.6,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o,toxicity,0.65,200,0.9,1.0,0.9474,0.95
+Matched-rubric GPT-4o,toxicity,0.7,200,0.3,1.0,0.4615,0.65
+Matched-rubric GPT-4o,toxicity,0.75,200,0.1,1.0,0.1818,0.55
+Matched-rubric GPT-4o,toxicity,0.8,200,0.1,1.0,0.1818,0.55
+Matched-rubric GPT-4o,toxicity,0.85,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,toxicity,0.9,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o,tone_appropriateness,0.3,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o,tone_appropriateness,0.35,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o,tone_appropriateness,0.4,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o,tone_appropriateness,0.45,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o,tone_appropriateness,0.5,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o,tone_appropriateness,0.55,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o,tone_appropriateness,0.6,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o,tone_appropriateness,0.65,200,0.3,1.0,0.4615,0.65
+Matched-rubric GPT-4o,tone_appropriateness,0.7,200,0.8,1.0,0.8889,0.9
+Matched-rubric GPT-4o,tone_appropriateness,0.75,200,0.9,1.0,0.9474,0.95
+Matched-rubric GPT-4o,tone_appropriateness,0.8,200,0.9,1.0,0.9474,0.95
+Matched-rubric GPT-4o,tone_appropriateness,0.85,200,0.9,1.0,0.9474,0.95
+Matched-rubric GPT-4o,tone_appropriateness,0.9,200,0.9,0.9,0.9,0.9474
+JEV,faithfulness,0.3,200,0.6,1.0,0.75,0.8
+JEV,faithfulness,0.35,200,1.0,1.0,1.0,1.0
+JEV,faithfulness,0.4,200,1.0,1.0,1.0,1.0
+JEV,faithfulness,0.45,200,1.0,1.0,1.0,1.0
+JEV,faithfulness,0.5,200,1.0,0.9524,0.9756,0.9972
+JEV,faithfulness,0.55,200,1.0,0.9524,0.9756,0.9972
+JEV,faithfulness,0.6,200,1.0,0.8696,0.9302,0.9917
+JEV,faithfulness,0.65,200,1.0,0.8696,0.9302,0.9917
+JEV,faithfulness,0.7,200,1.0,0.8333,0.9091,0.9889
+JEV,faithfulness,0.75,200,1.0,0.8,0.8889,0.9861
+JEV,faithfulness,0.8,200,1.0,0.6452,0.7843,0.9694
+JEV,faithfulness,0.85,200,1.0,0.5556,0.7143,0.9556
+JEV,faithfulness,0.9,200,1.0,0.5405,0.7018,0.9528
+JEV,answer_relevance,0.3,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.35,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.4,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.45,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.5,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.55,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.6,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.65,200,1.0,1.0,1.0,1.0
+JEV,answer_relevance,0.7,200,1.0,0.8889,0.9412,0.9974
+JEV,answer_relevance,0.75,200,1.0,0.5,0.6667,0.9792
+JEV,answer_relevance,0.8,200,1.0,0.3478,0.5161,0.9609
+JEV,answer_relevance,0.85,200,1.0,0.3077,0.4706,0.9531
+JEV,answer_relevance,0.9,200,1.0,0.25,0.4,0.9375
+JEV,context_relevance,0.3,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.35,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.4,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.45,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.5,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.55,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.6,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.65,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.7,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.75,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.8,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.85,200,0.0,0.0,0.0,0.5
+JEV,context_relevance,0.9,200,0.0,0.0,0.0,0.4925
+JEV,toxicity,0.3,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.35,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.4,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.45,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.5,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.55,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.6,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.65,200,1.0,1.0,1.0,1.0
+JEV,toxicity,0.7,200,0.0,0.0,0.0,0.5
+JEV,toxicity,0.75,200,0.0,0.0,0.0,0.5
+JEV,toxicity,0.8,200,0.0,0.0,0.0,0.5
+JEV,toxicity,0.85,200,0.0,0.0,0.0,0.5
+JEV,toxicity,0.9,200,0.0,0.0,0.0,0.5
+JEV,tone_appropriateness,0.3,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.35,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.4,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.45,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.5,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.55,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.6,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.65,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.7,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.75,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.8,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.85,200,1.0,1.0,1.0,1.0
+JEV,tone_appropriateness,0.9,200,1.0,1.0,1.0,1.0
+Matched-rubric GPT-4o-mini,faithfulness,0.3,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,faithfulness,0.35,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,faithfulness,0.4,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,faithfulness,0.45,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,faithfulness,0.5,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,faithfulness,0.55,200,0.15,0.5,0.2308,0.5667
+Matched-rubric GPT-4o-mini,faithfulness,0.6,200,0.9,0.2727,0.4186,0.8167
+Matched-rubric GPT-4o-mini,faithfulness,0.65,200,0.9,0.225,0.36,0.7778
+Matched-rubric GPT-4o-mini,faithfulness,0.7,200,1.0,0.107,0.1932,0.5361
+Matched-rubric GPT-4o-mini,faithfulness,0.75,200,1.0,0.107,0.1932,0.5361
+Matched-rubric GPT-4o-mini,faithfulness,0.8,200,1.0,0.107,0.1932,0.5361
+Matched-rubric GPT-4o-mini,faithfulness,0.85,200,1.0,0.102,0.1852,0.5111
+Matched-rubric GPT-4o-mini,faithfulness,0.9,200,1.0,0.102,0.1852,0.5111
+Matched-rubric GPT-4o-mini,answer_relevance,0.3,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,answer_relevance,0.35,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,answer_relevance,0.4,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,answer_relevance,0.45,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,answer_relevance,0.5,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,answer_relevance,0.55,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,answer_relevance,0.6,200,0.625,1.0,0.7692,0.8125
+Matched-rubric GPT-4o-mini,answer_relevance,0.65,200,1.0,0.4444,0.6154,0.974
+Matched-rubric GPT-4o-mini,answer_relevance,0.7,200,1.0,0.063,0.1185,0.6901
+Matched-rubric GPT-4o-mini,answer_relevance,0.75,200,1.0,0.0625,0.1176,0.6875
+Matched-rubric GPT-4o-mini,answer_relevance,0.8,200,1.0,0.0444,0.0851,0.5521
+Matched-rubric GPT-4o-mini,answer_relevance,0.85,200,1.0,0.0428,0.0821,0.5339
+Matched-rubric GPT-4o-mini,answer_relevance,0.9,200,1.0,0.0408,0.0784,0.5104
+Matched-rubric GPT-4o-mini,context_relevance,0.3,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.35,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.4,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.45,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.5,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.55,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.6,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.65,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,context_relevance,0.7,200,0.0,0.0,0.0,0.0825
+Matched-rubric GPT-4o-mini,context_relevance,0.75,200,0.0,0.0,0.0,0.08
+Matched-rubric GPT-4o-mini,context_relevance,0.8,200,0.0,0.0,0.0,0.0725
+Matched-rubric GPT-4o-mini,context_relevance,0.85,200,0.0,0.0,0.0,0.0625
+Matched-rubric GPT-4o-mini,context_relevance,0.9,200,0.0,0.0,0.0,0.03
+Matched-rubric GPT-4o-mini,toxicity,0.3,200,0.2,1.0,0.3333,0.6
+Matched-rubric GPT-4o-mini,toxicity,0.35,200,0.1,1.0,0.1818,0.55
+Matched-rubric GPT-4o-mini,toxicity,0.4,200,0.1,1.0,0.1818,0.55
+Matched-rubric GPT-4o-mini,toxicity,0.45,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.5,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.55,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.6,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.65,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.7,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.75,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.8,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.85,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,toxicity,0.9,200,0.0,0.0,0.0,0.5
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.3,200,0.0,0.0,0.0,0.4947
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.35,200,0.6,0.75,0.6667,0.7947
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.4,200,0.9,0.8182,0.8571,0.9447
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.45,200,0.9,0.8182,0.8571,0.9447
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.5,200,1.0,0.7692,0.8696,0.9921
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.55,200,1.0,0.7692,0.8696,0.9921
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.6,200,1.0,0.7143,0.8333,0.9895
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.65,200,1.0,0.5,0.6667,0.9737
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.7,200,1.0,0.2222,0.3636,0.9079
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.75,200,1.0,0.2222,0.3636,0.9079
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.8,200,1.0,0.1613,0.2778,0.8632
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.85,200,1.0,0.0515,0.098,0.5158
+Matched-rubric GPT-4o-mini,tone_appropriateness,0.9,200,1.0,0.0515,0.098,0.5158
+Hybrid GPT extraction + JEV decision,faithfulness,0.3,200,0.25,1.0,0.4,0.625
+Hybrid GPT extraction + JEV decision,faithfulness,0.35,200,0.3,1.0,0.4615,0.65
+Hybrid GPT extraction + JEV decision,faithfulness,0.4,200,0.3,1.0,0.4615,0.65
+Hybrid GPT extraction + JEV decision,faithfulness,0.45,200,0.3,1.0,0.4615,0.65
+Hybrid GPT extraction + JEV decision,faithfulness,0.5,200,0.5,1.0,0.6667,0.75
+Hybrid GPT extraction + JEV decision,faithfulness,0.55,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,faithfulness,0.6,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,faithfulness,0.65,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,faithfulness,0.7,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,faithfulness,0.75,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,faithfulness,0.8,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,faithfulness,0.85,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,faithfulness,0.9,200,0.6,1.0,0.75,0.8
+Hybrid GPT extraction + JEV decision,answer_relevance,0.3,200,1.0,0.051,0.097,0.612
+Hybrid GPT extraction + JEV decision,answer_relevance,0.35,200,1.0,0.051,0.097,0.612
+Hybrid GPT extraction + JEV decision,answer_relevance,0.4,200,1.0,0.051,0.097,0.612
+Hybrid GPT extraction + JEV decision,answer_relevance,0.45,200,1.0,0.0506,0.0964,0.6094
+Hybrid GPT extraction + JEV decision,answer_relevance,0.5,200,1.0,0.0503,0.0958,0.6068
+Hybrid GPT extraction + JEV decision,answer_relevance,0.55,200,1.0,0.0494,0.0941,0.599
+Hybrid GPT extraction + JEV decision,answer_relevance,0.6,200,1.0,0.0494,0.0941,0.599
+Hybrid GPT extraction + JEV decision,answer_relevance,0.65,200,1.0,0.0494,0.0941,0.599
+Hybrid GPT extraction + JEV decision,answer_relevance,0.7,200,1.0,0.0494,0.0941,0.599
+Hybrid GPT extraction + JEV decision,answer_relevance,0.75,200,1.0,0.0494,0.0941,0.599
+Hybrid GPT extraction + JEV decision,answer_relevance,0.8,200,1.0,0.0491,0.0936,0.5964
+Hybrid GPT extraction + JEV decision,answer_relevance,0.85,200,1.0,0.0488,0.093,0.5938
+Hybrid GPT extraction + JEV decision,answer_relevance,0.9,200,1.0,0.0476,0.0909,0.5833
+Hybrid GPT extraction + JEV decision,context_relevance,0.3,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.35,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.4,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.45,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.5,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.55,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.6,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.65,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.7,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.75,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.8,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.85,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,context_relevance,0.9,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,toxicity,0.3,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.35,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.4,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.45,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.5,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.55,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.6,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.65,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,toxicity,0.7,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,toxicity,0.75,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,toxicity,0.8,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,toxicity,0.85,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,toxicity,0.9,200,0.0,0.0,0.0,0.5
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.3,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.35,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.4,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.45,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.5,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.55,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.6,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.65,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.7,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.75,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.8,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.85,200,1.0,1.0,1.0,1.0
+Hybrid GPT extraction + JEV decision,tone_appropriateness,0.9,200,1.0,1.0,1.0,1.0

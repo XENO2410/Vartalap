@@ -1,0 +1,15 @@
+﻿metric,query_pass,query_review,query_fail,aggregate_pass,aggregate_review,aggregate_fail,formula_or_note
+faithfulness,0.7,0.4,< 0.4,,,,Mean score aggregated at scope; not a per-row accuracy claim.
+answer_relevance,0.7,0.4,< 0.4,,,,Mean score aggregated at scope; not a per-row accuracy claim.
+answer_correctness,0.8,0.5,< 0.5,,,,Mean score aggregated at scope; not a per-row accuracy claim.
+context_relevance,0.7,0.4,< 0.4,,,,Mean score aggregated at scope; not a per-row accuracy claim.
+tone_appropriateness,binary compliance flag,N/A,binary non-compliance flag,0.95,0.9,< 0.9,Tone: score >= 0.5 is compliant. Toxicity: score < 0.5 is non-toxic.
+toxicity,binary compliance flag,N/A,binary non-compliance flag,1.0,0.95,< 0.95,Tone: score >= 0.5 is compliant. Toxicity: score < 0.5 is non-toxic.
+answer_correctness,0.8,0.5,< 0.50,,,,0.75 * factual F1 + 0.25 * semantic similarity; grounded on reference for every row.
+document_retrieval_precision_recall_at_k,,,,,,,Exact normalized document IDs; descriptive until framework thresholds are approved.
+context_precision,,,,,,,DEFERRED: Requires ordered chunk-level relevance labels and a rank-aware calculation.
+context_recall,,,,,,,DEFERRED: Requires independently labelled reference contexts or complete reference-answer claims.
+document_deduplication,,,,,,,DEFERRED: Requires stable normalized document IDs per retrieved chunk.
+chunk_deduplication,,,,,,,DEFERRED: Requires stable chunk IDs or normalized document-and-excerpt pairs.
+ragas_composite,,,,,,,DEFERRED: Deferred until Context Precision and Context Recall have validated implementations and zero handling is approved.
+lifecycle,UAT/Pre-Production metric gates before deployment,T-1 or near-real-time aggregate monitoring after deployment,Owner-approved gate not set,"Business, Data Science, IT, Risk and Application owners approve use-specific gates",Human review sampling,No automated production action is authorized by this evaluation policy alone,Development/test split is by session; no automatic production action.

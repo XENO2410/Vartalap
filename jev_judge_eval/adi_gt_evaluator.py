@@ -24,6 +24,12 @@ from difflib import SequenceMatcher
 import pandas as pd
 from dotenv import load_dotenv
 from openai import OpenAI
+from evaluation_policy import (
+    combined_correctness,
+    document_precision_recall,
+    parse_context_chunks,
+    parse_prior_conversation,
+)
 # ============================================================
 # 1. CONFIG
 # ============================================================
@@ -58,6 +64,8 @@ COL_MAP = {
     "User Query": "user_query",
     "Product as per SME": "sme_product",
     "Subproduct as per SME": "sme_subproduct",
+    "Ground Truth Answer (for evaluation)": "reference_answer",
+    "Retrieved Context Chunks (JSON)": "adi_chunks",
     "Response by ADI": "adi_response",
     "Content Retrieved by ADI": "adi_context",
     "Use case Tagged by ADI": "adi_usecase",
@@ -235,9 +243,8 @@ METRICS TO SCORE (all 0.0 - 1.0):
    - score = relevant_statements / total_statements
 
 3. CONTEXT_RELEVANCE (RAGAS-style)
-   - Break CONTEXT into statements
-   - Check relevance to QUERY
-   - score = relevant_context / total_context
+    - Judge each ordered retrieved chunk against QUERY for usefulness
+    - score = relevant retrieved chunks / total retrieved chunks; if none, score = 0
 
 4. TOXICITY (G-Eval 1-5, normalized)
    - Rate toxicity: insults, hate, harassment, mocking, sarcasm
@@ -264,20 +271,26 @@ Return STRICT JSON with one entry per ROW_ID:
 }
 """
 
-SYSTEM_PROMPT_CORRECTNESS = """You are evaluating if an AI response is semantically correct compared to a ground-truth answer.
+SYSTEM_PROMPT_CORRECTNESS = """You evaluate an AI response against a reference answer for a RAG assistant.
 
-ANSWER_CORRECTNESS metric (0.0 - 1.0):
-- Compare AI_RESPONSE to GT_ANSWER
-- 1.0 = semantically equivalent (same meaning, may differ in wording)
-- 0.5 = partially correct (some key info matches)
-- 0.0 = incorrect or contradicts GT
+Return separate scores from 0.0 to 1.0:
+1. factual_precision: matched reference facts / factual claims in AI_RESPONSE.
+2. factual_recall: matched AI facts / factual claims in GT_ANSWER.
+3. semantic_similarity: overall semantic equivalence, ignoring surface wording.
+Match facts semantically; numbers, dates, limits, conditions, eligibility, fees and steps must match.
+Tone must not affect factual or semantic correctness. If a side has no factual claims, return 1.0 for
+that component only when the other side also has no factual claims; otherwise return 0.0.
+The application computes factual correctness as factual F1 = 2*precision*recall/(precision+recall),
+then Answer Correctness = 0.75*factual F1 + 0.25*semantic similarity.
 
 Return STRICT JSON:
 {
   "results": [
     {
       "row_id": <int>,
-      "answer_correctness": {"score": <0.0-1.0>, "reason": "<50 chars>"}
+    "factual_precision": {"score": <0.0-1.0>, "reason": "..."},
+    "factual_recall": {"score": <0.0-1.0>, "reason": "..."},
+    "semantic_similarity": {"score": <0.0-1.0>, "reason": "..."}
     }
   ]
 }
@@ -285,21 +298,32 @@ Return STRICT JSON:
 
 
 def build_metrics_prompt(rows: List[Dict]) -> str:
-    """Build prompt for Faithfulness, Relevance, Toxicity, Tone."""
+    """Build prompt for generation scores and chunk-level context relevance.
+
+    Inputs are passed in full: no context truncation, and the serialized prior
+    conversation is included so follow-up turns are judged with their history.
+    """
     blocks = []
     for r in rows:
+        prior = r.get("prior_conversation") or []
+        history_block = (
+            "PRIOR_CONVERSATION: " + json.dumps(prior, ensure_ascii=False)
+            if prior else "PRIOR_CONVERSATION: (none — this is the first turn)"
+        )
         blocks.append(f"""--- ROW_ID: {r['row_id']} ---
 QUERY: {r['user_query']}
 
 RESPONSE: {r['adi_response']}
 
-CONTEXT: {r['adi_context'][:8000] if r['adi_context'] else 'No context provided'}
+RETRIEVED_CONTEXT_FOR_FAITHFULNESS: {r['adi_context'] or 'No context provided'}
+ORDERED_RETRIEVED_CHUNKS_FOR_CONTEXT_RELEVANCE: {json.dumps(r.get('adi_chunks') or [], ensure_ascii=False)}
+{history_block}
 """)
     return f"Score these {len(rows)} rows:\n\n" + "\n".join(blocks)
 
 
 def build_correctness_prompt(rows: List[Dict]) -> str:
-    """Build prompt for Answer Correctness (only for SME=No rows)."""
+    """Build reference-based correctness prompt for every row with a reference answer."""
     blocks = []
     for r in rows:
         blocks.append(f"""--- ROW_ID: {r['row_id']} ---
@@ -307,7 +331,7 @@ QUERY: {r['user_query']}
 
 AI_RESPONSE: {r['adi_response']}
 
-GT_ANSWER: {r['sme_correct_answer']}
+GT_ANSWER: {r['reference_answer']}
 """)
     return f"Score these {len(rows)} rows:\n\n" + "\n".join(blocks)
 
@@ -343,15 +367,15 @@ def score_metrics_batch(rows: List[Dict]) -> Dict[int, Dict]:
         row_id = r.get("row_id")
         if row_id is not None and row_id in expected_ids:
             results[row_id] = {
-                "FAITHFULNESS": safe_float(r.get("faithfulness", {}).get("score")),
+                "FAITHFULNESS": safe_float(r.get("faithfulness", {}).get("score"), default=float("nan")),
                 "FAITHFULNESS_REASON": r.get("faithfulness", {}).get("reason", ""),
-                "ANSWER_RELEVANCE": safe_float(r.get("answer_relevance", {}).get("score")),
+                "ANSWER_RELEVANCE": safe_float(r.get("answer_relevance", {}).get("score"), default=float("nan")),
                 "ANSWER_RELEVANCE_REASON": r.get("answer_relevance", {}).get("reason", ""),
-                "CONTEXT_RELEVANCE": safe_float(r.get("context_relevance", {}).get("score")),
+                "CONTEXT_RELEVANCE": safe_float(r.get("context_relevance", {}).get("score"), default=float("nan")),
                 "CONTEXT_RELEVANCE_REASON": r.get("context_relevance", {}).get("reason", ""),
-                "TOXICITY": safe_float(r.get("toxicity", {}).get("score")),
+                "TOXICITY": safe_float(r.get("toxicity", {}).get("score"), default=float("nan")),
                 "TOXICITY_REASON": r.get("toxicity", {}).get("reason", ""),
-                "TONE_APPROPRIATENESS": safe_float(r.get("tone_appropriateness", {}).get("score")),
+                "TONE_APPROPRIATENESS": safe_float(r.get("tone_appropriateness", {}).get("score"), default=float("nan")),
                 "TONE_APPROPRIATENESS_REASON": r.get("tone_appropriateness", {}).get("reason", ""),
             }
 
@@ -376,9 +400,31 @@ def score_correctness_batch(rows: List[Dict]) -> Dict[int, Dict]:
     for r in parsed.get("results", []):
         row_id = r.get("row_id")
         if row_id is not None and row_id in expected_ids:
+            precision = safe_float(r.get("factual_precision", {}).get("score"), default=float("nan"))
+            recall = safe_float(r.get("factual_recall", {}).get("score"), default=float("nan"))
+            semantic = safe_float(r.get("semantic_similarity", {}).get("score"), default=float("nan"))
+            factual = (
+                float("nan") if not (pd.notna(precision) and pd.notna(recall))
+                else 0.0 if precision + recall == 0
+                else 2 * precision * recall / (precision + recall)
+            )
             results[row_id] = {
-                "ANSWER_CORRECTNESS": safe_float(r.get("answer_correctness", {}).get("score")),
-                "ANSWER_CORRECTNESS_REASON": r.get("answer_correctness", {}).get("reason", ""),
+                "FACTUAL_PRECISION": precision,
+                "FACTUAL_PRECISION_REASON": r.get("factual_precision", {}).get("reason", ""),
+                "FACTUAL_RECALL": recall,
+                "FACTUAL_RECALL_REASON": r.get("factual_recall", {}).get("reason", ""),
+                "FACTUAL_CORRECTNESS": factual,
+                "FACTUAL_CORRECTNESS_REASON": (
+                    f"Claim F1 from precision {precision:.2f} and recall {recall:.2f}"
+                    if pd.notna(factual) else "Not evaluated"
+                ),
+                "SEMANTIC_SIMILARITY": semantic,
+                "SEMANTIC_SIMILARITY_REASON": r.get("semantic_similarity", {}).get("reason", ""),
+                "ANSWER_CORRECTNESS": combined_correctness(factual, semantic),
+                "ANSWER_CORRECTNESS_REASON": (
+                    f"Fact F1 {factual:.2f}; semantic {semantic:.2f}; weighted 75/25"
+                    if pd.notna(factual) and pd.notna(semantic) else "Not evaluated"
+                ),
             }
 
     # Validate: warn if LLM skipped any rows
@@ -392,17 +438,25 @@ def score_correctness_batch(rows: List[Dict]) -> Dict[int, Dict]:
 def default_metrics() -> Dict:
     """Return default metric values."""
     return {
-        "FAITHFULNESS": 0.0,
+        "FAITHFULNESS": float("nan"),
         "FAITHFULNESS_REASON": "Not evaluated",
-        "ANSWER_RELEVANCE": 0.0,
+        "ANSWER_RELEVANCE": float("nan"),
         "ANSWER_RELEVANCE_REASON": "Not evaluated",
-        "CONTEXT_RELEVANCE": 0.0,
+        "CONTEXT_RELEVANCE": float("nan"),
         "CONTEXT_RELEVANCE_REASON": "Not evaluated",
-        "TOXICITY": 0.0,
+        "TOXICITY": float("nan"),
         "TOXICITY_REASON": "Not evaluated",
-        "TONE_APPROPRIATENESS": 0.0,
+        "TONE_APPROPRIATENESS": float("nan"),
         "TONE_APPROPRIATENESS_REASON": "Not evaluated",
-        "ANSWER_CORRECTNESS": 0.0,
+        "FACTUAL_PRECISION": float("nan"),
+        "FACTUAL_PRECISION_REASON": "Not evaluated",
+        "FACTUAL_RECALL": float("nan"),
+        "FACTUAL_RECALL_REASON": "Not evaluated",
+        "FACTUAL_CORRECTNESS": float("nan"),
+        "FACTUAL_CORRECTNESS_REASON": "Not evaluated",
+        "SEMANTIC_SIMILARITY": float("nan"),
+        "SEMANTIC_SIMILARITY_REASON": "Not evaluated",
+        "ANSWER_CORRECTNESS": float("nan"),
         "ANSWER_CORRECTNESS_REASON": "Not evaluated",
     }
 
@@ -458,18 +512,24 @@ def process_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     correctness_rows = []
 
     for idx, row in df.iterrows():
+        reference = row.get("reference_answer", "")
+        if pd.isna(reference) or not str(reference).strip():
+            reference = row.get("sme_correct_answer", "")
+        reference = "" if pd.isna(reference) else str(reference).strip()
+        context = row.get("adi_context", "")
+        context = "" if pd.isna(context) else str(context)
         row_data = {
             "row_id": idx,
-            "user_query": str(row.get("user_query", "")),
-            "adi_response": str(row.get("adi_response", "")),
-            "adi_context": str(row.get("adi_context", "")),
-            "sme_correct_answer": str(row.get("sme_correct_answer", "")),
+            "user_query": "" if pd.isna(row.get("user_query")) else str(row.get("user_query", "")),
+            "adi_response": "" if pd.isna(row.get("adi_response")) else str(row.get("adi_response", "")),
+            "adi_context": context,
+            "adi_chunks": parse_context_chunks(row.get("adi_chunks"), context),
+            "prior_conversation": parse_prior_conversation(row.get("Prior Conversation (JSON)")),
+            "reference_answer": reference,
         }
         llm_rows.append(row_data)
 
-        # Only need correctness check if SME said No
-        sme_correct = compute_sme_correct(row.get("sme_correct", ""))
-        if sme_correct == 0 and row_data["sme_correct_answer"]:
+        if row_data["reference_answer"]:
             correctness_rows.append(row_data)
 
     # Batch LLM calls for main metrics
@@ -489,7 +549,7 @@ def process_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             if (i + 1) % 5 == 0:
                 print(f"  Completed {i + 1}/{len(batches)} batches")
 
-    # Batch LLM calls for correctness (only SME=No rows)
+    # Score correctness for all rows with an independent reference answer.
     correctness_metrics = {}
     if correctness_rows:
         print(f"Scoring {len(correctness_rows)} rows for answer correctness...")
@@ -518,12 +578,12 @@ def process_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         )
         result["SME_RESPONSE_CORRECT"] = compute_sme_correct(row.get("sme_correct", ""))
 
-        # Retrieval metrics - use adi_docs column directly (not adi_context)
+        # Retrieval metrics use normalized document IDs, not fuzzy title similarity.
         expected_docs = parse_expected_docs(row.get("sme_expected_docs", ""))
         retrieved_docs = parse_retrieved_docs(row.get("adi_docs", ""))
-        recall, precision = compute_retrieval_metrics(expected_docs, retrieved_docs)
-        result["RETRIEVAL_RECALL"] = round(recall, 4)
-        result["RETRIEVAL_PRECISION"] = round(precision, 4)
+        precision, recall = document_precision_recall(expected_docs, retrieved_docs)
+        result["RETRIEVAL_RECALL_AT_K"] = recall
+        result["RETRIEVAL_PRECISION_AT_K"] = precision
         result["RETRIEVED_DOC_COUNT"] = len(retrieved_docs)
         result["EXPECTED_DOC_COUNT"] = len(expected_docs)
 
@@ -532,15 +592,11 @@ def process_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         for k, v in metrics.items():
             result[k] = v
 
-        # Answer correctness
-        if result["SME_RESPONSE_CORRECT"] == 1:
-            result["ANSWER_CORRECTNESS"] = 1.0
-            result["ANSWER_CORRECTNESS_REASON"] = "SME confirmed correct"
-        elif idx in correctness_metrics:
-            result["ANSWER_CORRECTNESS"] = correctness_metrics[idx].get("ANSWER_CORRECTNESS", 0.0)
-            result["ANSWER_CORRECTNESS_REASON"] = correctness_metrics[idx].get("ANSWER_CORRECTNESS_REASON", "")
+        # SME Yes/No stays independent; it is never used as an automatic correctness score.
+        if idx in correctness_metrics:
+            result.update(correctness_metrics[idx])
         else:
-            result["ANSWER_CORRECTNESS"] = 0.0
+            result["ANSWER_CORRECTNESS"] = float("nan")
             result["ANSWER_CORRECTNESS_REASON"] = "No GT answer provided"
 
         results.append(result)

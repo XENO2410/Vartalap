@@ -1,0 +1,2 @@
+﻿arm,metrics_covered,mean_binary_framework_accuracy,faithfulness_accuracy,faithfulness_failure_recall,answer_correctness_status_agreement,answer_correctness_mae,SME_overall_agreement,wall_time_s_mean,call_p50_s_mean,call_p95_s_mean,cost_per_1k_rows_usd,failed_calls,rows_missing_scores,out_of_range_scores
+LLM judge,"faithfulness, answer_relevance, context_relevance, toxicity, tone_appropriateness, factual_precision, factual_recall, factual_correctness, semantic_similarity, answer_correctness",0.947,0.9261,0.0,0.8885,0.078,0.7946,16.2722,0.2278,5.4804,0.6397,133,370,0

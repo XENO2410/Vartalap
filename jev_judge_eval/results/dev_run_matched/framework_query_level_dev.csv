@@ -1,0 +1,201 @@
+﻿row_id,product,sub_product,session_id,evaluation_split,session_turn,session_length,sme_correct,retrieval_precision_at_k,retrieval_recall_at_k,judge,run,faithfulness_score,faithfulness_status,answer_relevance_score,answer_relevance_status,context_relevance_score,context_relevance_status,toxicity_score,toxicity_status,tone_appropriateness_score,tone_appropriateness_status,answer_correctness_score,answer_correctness_status
+2,HR,PF & Gratuity,SYN-0002,dev,1,2,0,1.0,1.0,Matched-rubric GPT-4o,1,0.0,fail,0.0,fail,1.0,pass,0.0,pass,1.0,pass,0.0,fail
+3,HR,PF & Gratuity,SYN-0002,dev,2,2,0,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.6667,fail,0.6667,pass,1.0,pass
+4,Social Security Schemes,PMSBY,SYN-0003,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+5,Social Security Schemes,PMSBY,SYN-0003,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+6,NR Banking,NRO Savings,SYN-0004,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+7,NR Banking,NRO Savings,SYN-0004,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+8,NR Banking,NRE Savings,SYN-0005,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+9,NR Banking,NRE Savings,SYN-0005,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+12,Cards,Debit Card Reissue,SYN-0007,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+13,Cards,Debit Card Reissue,SYN-0007,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+14,IT Helpdesk,VPN Access,SYN-0008,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,0.9333,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+15,IT Helpdesk,VPN Access,SYN-0008,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+16,Cards,Service Request Status,SYN-0009,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+17,Cards,Service Request Status,SYN-0009,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+18,Cards,Credit Card Application,SYN-0010,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+19,Cards,Credit Card Application,SYN-0010,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+22,Compliance,Re-KYC,SYN-0012,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+23,Compliance,Re-KYC,SYN-0012,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+24,Deposits,Fixed Deposit,SYN-0013,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,1.0,pass,1.0,pass,1.0,pass,0.0,pass,1.0,pass,1.0,pass
+25,Deposits,Fixed Deposit,SYN-0013,dev,2,2,0,1.0,1.0,Matched-rubric GPT-4o,1,0.1,fail,0.9667,pass,1.0,pass,0.0,pass,0.9667,pass,0.1,fail
+26,Operations,NACH Mandate,SYN-0014,dev,1,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+27,Operations,NACH Mandate,SYN-0014,dev,2,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+28,CRES,Meeting Rooms,SYN-0015,dev,1,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+29,CRES,Meeting Rooms,SYN-0015,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+32,Forex,LRS Outward Remittance,SYN-0017,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+33,Forex,LRS Outward Remittance,SYN-0017,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+34,Operations,Safe Deposit Locker,SYN-0018,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+35,Operations,Safe Deposit Locker,SYN-0018,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+36,Social Security Schemes,Atal Pension Yojana,SYN-0019,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+37,Social Security Schemes,Atal Pension Yojana,SYN-0019,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+38,HR,Payroll Bank Details,SYN-0020,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+39,HR,Payroll Bank Details,SYN-0020,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+42,Operations,Payments - RTGS,SYN-0022,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+43,Operations,Payments - RTGS,SYN-0022,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+44,CASA,Cheque Book Charges,SYN-0023,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+45,CASA,Cheque Book Charges,SYN-0023,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+46,HR,Leave Policy,SYN-0024,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+47,HR,Leave Policy,SYN-0024,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+48,HR,PF & Gratuity,SYN-0025,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+49,HR,PF & Gratuity,SYN-0025,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+52,NR Banking,NRO Savings,SYN-0027,dev,1,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+53,NR Banking,NRO Savings,SYN-0027,dev,2,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+54,NR Banking,NRE Savings,SYN-0028,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+55,NR Banking,NRE Savings,SYN-0028,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+56,Retail Loans,Home Loan,SYN-0029,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+57,Retail Loans,Home Loan,SYN-0029,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+58,Cards,Debit Card Reissue,SYN-0030,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+59,Cards,Debit Card Reissue,SYN-0030,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+62,Cards,Service Request Status,SYN-0032,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+63,Cards,Service Request Status,SYN-0032,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+64,Cards,Credit Card Application,SYN-0033,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+65,Cards,Credit Card Application,SYN-0033,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+66,CASA,Dormant Accounts,SYN-0034,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+67,CASA,Dormant Accounts,SYN-0034,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+68,Compliance,Re-KYC,SYN-0035,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+69,Compliance,Re-KYC,SYN-0035,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+72,Operations,NACH Mandate,SYN-0037,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+73,Operations,NACH Mandate,SYN-0037,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+74,CRES,Meeting Rooms,SYN-0038,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+75,CRES,Meeting Rooms,SYN-0038,dev,2,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+76,CASA,Salary Account,SYN-0039,dev,1,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+77,CASA,Salary Account,SYN-0039,dev,2,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+78,Forex,LRS Outward Remittance,SYN-0040,dev,1,2,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+79,Forex,LRS Outward Remittance,SYN-0040,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+82,Social Security Schemes,Atal Pension Yojana,SYN-0042,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+83,Social Security Schemes,Atal Pension Yojana,SYN-0042,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+84,HR,Payroll Bank Details,SYN-0043,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+85,HR,Payroll Bank Details,SYN-0043,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+86,HR,Group Mediclaim,SYN-0044,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+87,HR,Group Mediclaim,SYN-0044,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+88,Operations,Payments - RTGS,SYN-0045,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+89,Operations,Payments - RTGS,SYN-0045,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+92,HR,Leave Policy,SYN-0047,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+93,HR,Leave Policy,SYN-0047,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+94,HR,PF & Gratuity,SYN-0048,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+95,HR,PF & Gratuity,SYN-0048,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+96,Social Security Schemes,PMSBY,SYN-0049,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+97,Social Security Schemes,PMSBY,SYN-0049,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+98,NR Banking,NRO Savings,SYN-0050,dev,1,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+99,NR Banking,NRO Savings,SYN-0050,dev,2,2,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+103,Retail Loans,Home Loan,SYN-0052,dev,1,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+104,Retail Loans,Home Loan,SYN-0052,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+105,Retail Loans,Home Loan,SYN-0052,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+106,Cards,Debit Card Reissue,SYN-0053,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+107,Cards,Debit Card Reissue,SYN-0053,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+108,Cards,Debit Card Reissue,SYN-0053,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+109,IT Helpdesk,VPN Access,SYN-0054,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+110,IT Helpdesk,VPN Access,SYN-0054,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+111,IT Helpdesk,VPN Access,SYN-0054,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+112,Cards,Service Request Status,SYN-0055,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+113,Cards,Service Request Status,SYN-0055,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+114,Cards,Service Request Status,SYN-0055,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+118,CASA,Dormant Accounts,SYN-0057,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+119,CASA,Dormant Accounts,SYN-0057,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+120,CASA,Dormant Accounts,SYN-0057,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+121,Compliance,Re-KYC,SYN-0058,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+122,Compliance,Re-KYC,SYN-0058,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+123,Compliance,Re-KYC,SYN-0058,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+124,Deposits,Fixed Deposit,SYN-0059,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+125,Deposits,Fixed Deposit,SYN-0059,dev,2,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+126,Deposits,Fixed Deposit,SYN-0059,dev,3,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+127,Operations,NACH Mandate,SYN-0060,dev,1,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+128,Operations,NACH Mandate,SYN-0060,dev,2,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+129,Operations,NACH Mandate,SYN-0060,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+133,CASA,Salary Account,SYN-0062,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+134,CASA,Salary Account,SYN-0062,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+135,CASA,Salary Account,SYN-0062,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+136,Forex,LRS Outward Remittance,SYN-0063,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+137,Forex,LRS Outward Remittance,SYN-0063,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+138,Forex,LRS Outward Remittance,SYN-0063,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+139,Operations,Safe Deposit Locker,SYN-0064,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+140,Operations,Safe Deposit Locker,SYN-0064,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+141,Operations,Safe Deposit Locker,SYN-0064,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+142,Social Security Schemes,Atal Pension Yojana,SYN-0065,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+143,Social Security Schemes,Atal Pension Yojana,SYN-0065,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+144,Social Security Schemes,Atal Pension Yojana,SYN-0065,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+148,HR,Group Mediclaim,SYN-0067,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+149,HR,Group Mediclaim,SYN-0067,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+150,HR,Group Mediclaim,SYN-0067,dev,3,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+151,Operations,Payments - RTGS,SYN-0068,dev,1,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+152,Operations,Payments - RTGS,SYN-0068,dev,2,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+153,Operations,Payments - RTGS,SYN-0068,dev,3,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+154,CASA,Cheque Book Charges,SYN-0069,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+155,CASA,Cheque Book Charges,SYN-0069,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+156,CASA,Cheque Book Charges,SYN-0069,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+157,HR,Leave Policy,SYN-0070,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+158,HR,Leave Policy,SYN-0070,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+159,HR,Leave Policy,SYN-0070,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+163,Social Security Schemes,PMSBY,SYN-0072,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+164,Social Security Schemes,PMSBY,SYN-0072,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+165,Social Security Schemes,PMSBY,SYN-0072,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+166,NR Banking,NRO Savings,SYN-0073,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+167,NR Banking,NRO Savings,SYN-0073,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+168,NR Banking,NRO Savings,SYN-0073,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+169,NR Banking,NRE Savings,SYN-0074,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+170,NR Banking,NRE Savings,SYN-0074,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+171,NR Banking,NRE Savings,SYN-0074,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+172,Retail Loans,Home Loan,SYN-0075,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+173,Retail Loans,Home Loan,SYN-0075,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+174,Retail Loans,Home Loan,SYN-0075,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+178,IT Helpdesk,VPN Access,SYN-0077,dev,1,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+179,IT Helpdesk,VPN Access,SYN-0077,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+180,IT Helpdesk,VPN Access,SYN-0077,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+181,Cards,Service Request Status,SYN-0078,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+182,Cards,Service Request Status,SYN-0078,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+183,Cards,Service Request Status,SYN-0078,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+184,Cards,Credit Card Application,SYN-0079,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+185,Cards,Credit Card Application,SYN-0079,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+186,Cards,Credit Card Application,SYN-0079,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+187,CASA,Dormant Accounts,SYN-0080,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+188,CASA,Dormant Accounts,SYN-0080,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+189,CASA,Dormant Accounts,SYN-0080,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+193,Deposits,Fixed Deposit,SYN-0082,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+194,Deposits,Fixed Deposit,SYN-0082,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+195,Deposits,Fixed Deposit,SYN-0082,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+196,Operations,NACH Mandate,SYN-0083,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+197,Operations,NACH Mandate,SYN-0083,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+198,Operations,NACH Mandate,SYN-0083,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+199,CRES,Meeting Rooms,SYN-0084,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+200,CRES,Meeting Rooms,SYN-0084,dev,2,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+201,CRES,Meeting Rooms,SYN-0084,dev,3,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+202,CASA,Salary Account,SYN-0085,dev,1,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+203,CASA,Salary Account,SYN-0085,dev,2,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+204,CASA,Salary Account,SYN-0085,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+208,Operations,Safe Deposit Locker,SYN-0087,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+209,Operations,Safe Deposit Locker,SYN-0087,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+210,Operations,Safe Deposit Locker,SYN-0087,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+211,Social Security Schemes,Atal Pension Yojana,SYN-0088,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+212,Social Security Schemes,Atal Pension Yojana,SYN-0088,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+213,Social Security Schemes,Atal Pension Yojana,SYN-0088,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+214,HR,Payroll Bank Details,SYN-0089,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+215,HR,Payroll Bank Details,SYN-0089,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+216,HR,Payroll Bank Details,SYN-0089,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+217,HR,Group Mediclaim,SYN-0090,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+218,HR,Group Mediclaim,SYN-0090,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+219,HR,Group Mediclaim,SYN-0090,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+223,CASA,Cheque Book Charges,SYN-0092,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+224,CASA,Cheque Book Charges,SYN-0092,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+225,CASA,Cheque Book Charges,SYN-0092,dev,3,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+226,HR,Leave Policy,SYN-0093,dev,1,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+227,HR,Leave Policy,SYN-0093,dev,2,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+228,HR,Leave Policy,SYN-0093,dev,3,3,0,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+229,HR,PF & Gratuity,SYN-0094,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+230,HR,PF & Gratuity,SYN-0094,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+231,HR,PF & Gratuity,SYN-0094,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+232,Social Security Schemes,PMSBY,SYN-0095,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+233,Social Security Schemes,PMSBY,SYN-0095,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+234,Social Security Schemes,PMSBY,SYN-0095,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+238,NR Banking,NRE Savings,SYN-0097,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+239,NR Banking,NRE Savings,SYN-0097,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+240,NR Banking,NRE Savings,SYN-0097,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+241,Retail Loans,Home Loan,SYN-0098,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+242,Retail Loans,Home Loan,SYN-0098,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+243,Retail Loans,Home Loan,SYN-0098,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+244,Cards,Debit Card Reissue,SYN-0099,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+245,Cards,Debit Card Reissue,SYN-0099,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+246,Cards,Debit Card Reissue,SYN-0099,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+247,IT Helpdesk,VPN Access,SYN-0100,dev,1,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+248,IT Helpdesk,VPN Access,SYN-0100,dev,2,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated
+249,IT Helpdesk,VPN Access,SYN-0100,dev,3,3,1,1.0,1.0,Matched-rubric GPT-4o,1,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated,,not_evaluated

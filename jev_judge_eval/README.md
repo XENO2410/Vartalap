@@ -1,9 +1,23 @@
 # JEV vs LLM-as-a-judge for ADI evaluation
 
 Benchmarks TypeSafe's **JEV** (`jev-1.13.0`, a "System One" model that returns typed scores with
-probabilities instead of generated text) against the **GPT-4o LLM-as-a-judge** used to evaluate ADI
-(Axis Deep Intelligence) chatbot answers. It also includes a JEV-only evaluator with the same input
-and output format as the LLM evaluator, so JEV can be tested on its own.
+probabilities instead of generated text) against **GPT-4o LLM-as-a-judge** arms that evaluate ADI
+(Axis Deep Intelligence) chatbot answers, for the observability use case. The comparison is kept
+fair: every arm receives the same complete state (full retrieved context, ordered chunks, prior
+conversation, reference answer) and outputs the same 0-1 metrics.
+
+## Fair-comparison design: the three primary arms
+
+| Arm (`--arms`) | What it tests |
+| --- | --- |
+| `ragas-gpt` | **Our info, RAGAS-style:** GPT-4o decomposes the response into claims/statements, judges each unit against context/query/reference, and the framework formulas (claim ratios, factual F1, 75/25 correctness) are computed in code. |
+| `matched-gpt` | **Same prompt as JEV:** GPT-4o returns probability distributions over JEV's exact rubric levels; the same expected-score normalization JEV uses is applied. |
+| `jev` | JEV native typed scores with per-metric confidence. |
+
+Comparing `ragas-gpt` (our metric definitions, RAGAS implementation) with `matched-gpt` (JEV's
+rubrics on GPT) separates **rubric effects** from **model effects**; both are compared against JEV
+itself. The legacy `llm` arm (current `adi_gt_evaluator.py` prompts) is kept as the production
+baseline, and `gpt-mini`, `hybrid`, and `hhem` remain opt-in extras.
 
 ## What's here
 
@@ -11,7 +25,8 @@ and output format as the LLM evaluator, so JEV can be tested on its own.
 | --- | --- |
 | `adi_gt_evaluator.py` | Existing LLM judge: GPT-4o via OpenRouter, 5 rows per call, plus deterministic metrics |
 | `jev_judge.py` | JEV judge: same sheet in, same metric columns out, plus a confidence per metric |
-| `compare_judges.py` | Runs both judges on the same rows and writes the comparison workbook |
+| `judge_arms.py` | Extra arms: RAGAS-style GPT, matched-rubric GPT/GPT-mini, hybrid GPT-extract + JEV-decide |
+| `compare_judges.py` | Runs selected arms on the same rows and writes the comparison workbook + framework CSVs |
 | `build_presentation.py` | Builds the eight-slide leadership PowerPoint from the saved comparison workbook and synthetic cases; no API calls |
 | `data/build_synthetic_dataset.py` | Regenerates the 35-row synthetic sheet and its designer labels |
 | `data/synthetic_adi_gt_35.csv` | Synthetic ground-truth sheet in the SME layout (12 columns) |
@@ -45,11 +60,29 @@ python jev_judge.py data/synthetic_adi_gt_35.csv results/jev_eval.xlsx        # 
 python adi_gt_evaluator.py data/synthetic_adi_gt_35.csv results/llm_eval.xlsx  # GPT-4o only
 python compare_judges.py                                                       # head-to-head, 2 runs each
 python compare_judges.py --input path/to/real_gt.csv --gold none               # real SME sheet, no labels
+python compare_judges.py --arms llm jev matched-gpt gpt-mini hybrid            # multi-arm benchmark
+python compare_judges.py --arms ragas-gpt matched-gpt jev                      # the fair three-way comparison
+python compare_judges.py --split dev --tune                                   # dev split + dev-only threshold sweep
+python compare_judges.py --split test                                         # held-out test split; --tune is refused here
+python compare_judges.py --arms llm jev hhem                                   # + HHEM faithfulness (needs requirements-hhem.txt)
 ```
 
-`compare_judges.py` options: `--repeats N` (runs per judge; 2 or more measures consistency),
-`--workers N` (concurrent calls, same for both judges), `--threshold 0.5` (pass/fail cut-off on 0-1
-scores), `--judges both|llm|jev`.
+`compare_judges.py` options: `--repeats N` (runs per arm; 2 or more measures consistency),
+`--workers N` (concurrent calls), `--threshold 0.5` (binary pass/fail cut-off on 0-1 scores),
+`--judges both|llm|jev` (legacy shorthand; ignored when `--arms` is given), and the newer
+`--arms llm jev matched-gpt gpt-mini ragas-gpt hybrid hhem`, `--split all|dev|test`, `--tune`.
+
+The `--split` flag filters rows by the session-level `Evaluation Split` column from the dataset.
+Threshold tuning (`--tune`) is development-only: the sweep always runs on dev rows and is
+**refused on the `test` split** so the held-out result can never be used to choose its own cutoffs.
+The `hhem` arm is opt-in and downloads Vectara HHEM weights on first use.
+
+Every run writes split-suffixed outputs (dev/test runs never overwrite each other):
+`framework_query_level_<split>.csv`, `framework_aggregates_<split>.csv`, `arm_summary_<split>.csv`,
+`arm_agreement_<split>.csv`, `per_row_<split>.csv`, plus `decision_policy.csv` and (dev-only)
+`threshold_sweep_dev.csv`. The legacy filenames (`jev_vs_llm_comparison.xlsx`, `summary.csv`,
+`per_row.csv`, `llm_judge_run<N>.csv`, `jev_raw_responses.jsonl`) are still written for the
+default `--split all` run.
 
 ## Input sheet
 
@@ -77,11 +110,11 @@ checks session counts, unique queries, history serialization, SME corrections, a
 gold alignment. The sample mixes correct answers with unsupported claims, wrong key figures,
 off-topic replies, and rude-but-factually-correct answers.
 
-The existing judges score **each query row independently**. They currently ignore the added
-`Prior Conversation (JSON)` when constructing their judge input, and `compare_judges.py` reports
-rows rather than session-level metrics. The queries are independently understandable; use this
-file for a larger row-level benchmark and session grouping. For follow-up/history-aware scoring,
-extend both judge inputs before interpreting results as a conversational-memory test. The records
+The judges receive **complete inputs**: the full retrieved context (no 8000-character cap),
+the ordered retrieved chunks, and the serialized `Prior Conversation (JSON)` are all sent to
+every judge arm, so follow-up turns are scored with their history. `compare_judges.py` reports
+rows plus session-level aggregates (`framework_aggregates_<split>.csv`), and the session-level
+`Evaluation Split` keeps turns of one conversation inside a single dev or test split. The records
 and policy references are fabricated; this is not a factual banking knowledge set.
 
 To compare both judges (requires JEV and OpenRouter keys):
