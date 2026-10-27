@@ -30,6 +30,9 @@ RAG pipeline.
 > The bot's public name is **वार्तालाप** ("conversation"). Everything below is
 > synthetic sample data — not real Axis Bank content.
 
+> 📘 **New here?** Start with [docs/VARTALAP_GUIDE.md](docs/VARTALAP_GUIDE.md) —
+> the complete project guide and MLflow integration reference.
+
 ---
 
 ## Screenshots
@@ -265,6 +268,12 @@ Every `emit(...)` populates the schema fields from the architecture doc
 ---
 
 ## 5. Adding MLflow / Kytee
+
+> 🧭 Want to integrate MLflow into **your own** system? The step-by-step
+> generic recipe is in [docs/MLFLOW_INTEGRATION_GUIDE.md](docs/MLFLOW_INTEGRATION_GUIDE.md)
+> — it uses this repo's wiring as the working reference.
+> For rolling the same patterns out across **ADI's ~52 microservices**, see
+> [docs/ADI_MLFLOW_INTEGRATION_GUIDE.md](docs/ADI_MLFLOW_INTEGRATION_GUIDE.md).
 
 You only need to touch one file:
 
