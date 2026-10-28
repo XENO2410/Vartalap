@@ -78,6 +78,12 @@ def _try_init() -> bool:
             _INITED = True
             return False
         try:
+            # MLflow 3.x puts the filesystem backend (./mlruns) in maintenance
+            # mode and raises unless this opt-out is set. We run a lightweight
+            # local file store on both dev and Render, so opt out explicitly.
+            # Must be set BEFORE the tracking store is first created below.
+            os.environ.setdefault("MLFLOW_ALLOW_FILE_STORE", "true")
+            os.environ.setdefault("MLFLOW_DISABLE_AGENT_HINT", "1")
             mlflow.set_tracking_uri(settings.mlflow_tracking_uri_resolved)
             mlflow.set_experiment(settings.mlflow_experiment)
             # System metrics: CPU / RAM samples per run (needs psutil).

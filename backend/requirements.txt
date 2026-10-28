@@ -24,10 +24,11 @@ python-slugify==8.0.4
 tenacity==9.0.0
 
 # Observability
-# MLflow 2.15+ includes tracing. 2.17+ renders the GenAI "Requests / Latency /
-# Token Usage / Tokens per Trace" dashboards when `mlflow.chat.*` conventions
-# are set on LLM spans (we do — see backend/app/observability/mlflow_sink.py).
-mlflow>=2.17,<4.0
+# MLflow 3.x: tracing + GenAI dashboards via `mlflow.chat.*` conventions on
+# LLM spans (see backend/app/observability/mlflow_sink.py). The filesystem
+# backend (./mlruns) is maintenance-mode in 3.x; the sink opts out via
+# MLFLOW_ALLOW_FILE_STORE=true. Migrate to sqlite:// later if we grow.
+mlflow>=3.17,<4.0
 
 # --- Optional (developer-only) ---
 # Uncomment for local dev if you want fast, offline embeddings & re-ranking.
