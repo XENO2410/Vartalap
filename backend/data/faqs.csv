@@ -1,40 +1,1208 @@
 question,answer,domain,role,product,freshness
 What is the leave policy at Axis Bank?,"Employees are entitled to 24 privileged leaves, 8 casual leaves and 12 sick leaves per calendar year. Privileged leaves must be planned at least 7 working days in advance and can be availed up to 3 times a year. Unused privileged leaves are carried forward up to a cap of 60 days.",HR,employee,leave-policy,2026-06-01
-How do I apply for maternity leave?,"Maternity leave of 26 weeks is available to eligible female employees. Raise a request via the HR self-service portal at least 8 weeks before the expected delivery date. Attach the medical certificate and reporting-manager approval before submission.",HR,employee,leave-policy,2026-06-01
+How do I apply for maternity leave?,Maternity leave of 26 weeks is available to eligible female employees. Raise a request via the HR self-service portal at least 8 weeks before the expected delivery date. Attach the medical certificate and reporting-manager approval before submission.,HR,employee,leave-policy,2026-06-01
 What is the re-hiring policy?,"Ex-employees who resigned in good standing may be considered for re-hiring after a cooling period of 12 months. Approval requires HRBP, business head and CHRO sign-off. Prior tenure is counted only for gratuity and long-service awards.",HR,manager,rehiring-policy,2026-03-15
-What are the working hours for branch staff?,"Branch operating window is 09:30 to 17:30 on weekdays and 09:30 to 13:30 on second and fourth Saturdays. Front-office staff are expected to be on floor 15 minutes before opening.",HR,branch-staff,attendance,2026-04-10
+What are the working hours for branch staff?,Branch operating window is 09:30 to 17:30 on weekdays and 09:30 to 13:30 on second and fourth Saturdays. Front-office staff are expected to be on floor 15 minutes before opening.,HR,branch-staff,attendance,2026-04-10
 How is the performance appraisal cycle structured?,"The appraisal cycle runs from April to March. Goal setting happens in April, mid-year review in September and final review in March-April. Ratings are on a 5-point scale with a normalisation step at the business-unit level.",HR,employee,performance-management,2026-02-01
 How do I reset my Active Directory password?,"Open https://reset.axisbank.internal, complete MFA, provide your employee ID and set a new password (min 12 chars, 1 upper, 1 digit, 1 symbol). If MFA is not enrolled, raise a ticket via IT Helpdesk with your reporting manager on CC.",IT_HELPDESK,employee,identity,2026-08-01
 How do I request VPN access?,"Raise a Service Request under IT Helpdesk > Connectivity > VPN with justification. Approval flow: reporting manager, InfoSec, and Network team. Provisioning SLA is 2 business days.",IT_HELPDESK,employee,vpn,2026-07-11
 How do I raise a laptop hardware issue?,"Log a ticket via Unidesk under IT Helpdesk > Hardware. Select 'Laptop' and describe the issue. On-site engineers respond within 4 hours for critical issues (screen not turning on, keyboard failure) and 1 business day otherwise.",IT_HELPDESK,employee,hardware,2026-05-20
 What is Know Your Customer (KYC)?,"KYC is the mandatory identity and address verification process required before opening any customer account. Acceptable documents include Aadhaar, PAN, passport, driving licence and voter ID. Video KYC is available for eligible savings accounts.",LAW,relationship-manager,compliance,2026-01-15
-What is Anti Money Laundering (AML)?,"AML refers to the controls that detect and prevent financial crime. Every transaction above INR 10 lakh in cash is reported to FIU-IND. Suspicious Transaction Reports (STRs) must be filed within 7 working days.",LAW,compliance-officer,aml,2026-01-15
+What is Anti Money Laundering (AML)?,AML refers to the controls that detect and prevent financial crime. Every transaction above INR 10 lakh in cash is reported to FIU-IND. Suspicious Transaction Reports (STRs) must be filed within 7 working days.,LAW,compliance-officer,aml,2026-01-15
 How do I check the status of a service request?,"Use the #status bubble followed by the SR reference, e.g. '#status SR-123456'. Vartalaap will fetch the current state from Unidesk.",STATUS,employee,unidesk,2026-08-20
 How do I check credit card application status?,"Type '#status credit card application <application-id>'. The bot will query PrimeCTL and return the current stage (documentation, verification, disbursement).",STATUS,employee,primectl,2026-08-20
-Where can I download the FEMA declaration form?,"Go to the Download tab and choose 'Forms & Annexure > FEMA Declaration'. The latest version is dated 2026-04.",DOWNLOAD,employee,forms,2026-04-01
-Where can I download the salary reimbursement form?,"Download > HR Forms > Salary Reimbursement. Submit the completed form to your HR business partner within 30 days of the expense.",DOWNLOAD,employee,forms,2026-05-05
+Where can I download the FEMA declaration form?,Go to the Download tab and choose 'Forms & Annexure > FEMA Declaration'. The latest version is dated 2026-04.,DOWNLOAD,employee,forms,2026-04-01
+Where can I download the salary reimbursement form?,Download > HR Forms > Salary Reimbursement. Submit the completed form to your HR business partner within 30 days of the expense.,DOWNLOAD,employee,forms,2026-05-05
 What is the Aha loyalty programme?,"Aha is Axis Bank's employee-facing rewards programme. Points are earned for referrals, cross-sell wins and audit-clean months. Points can be redeemed on the Aha portal for vouchers and merchandise.",AHA,employee,aha,2026-03-01
 How do I raise a Change Request (CR) for a policy update?,"Log a CR in the Change Management portal. Attach the impact assessment, business justification and roll-back plan. CRs affecting production data require CAB approval.",CR,team-lead,change-management,2026-06-10
 What is the Cerebro RAG engine?,"Cerebro is the internal RAG engine that powers Vartalaap. It has three layers: query routing, retrieval (Azure AI Search top-50 + rerank top-5) and GPT-4o mini answer generation.",IT_HELPDESK,engineer,cerebro,2026-08-20
 What models power Vartalaap?,"Vartalaap uses GPT-4o mini for answer generation, text-embedding-3-large for embeddings and Azure AI Search for vector retrieval. Reranking is done via a semantic reranker on the top 50 candidates.",IT_HELPDESK,engineer,cerebro,2026-08-20
-What is the Conversational BI bubble used for?,"The Conversational BI bubble is used for free-text analytics against the reporting data mart. It uses the Text2SQL agent to translate the question into SQL and executes it on the reporting DB.",CONVERSATIONAL_BI,analyst,bi,2026-07-01
+What is the Conversational BI bubble used for?,The Conversational BI bubble is used for free-text analytics against the reporting data mart. It uses the Text2SQL agent to translate the question into SQL and executes it on the reporting DB.,CONVERSATIONAL_BI,analyst,bi,2026-07-01
 How do I contact the Financial Advisor tab?,"The Financial Advisor bubble routes to the wealth-advisory knowledge base. For personalised advice, use the Axis Phone bubble to raise a callback request with a certified advisor.",FINANCIAL_ADVISOR,customer,advisory,2026-06-01
 How do I book a fixed deposit?,"Log in to internet banking or the mobile app, choose Deposits > Book FD, pick tenure (7 days to 10 years), amount, and interest payout mode. Senior citizens get an extra 0.50 percent over the card rate.",FINANCIAL_ADVISOR,customer,fixed-deposit,2026-04-15
-What is the SIP registration cut-off?,"SIP registration cut-off is 8 calendar days before the first debit date. Pausing or cancelling a running SIP requires the request at least 2 working days before the debit date.",FINANCIAL_ADVISOR,advisor,mutual-funds,2026-05-01
-Can I break a Tax Saver FD before 5 years?,"No. The 5-year Tax Saver FD has a statutory lock-in and cannot be broken until maturity. Regular FDs can be broken with a 1 percent penalty over the applicable rate.",FINANCIAL_ADVISOR,customer,fixed-deposit,2026-04-15
+What is the SIP registration cut-off?,SIP registration cut-off is 8 calendar days before the first debit date. Pausing or cancelling a running SIP requires the request at least 2 working days before the debit date.,FINANCIAL_ADVISOR,advisor,mutual-funds,2026-05-01
+Can I break a Tax Saver FD before 5 years?,No. The 5-year Tax Saver FD has a statutory lock-in and cannot be broken until maturity. Regular FDs can be broken with a 1 percent penalty over the applicable rate.,FINANCIAL_ADVISOR,customer,fixed-deposit,2026-04-15
 How do I request a callback via Axis Phone?,"Choose the Axis Phone bubble, pick a 30-minute slot between 09:00 and 20:00 IST, confirm the callback number, and select the topic. You will get an SMS confirmation with the reference ID. Priority and Burgundy customers are called within 15 minutes of the slot.",AXIS_PHONE,customer,callback,2026-06-15
 What if I miss my scheduled Axis Phone callback?,"The system retries once automatically. If both attempts miss, the callback is flagged for supervisor review and rescheduled for the next business day.",AXIS_PHONE,customer,callback,2026-06-15
 How do I use the Conversational BI bubble?,"Choose the Conversational BI bubble and ask a natural-language question about customers, accounts, or transactions. Vartalaap generates SQL, executes it read-only against the reporting mart, and returns a formatted table.",CONVERSATIONAL_BI,analyst,text2sql,2026-07-01
 Why did Conversational BI refuse my query?,"The Text-to-SQL agent refuses queries that write data, reference tables outside the whitelist, or would return more than 5000 rows. Restrict the query, add filters, or split the analysis into steps.",CONVERSATIONAL_BI,analyst,text2sql,2026-07-01
 What is the DPDP Act?,"The Digital Personal Data Protection (DPDP) Act, 2023 governs how personal data of Indian citizens is processed. Axis Bank is a Significant Data Fiduciary and offers rights of access, correction, erasure and grievance redressal to customers.",LAW,compliance-officer,dpdp,2026-01-20
-How do I raise a data breach report?,"Any suspected personal-data breach must be reported to the Data Protection Officer within 24 hours by raising a Priority-Zero incident on Unidesk. The DPO notifies the Data Protection Board within 72 hours for notifiable breaches.",LAW,compliance-officer,dpdp,2026-01-20
-When must an STR be filed?,"A Suspicious Transaction Report must be filed with FIU-IND within 7 working days from the detection of the red flag. The FCC team owns the filing; the branch or ops team surfaces the red flag through the case management tool.",LAW,compliance-officer,aml,2026-01-20
+How do I raise a data breach report?,Any suspected personal-data breach must be reported to the Data Protection Officer within 24 hours by raising a Priority-Zero incident on Unidesk. The DPO notifies the Data Protection Board within 72 hours for notifiable breaches.,LAW,compliance-officer,dpdp,2026-01-20
+When must an STR be filed?,A Suspicious Transaction Report must be filed with FIU-IND within 7 working days from the detection of the red flag. The FCC team owns the filing; the branch or ops team surfaces the red flag through the case management tool.,LAW,compliance-officer,aml,2026-01-20
 What are the CAB blackout windows?,"No non-emergency production change is allowed during the last 5 business days of March (financial year end), the last 3 business days of September (half-year close), and RBI-mandated reporting windows.",CR,change-manager,change-management,2026-06-10
-Where do I download the FATCA / CRS self-certification form?,"Go to Download > Statutory Forms > FATCA / CRS. The form code is FATCA-CRS-01 and the latest version is dated 2026-03.",DOWNLOAD,employee,forms,2026-03-01
+Where do I download the FATCA / CRS self-certification form?,Go to Download > Statutory Forms > FATCA / CRS. The form code is FATCA-CRS-01 and the latest version is dated 2026-03.,DOWNLOAD,employee,forms,2026-03-01
 Where do I find the corporate KYC form?,"Download > Customer Journey Forms > Corporate KYC. Form code KYC-CORP-01. Requires certified copy of incorporation, PAN, beneficial ownership declaration and board resolution.",DOWNLOAD,relationship-manager,forms,2026-05-05
 How do I reset my Outlook / email password?,"Email uses the same Active Directory identity as the laptop. Use the self-service portal at https://reset.axisbank.internal after completing MFA. If Outlook shows old cached credentials, delete the profile under Control Panel > Mail > Show Profiles and add it back.",IT_HELPDESK,employee,identity,2026-08-01
 Why does my VPN keep disconnecting?,"Common causes: wrong AnyConnect group selected, expired posture certificate, or corporate network throttling. Toggle Airplane mode for 10 seconds; if the loop continues, log a P2 SR under IT Helpdesk > Connectivity > VPN.",IT_HELPDESK,employee,vpn,2026-07-11
-How is compensatory off applied?,"Employees working on declared holidays are eligible for a compensatory off within 45 days of the worked date. Comp off cannot be encashed and must be booked through the HR self-service portal.",HR,employee,leave-policy,2026-06-01
-What is the salary reimbursement window?,"Reimbursement claims must be submitted within 30 calendar days of the expense date. Claims older than 30 days require reporting manager and HRBP approval; claims older than 60 days are auto-rejected.",HR,employee,reimbursement,2026-05-05
+How is compensatory off applied?,Employees working on declared holidays are eligible for a compensatory off within 45 days of the worked date. Comp off cannot be encashed and must be booked through the HR self-service portal.,HR,employee,leave-policy,2026-06-01
+What is the salary reimbursement window?,Reimbursement claims must be submitted within 30 calendar days of the expense date. Claims older than 30 days require reporting manager and HRBP approval; claims older than 60 days are auto-rejected.,HR,employee,reimbursement,2026-05-05
 What is the eligibility for gratuity?,"Gratuity is payable after 5 years of continuous service, waived on death or permanent disability. The formula is (last drawn basic + DA) x 15 / 26 x completed years. Statutory tax-exempt cap is INR 20 lakh.",HR,employee,statutory,2026-06-01
-How does the Aha referral bonus work?,"Successful employee referrals earn 5000 Aha points once the referred employee completes 6 months of service. Points are clawed back if the referred employee exits within 6 months.",AHA,employee,aha,2026-03-01
+How does the Aha referral bonus work?,Successful employee referrals earn 5000 Aha points once the referred employee completes 6 months of service. Points are clawed back if the referred employee exits within 6 months.,AHA,employee,aha,2026-03-01
+How many days of Privileged Leave am I entitled to each year?,You are entitled to 24 working days of Privileged Leave per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Privileged Leave?,The minimum block for Privileged Leave is 3 continuous working days.,HR,employee,leave-policy,2026-04-01
+Can Privileged Leave be carried forward?,Unused Privileged Leave carries forward up to a cap of 60 days.,HR,employee,leave-policy,2026-04-01
+How do I apply for Privileged Leave?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Privileged Leave requests?,"Privileged Leave requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Privileged Leave if I resign?,"On separation, Privileged Leave is settled per the full-and-final rules; the balance carries forward up to a cap of 60 days.",HR,employee,leave-policy,2026-04-01
+How many days of Casual Leave am I entitled to each year?,You are entitled to 8 working days of Casual Leave per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Casual Leave?,The minimum block for Casual Leave is 1 working day.,HR,employee,leave-policy,2026-04-01
+Can Casual Leave be carried forward?,Unused Casual Leave cannot be carried forward.,HR,employee,leave-policy,2026-04-01
+How do I apply for Casual Leave?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Casual Leave requests?,"Casual Leave requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Casual Leave if I resign?,"On separation, Casual Leave is settled per the full-and-final rules; the balance cannot be carried forward.",HR,employee,leave-policy,2026-04-01
+How many days of Sick Leave am I entitled to each year?,You are entitled to 12 working days of Sick Leave per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Sick Leave?,The minimum block for Sick Leave is 1 working day.,HR,employee,leave-policy,2026-04-01
+Can Sick Leave be carried forward?,Unused Sick Leave carries forward up to 30 days.,HR,employee,leave-policy,2026-04-01
+How do I apply for Sick Leave?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Sick Leave requests?,"Sick Leave requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Sick Leave if I resign?,"On separation, Sick Leave is settled per the full-and-final rules; the balance carries forward up to 30 days.",HR,employee,leave-policy,2026-04-01
+How many days of Maternity Leave am I entitled to each year?,You are entitled to 26 weeks of Maternity Leave per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Maternity Leave?,The minimum block for Maternity Leave is continuous.,HR,employee,leave-policy,2026-04-01
+Can Maternity Leave be carried forward?,Unused Maternity Leave does not carry forward.,HR,employee,leave-policy,2026-04-01
+How do I apply for Maternity Leave?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Maternity Leave requests?,"Maternity Leave requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Maternity Leave if I resign?,"On separation, Maternity Leave is settled per the full-and-final rules; the balance does not carry forward.",HR,employee,leave-policy,2026-04-01
+How many days of Paternity Leave am I entitled to each year?,You are entitled to 15 working days of Paternity Leave per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Paternity Leave?,The minimum block for Paternity Leave is continuous.,HR,employee,leave-policy,2026-04-01
+Can Paternity Leave be carried forward?,Unused Paternity Leave does not carry forward.,HR,employee,leave-policy,2026-04-01
+How do I apply for Paternity Leave?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Paternity Leave requests?,"Paternity Leave requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Paternity Leave if I resign?,"On separation, Paternity Leave is settled per the full-and-final rules; the balance does not carry forward.",HR,employee,leave-policy,2026-04-01
+How many days of Adoption Leave am I entitled to each year?,You are entitled to 12 weeks of Adoption Leave per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Adoption Leave?,The minimum block for Adoption Leave is continuous.,HR,employee,leave-policy,2026-04-01
+Can Adoption Leave be carried forward?,Unused Adoption Leave does not carry forward.,HR,employee,leave-policy,2026-04-01
+How do I apply for Adoption Leave?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Adoption Leave requests?,"Adoption Leave requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Adoption Leave if I resign?,"On separation, Adoption Leave is settled per the full-and-final rules; the balance does not carry forward.",HR,employee,leave-policy,2026-04-01
+How many days of Bereavement Leave am I entitled to each year?,You are entitled to 5 working days of Bereavement Leave per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Bereavement Leave?,The minimum block for Bereavement Leave is continuous.,HR,employee,leave-policy,2026-04-01
+Can Bereavement Leave be carried forward?,Unused Bereavement Leave does not carry forward.,HR,employee,leave-policy,2026-04-01
+How do I apply for Bereavement Leave?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Bereavement Leave requests?,"Bereavement Leave requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Bereavement Leave if I resign?,"On separation, Bereavement Leave is settled per the full-and-final rules; the balance does not carry forward.",HR,employee,leave-policy,2026-04-01
+How many days of Sabbatical am I entitled to each year?,You are entitled to up to 6 months of Sabbatical per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Sabbatical?,The minimum block for Sabbatical is continuous.,HR,employee,leave-policy,2026-04-01
+Can Sabbatical be carried forward?,Unused Sabbatical does not carry forward.,HR,employee,leave-policy,2026-04-01
+How do I apply for Sabbatical?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Sabbatical requests?,"Sabbatical requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Sabbatical if I resign?,"On separation, Sabbatical is settled per the full-and-final rules; the balance does not carry forward.",HR,employee,leave-policy,2026-04-01
+How many days of Compensatory Off am I entitled to each year?,You are entitled to 1 day per approved weekend day of Compensatory Off per calendar year.,HR,employee,leave-policy,2026-04-01
+What is the minimum block for Compensatory Off?,The minimum block for Compensatory Off is a full day.,HR,employee,leave-policy,2026-04-01
+Can Compensatory Off be carried forward?,Unused Compensatory Off carries forward up to 30 days.,HR,employee,leave-policy,2026-04-01
+How do I apply for Compensatory Off?,Raise the request on the HR self-service portal with the required notice and reporting-manager approval.,HR,employee,leave-policy,2026-04-01
+Who approves Compensatory Off requests?,"Compensatory Off requests are approved by the reporting manager, with HR business partner review for long absences.",HR,employee,leave-policy,2026-04-01
+What happens to Compensatory Off if I resign?,"On separation, Compensatory Off is settled per the full-and-final rules; the balance carries forward up to 30 days.",HR,employee,leave-policy,2026-04-01
+What are the flexible working hours rules?,"For flexible working hours, the arrival window is 08:00 to 10:30 IST with a 9-hour workday and core hours of 10:30 to 16:30.",HR,employee,attendance,2026-05-01
+What is the processing time for flexible working hours?,The turnaround for flexible working hours is: set with the reporting manager.,HR,employee,attendance,2026-05-01
+Who should I contact about flexible working hours?,Contact the reporting manager for flexible working hours queries.,HR,employee,attendance,2026-05-01
+Can I request an exception to flexible working hours?,Exceptions to flexible working hours require approval from the reporting manager.,HR,employee,attendance,2026-05-01
+Where is the flexible working hours policy published?,The flexible working hours rules live in the attendance policy on the HR intranet.,HR,employee,attendance,2026-05-01
+What are the biometric attendance rules?,"For biometric attendance, swipe at entry and exit; missing swipes must be regularised.",HR,employee,attendance,2026-05-01
+What is the processing time for biometric attendance?,The turnaround for biometric attendance is: regularise within 3 working days.,HR,employee,attendance,2026-05-01
+Who should I contact about biometric attendance?,Contact the HR operations for biometric attendance queries.,HR,employee,attendance,2026-05-01
+Can I request an exception to biometric attendance?,Exceptions to biometric attendance require approval from the HR operations.,HR,employee,attendance,2026-05-01
+Where is the biometric attendance policy published?,The biometric attendance rules live in the attendance policy on the HR intranet.,HR,employee,attendance,2026-05-01
+What are the work-from-home rules?,"For work-from-home, up to 2 days per week with a standing declaration.",HR,employee,attendance,2026-05-01
+What is the processing time for work-from-home?,The turnaround for work-from-home is: register at least 24 hours in advance.,HR,employee,attendance,2026-05-01
+Who should I contact about work-from-home?,Contact the reporting manager for work-from-home queries.,HR,employee,attendance,2026-05-01
+Can I request an exception to work-from-home?,Exceptions to work-from-home require approval from the reporting manager.,HR,employee,attendance,2026-05-01
+Where is the work-from-home policy published?,The work-from-home rules live in the attendance policy on the HR intranet.,HR,employee,attendance,2026-05-01
+What are the late arrival rules?,"For late arrival, up to 3 late arrivals per month are absorbed; the 4th triggers counselling.",HR,employee,attendance,2026-05-01
+What is the processing time for late arrival?,The turnaround for late arrival is: reviewed monthly.,HR,employee,attendance,2026-05-01
+Who should I contact about late arrival?,Contact the reporting manager for late arrival queries.,HR,employee,attendance,2026-05-01
+Can I request an exception to late arrival?,Exceptions to late arrival require approval from the reporting manager.,HR,employee,attendance,2026-05-01
+Where is the late arrival policy published?,The late arrival rules live in the attendance policy on the HR intranet.,HR,employee,attendance,2026-05-01
+What are the night shift rules?,"For night shift, shifts after 20:00 attract shift allowance and transport.",HR,employee,attendance,2026-05-01
+What is the processing time for night shift?,The turnaround for night shift is: roster published by the 20th of the prior month.,HR,employee,attendance,2026-05-01
+Who should I contact about night shift?,Contact the workforce management for night shift queries.,HR,employee,attendance,2026-05-01
+Can I request an exception to night shift?,Exceptions to night shift require approval from the workforce management.,HR,employee,attendance,2026-05-01
+Where is the night shift policy published?,The night shift rules live in the attendance policy on the HR intranet.,HR,employee,attendance,2026-05-01
+What are the attendance correction rules?,"For attendance correction, use HR-ATT-01 to correct any discrepancy.",HR,employee,attendance,2026-05-01
+What is the processing time for attendance correction?,The turnaround for attendance correction is: processed within 5 working days.,HR,employee,attendance,2026-05-01
+Who should I contact about attendance correction?,Contact the HR operations for attendance correction queries.,HR,employee,attendance,2026-05-01
+Can I request an exception to attendance correction?,Exceptions to attendance correction require approval from the HR operations.,HR,employee,attendance,2026-05-01
+Where is the attendance correction policy published?,The attendance correction rules live in the attendance policy on the HR intranet.,HR,employee,attendance,2026-05-01
+How much can I claim under mobile bill reimbursement?,"The limit for mobile bill reimbursement is INR 1,500 per month.",HR,employee,reimbursements,2026-05-15
+How often can I claim mobile bill reimbursement?,"Claims for mobile bill reimbursement run monthly, by the 5th.",HR,employee,reimbursements,2026-05-15
+What documents are needed for mobile bill reimbursement?,Attach the phone bill in the employee's name to the claim.,HR,employee,reimbursements,2026-05-15
+How do I submit a mobile bill reimbursement claim?,Use HR-REIMB-01 on the HR portal with the phone bill in the employee's name attached.,HR,employee,reimbursements,2026-05-15
+What happens if my mobile bill reimbursement claim is rejected?,Rejections state the reason; correct and resubmit within 10 working days.,HR,employee,reimbursements,2026-05-15
+How much can I claim under fuel reimbursement?,The limit for fuel reimbursement is approved per-kilometre rates.,HR,employee,reimbursements,2026-05-15
+How often can I claim fuel reimbursement?,"Claims for fuel reimbursement run monthly, with the log sheet.",HR,employee,reimbursements,2026-05-15
+What documents are needed for fuel reimbursement?,Attach the fuel log and receipts to the claim.,HR,employee,reimbursements,2026-05-15
+How do I submit a fuel reimbursement claim?,Use HR-REIMB-01 on the HR portal with the fuel log and receipts attached.,HR,employee,reimbursements,2026-05-15
+What happens if my fuel reimbursement claim is rejected?,Rejections state the reason; correct and resubmit within 10 working days.,HR,employee,reimbursements,2026-05-15
+How much can I claim under relocation reimbursement?,The limit for relocation reimbursement is per the relocation schedule.,HR,employee,reimbursements,2026-05-15
+How often can I claim relocation reimbursement?,"Claims for relocation reimbursement run one-time, within 60 days of the move.",HR,employee,reimbursements,2026-05-15
+What documents are needed for relocation reimbursement?,Attach invoices and the transfer letter to the claim.,HR,employee,reimbursements,2026-05-15
+How do I submit a relocation reimbursement claim?,Use HR-REIMB-01 on the HR portal with invoices and the transfer letter attached.,HR,employee,reimbursements,2026-05-15
+What happens if my relocation reimbursement claim is rejected?,Rejections state the reason; correct and resubmit within 10 working days.,HR,employee,reimbursements,2026-05-15
+How much can I claim under late-shift meal reimbursement?,The limit for late-shift meal reimbursement is INR 300 per shift.,HR,employee,reimbursements,2026-05-15
+How often can I claim late-shift meal reimbursement?,Claims for late-shift meal reimbursement run weekly.,HR,employee,reimbursements,2026-05-15
+What documents are needed for late-shift meal reimbursement?,Attach the shift roster extract to the claim.,HR,employee,reimbursements,2026-05-15
+How do I submit a late-shift meal reimbursement claim?,Use HR-REIMB-01 on the HR portal with the shift roster extract attached.,HR,employee,reimbursements,2026-05-15
+What happens if my late-shift meal reimbursement claim is rejected?,Rejections state the reason; correct and resubmit within 10 working days.,HR,employee,reimbursements,2026-05-15
+How much can I claim under professional membership reimbursement?,The limit for professional membership reimbursement is one membership per year.,HR,employee,reimbursements,2026-05-15
+How often can I claim professional membership reimbursement?,Claims for professional membership reimbursement run annual.,HR,employee,reimbursements,2026-05-15
+What documents are needed for professional membership reimbursement?,Attach the membership invoice to the claim.,HR,employee,reimbursements,2026-05-15
+How do I submit a professional membership reimbursement claim?,Use HR-REIMB-01 on the HR portal with the membership invoice attached.,HR,employee,reimbursements,2026-05-15
+What happens if my professional membership reimbursement claim is rejected?,Rejections state the reason; correct and resubmit within 10 working days.,HR,employee,reimbursements,2026-05-15
+How much can I claim under books and learning reimbursement?,"The limit for books and learning reimbursement is INR 5,000 per year.",HR,employee,reimbursements,2026-05-15
+How often can I claim books and learning reimbursement?,Claims for books and learning reimbursement run quarterly.,HR,employee,reimbursements,2026-05-15
+What documents are needed for books and learning reimbursement?,Attach the purchase receipt to the claim.,HR,employee,reimbursements,2026-05-15
+How do I submit a books and learning reimbursement claim?,Use HR-REIMB-01 on the HR portal with the purchase receipt attached.,HR,employee,reimbursements,2026-05-15
+What happens if my books and learning reimbursement claim is rejected?,Rejections state the reason; correct and resubmit within 10 working days.,HR,employee,reimbursements,2026-05-15
+How does salary credit work?,"For salary credit: salary credits on the 25th of every month, or the next working day if the 25th is a holiday.",HR,employee,payroll,2026-06-01
+Where can I verify salary credit?,Check the HR portal under Pay & Benefits; supporting details appear on the payslip.,HR,employee,payroll,2026-06-01
+Who should I contact about salary credit?,Use the payroll helpdesk in the HR portal; the SLA is 2 business days.,HR,employee,payroll,2026-06-01
+What should I do if salary credit looks incorrect?,Raise a discrepancy ticket with the payslip copy; corrections apply in the next cycle.,HR,employee,payroll,2026-06-01
+How does payslip access work?,For payslip access: payslips publish on the HR portal two days before salary credit.,HR,employee,payroll,2026-06-01
+Where can I verify payslip access?,Check the HR portal under Pay & Benefits; supporting details appear on the payslip.,HR,employee,payroll,2026-06-01
+Who should I contact about payslip access?,Use the payroll helpdesk in the HR portal; the SLA is 2 business days.,HR,employee,payroll,2026-06-01
+What should I do if payslip access looks incorrect?,Raise a discrepancy ticket with the payslip copy; corrections apply in the next cycle.,HR,employee,payroll,2026-06-01
+How does TDS declaration work?,For TDS declaration: submit investment declarations by 15 June and proof documents by 15 January.,HR,employee,payroll,2026-06-01
+Where can I verify TDS declaration?,Check the HR portal under Pay & Benefits; supporting details appear on the payslip.,HR,employee,payroll,2026-06-01
+Who should I contact about TDS declaration?,Use the payroll helpdesk in the HR portal; the SLA is 2 business days.,HR,employee,payroll,2026-06-01
+What should I do if TDS declaration looks incorrect?,Raise a discrepancy ticket with the payslip copy; corrections apply in the next cycle.,HR,employee,payroll,2026-06-01
+How does PF contribution work?,For PF contribution: 12 percent of basic pay is contributed by both employer and employee; the UAN is on the payslip.,HR,employee,payroll,2026-06-01
+Where can I verify PF contribution?,Check the HR portal under Pay & Benefits; supporting details appear on the payslip.,HR,employee,payroll,2026-06-01
+Who should I contact about PF contribution?,Use the payroll helpdesk in the HR portal; the SLA is 2 business days.,HR,employee,payroll,2026-06-01
+What should I do if PF contribution looks incorrect?,Raise a discrepancy ticket with the payslip copy; corrections apply in the next cycle.,HR,employee,payroll,2026-06-01
+How does leave encashment work?,For leave encashment: encashable leave pays with the March salary up to the policy cap.,HR,employee,payroll,2026-06-01
+Where can I verify leave encashment?,Check the HR portal under Pay & Benefits; supporting details appear on the payslip.,HR,employee,payroll,2026-06-01
+Who should I contact about leave encashment?,Use the payroll helpdesk in the HR portal; the SLA is 2 business days.,HR,employee,payroll,2026-06-01
+What should I do if leave encashment looks incorrect?,Raise a discrepancy ticket with the payslip copy; corrections apply in the next cycle.,HR,employee,payroll,2026-06-01
+How does salary account change work?,For salary account change: update the new account on the HR portal before the 15th of the month.,HR,employee,payroll,2026-06-01
+Where can I verify salary account change?,Check the HR portal under Pay & Benefits; supporting details appear on the payslip.,HR,employee,payroll,2026-06-01
+Who should I contact about salary account change?,Use the payroll helpdesk in the HR portal; the SLA is 2 business days.,HR,employee,payroll,2026-06-01
+What should I do if salary account change looks incorrect?,Raise a discrepancy ticket with the payslip copy; corrections apply in the next cycle.,HR,employee,payroll,2026-06-01
+What is Group medical cover?,"Group medical cover gives cashless hospitalisation cover for the employee, spouse, two children and parents up to the sum insured.",HR,employee,benefits,2026-06-10
+How do I enrol in Group medical cover?,"Enrol during the benefits window each November, or raise a life-event request on the HR portal.",HR,employee,benefits,2026-06-10
+When does my Group medical cover cover start?,"Cover starts the first day of the month after enrolment, unless a life event applies.",HR,employee,benefits,2026-06-10
+Who manages Group medical cover queries?,The benefits helpdesk in the HR portal responds within 2 business days.,HR,employee,benefits,2026-06-10
+What is Group term life?,"Group term life gives life cover equal to a multiple of annual base salary, with mandatory nomination.",HR,employee,benefits,2026-06-10
+How do I enrol in Group term life?,"Enrol during the benefits window each November, or raise a life-event request on the HR portal.",HR,employee,benefits,2026-06-10
+When does my Group term life cover start?,"Cover starts the first day of the month after enrolment, unless a life event applies.",HR,employee,benefits,2026-06-10
+Who manages Group term life queries?,The benefits helpdesk in the HR portal responds within 2 business days.,HR,employee,benefits,2026-06-10
+What is Parental insurance top-up?,Parental insurance top-up is a voluntary parental cover funded through monthly salary deductions.,HR,employee,benefits,2026-06-10
+How do I enrol in Parental insurance top-up?,"Enrol during the benefits window each November, or raise a life-event request on the HR portal.",HR,employee,benefits,2026-06-10
+When does my Parental insurance top-up cover start?,"Cover starts the first day of the month after enrolment, unless a life event applies.",HR,employee,benefits,2026-06-10
+Who manages Parental insurance top-up queries?,The benefits helpdesk in the HR portal responds within 2 business days.,HR,employee,benefits,2026-06-10
+What is Corporate NPS?,Corporate NPS is the voluntary corporate National Pension System with an employer-contribution option.,HR,employee,benefits,2026-06-10
+How do I enrol in Corporate NPS?,"Enrol during the benefits window each November, or raise a life-event request on the HR portal.",HR,employee,benefits,2026-06-10
+When does my Corporate NPS cover start?,"Cover starts the first day of the month after enrolment, unless a life event applies.",HR,employee,benefits,2026-06-10
+Who manages Corporate NPS queries?,The benefits helpdesk in the HR portal responds within 2 business days.,HR,employee,benefits,2026-06-10
+What is Employee Assistance Programme?,Employee Assistance Programme offers confidential 24x7 counselling for employees and their families.,HR,employee,benefits,2026-06-10
+How do I enrol in Employee Assistance Programme?,"Enrol during the benefits window each November, or raise a life-event request on the HR portal.",HR,employee,benefits,2026-06-10
+When does my Employee Assistance Programme cover start?,"Cover starts the first day of the month after enrolment, unless a life event applies.",HR,employee,benefits,2026-06-10
+Who manages Employee Assistance Programme queries?,The benefits helpdesk in the HR portal responds within 2 business days.,HR,employee,benefits,2026-06-10
+What is Wellness benefit?,"Wellness benefit is an annual allowance for fitness or health programmes, claimed with receipts.",HR,employee,benefits,2026-06-10
+How do I enrol in Wellness benefit?,"Enrol during the benefits window each November, or raise a life-event request on the HR portal.",HR,employee,benefits,2026-06-10
+When does my Wellness benefit cover start?,"Cover starts the first day of the month after enrolment, unless a life event applies.",HR,employee,benefits,2026-06-10
+Who manages Wellness benefit queries?,The benefits helpdesk in the HR portal responds within 2 business days.,HR,employee,benefits,2026-06-10
+How does the internal job posting process work?,For the internal job posting process: IJPs publish on the careers portal; apply within 14 days with manager acknowledgement.,HR,employee,career,2026-07-01
+Who can apply for internal job posting?,Employees meeting the eligibility criteria in the policy; check the posting for specifics.,HR,employee,career,2026-07-01
+What is the approval flow for internal job posting?,Apply through the HR portal with manager approval; the HR business partner coordinates.,HR,employee,career,2026-07-01
+Can I appeal a internal job posting decision?,"Yes, raise an appeal within 10 working days to the next-level manager and HRBP.",HR,employee,career,2026-07-01
+How does the job rotation process work?,For the job rotation process: rotations run 6 months; eligibility requires at least 18 months in the current role.,HR,employee,career,2026-07-01
+Who can apply for job rotation?,Employees meeting the eligibility criteria in the policy; check the posting for specifics.,HR,employee,career,2026-07-01
+What is the approval flow for job rotation?,Apply through the HR portal with manager approval; the HR business partner coordinates.,HR,employee,career,2026-07-01
+Can I appeal a job rotation decision?,"Yes, raise an appeal within 10 working days to the next-level manager and HRBP.",HR,employee,career,2026-07-01
+How does the promotion review process work?,"For the promotion review process: promotions are reviewed in March-April against performance, tenure and panel feedback.",HR,employee,career,2026-07-01
+Who can apply for promotion review?,Employees meeting the eligibility criteria in the policy; check the posting for specifics.,HR,employee,career,2026-07-01
+What is the approval flow for promotion review?,Apply through the HR portal with manager approval; the HR business partner coordinates.,HR,employee,career,2026-07-01
+Can I appeal a promotion review decision?,"Yes, raise an appeal within 10 working days to the next-level manager and HRBP.",HR,employee,career,2026-07-01
+How does the performance improvement plan process work?,For the performance improvement plan process: a PIP runs 60 days with weekly check-ins and defined milestones.,HR,employee,career,2026-07-01
+Who can apply for performance improvement plan?,Employees meeting the eligibility criteria in the policy; check the posting for specifics.,HR,employee,career,2026-07-01
+What is the approval flow for performance improvement plan?,Apply through the HR portal with manager approval; the HR business partner coordinates.,HR,employee,career,2026-07-01
+Can I appeal a performance improvement plan decision?,"Yes, raise an appeal within 10 working days to the next-level manager and HRBP.",HR,employee,career,2026-07-01
+How does the secondment process work?,For the secondment process: secondments of up to 12 months need business-head and HR approval.,HR,employee,career,2026-07-01
+Who can apply for secondment?,Employees meeting the eligibility criteria in the policy; check the posting for specifics.,HR,employee,career,2026-07-01
+What is the approval flow for secondment?,Apply through the HR portal with manager approval; the HR business partner coordinates.,HR,employee,career,2026-07-01
+Can I appeal a secondment decision?,"Yes, raise an appeal within 10 working days to the next-level manager and HRBP.",HR,employee,career,2026-07-01
+How does the internal certification process work?,"For the internal certification process: approved certifications reimburse up to INR 25,000 with a one-year service commitment.",HR,employee,career,2026-07-01
+Who can apply for internal certification?,Employees meeting the eligibility criteria in the policy; check the posting for specifics.,HR,employee,career,2026-07-01
+What is the approval flow for internal certification?,Apply through the HR portal with manager approval; the HR business partner coordinates.,HR,employee,career,2026-07-01
+Can I appeal a internal certification decision?,"Yes, raise an appeal within 10 working days to the next-level manager and HRBP.",HR,employee,career,2026-07-01
+How do I handle a password reset?,"For password reset: use the self-service portal with MFA; passwords need 12 characters with upper, digit and symbol.",IT_HELPDESK,employee,identity,2026-08-01
+What is the turnaround for password reset?,The turnaround for password reset is immediate via self-service.,IT_HELPDESK,employee,identity,2026-08-01
+Who can help with password reset?,Raise a Unidesk ticket under IT Helpdesk > Identity with your employee ID.,IT_HELPDESK,employee,identity,2026-08-01
+What if self-service password reset fails?,Call the IT helpdesk and verify identity with employee ID and manager approval.,IT_HELPDESK,employee,identity,2026-08-01
+Is manager approval needed for password reset?,Self-service password reset needs no approval; manual cases require manager sign-off.,IT_HELPDESK,employee,identity,2026-08-01
+How do I handle a account unlock?,For account unlock: accounts unlock automatically after 30 minutes; call the helpdesk for urgent access.,IT_HELPDESK,employee,identity,2026-08-01
+What is the turnaround for account unlock?,The turnaround for account unlock is 30 minutes.,IT_HELPDESK,employee,identity,2026-08-01
+Who can help with account unlock?,Raise a Unidesk ticket under IT Helpdesk > Identity with your employee ID.,IT_HELPDESK,employee,identity,2026-08-01
+What if self-service account unlock fails?,Call the IT helpdesk and verify identity with employee ID and manager approval.,IT_HELPDESK,employee,identity,2026-08-01
+Is manager approval needed for account unlock?,Self-service account unlock needs no approval; manual cases require manager sign-off.,IT_HELPDESK,employee,identity,2026-08-01
+How do I handle a MFA enrolment?,For MFA enrolment: enrol the authenticator app during onboarding; changing devices needs helpdesk verification.,IT_HELPDESK,employee,identity,2026-08-01
+What is the turnaround for MFA enrolment?,The turnaround for MFA enrolment is same business day.,IT_HELPDESK,employee,identity,2026-08-01
+Who can help with MFA enrolment?,Raise a Unidesk ticket under IT Helpdesk > Identity with your employee ID.,IT_HELPDESK,employee,identity,2026-08-01
+What if self-service MFA enrolment fails?,Call the IT helpdesk and verify identity with employee ID and manager approval.,IT_HELPDESK,employee,identity,2026-08-01
+Is manager approval needed for MFA enrolment?,Self-service MFA enrolment needs no approval; manual cases require manager sign-off.,IT_HELPDESK,employee,identity,2026-08-01
+How do I handle a single sign-on?,For single sign-on: internal applications sign in with corporate credentials; unsupported apps need an SSO onboarding request.,IT_HELPDESK,employee,identity,2026-08-01
+What is the turnaround for single sign-on?,The turnaround for single sign-on is 5 business days.,IT_HELPDESK,employee,identity,2026-08-01
+Who can help with single sign-on?,Raise a Unidesk ticket under IT Helpdesk > Identity with your employee ID.,IT_HELPDESK,employee,identity,2026-08-01
+What if self-service single sign-on fails?,Call the IT helpdesk and verify identity with employee ID and manager approval.,IT_HELPDESK,employee,identity,2026-08-01
+Is manager approval needed for single sign-on?,Self-service single sign-on needs no approval; manual cases require manager sign-off.,IT_HELPDESK,employee,identity,2026-08-01
+How do I handle a leaver access removal?,For leaver access removal: access is revoked at end-of-day on the last working day; managers confirm the exit date.,IT_HELPDESK,employee,identity,2026-08-01
+What is the turnaround for leaver access removal?,The turnaround for leaver access removal is end of last working day.,IT_HELPDESK,employee,identity,2026-08-01
+Who can help with leaver access removal?,Raise a Unidesk ticket under IT Helpdesk > Identity with your employee ID.,IT_HELPDESK,employee,identity,2026-08-01
+What if self-service leaver access removal fails?,Call the IT helpdesk and verify identity with employee ID and manager approval.,IT_HELPDESK,employee,identity,2026-08-01
+Is manager approval needed for leaver access removal?,Self-service leaver access removal needs no approval; manual cases require manager sign-off.,IT_HELPDESK,employee,identity,2026-08-01
+How do I handle a name change?,For name change: update the record through HR first; IT syncs the display name and email within 48 hours.,IT_HELPDESK,employee,identity,2026-08-01
+What is the turnaround for name change?,The turnaround for name change is 48 hours.,IT_HELPDESK,employee,identity,2026-08-01
+Who can help with name change?,Raise a Unidesk ticket under IT Helpdesk > Identity with your employee ID.,IT_HELPDESK,employee,identity,2026-08-01
+What if self-service name change fails?,Call the IT helpdesk and verify identity with employee ID and manager approval.,IT_HELPDESK,employee,identity,2026-08-01
+Is manager approval needed for name change?,Self-service name change needs no approval; manual cases require manager sign-off.,IT_HELPDESK,employee,identity,2026-08-01
+How do I report a laptop issue?,Log a Unidesk ticket under IT Helpdesk > Hardware with the asset tag and a description.,IT_HELPDESK,employee,hardware,2026-08-05
+What is the SLA for laptop issues?,"The SLA for laptop issues is same-day triage, repair or replacement within 3 business days.",IT_HELPDESK,employee,hardware,2026-08-05
+What should I know before raising a laptop ticket?,Before raising a laptop ticket: back up your files before handing the device over.,IT_HELPDESK,employee,hardware,2026-08-05
+Will I get a loaner laptop?,Loaners are available for critical roles while the device is under repair.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I track my laptop ticket?,Track it in Unidesk; escalate to the desk lead if the SLA breaches.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I report a desktop issue?,Log a Unidesk ticket under IT Helpdesk > Hardware with the asset tag and a description.,IT_HELPDESK,employee,hardware,2026-08-05
+What is the SLA for desktop issues?,The SLA for desktop issues is next-business-day visit for office locations.,IT_HELPDESK,employee,hardware,2026-08-05
+What should I know before raising a desktop ticket?,Before raising a desktop ticket: monitors and peripherals are covered under facilities.,IT_HELPDESK,employee,hardware,2026-08-05
+Will I get a loaner desktop?,Loaners are available for critical roles while the device is under repair.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I track my desktop ticket?,Track it in Unidesk; escalate to the desk lead if the SLA breaches.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I report a monitor issue?,Log a Unidesk ticket under IT Helpdesk > Hardware with the asset tag and a description.,IT_HELPDESK,employee,hardware,2026-08-05
+What is the SLA for monitor issues?,The SLA for monitor issues is replacement within 2 business days from stock.,IT_HELPDESK,employee,hardware,2026-08-05
+What should I know before raising a monitor ticket?,Before raising a monitor ticket: raise the request with the asset tag.,IT_HELPDESK,employee,hardware,2026-08-05
+Will I get a loaner monitor?,Loaners are available for critical roles while the device is under repair.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I track my monitor ticket?,Track it in Unidesk; escalate to the desk lead if the SLA breaches.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I report a docking station issue?,Log a Unidesk ticket under IT Helpdesk > Hardware with the asset tag and a description.,IT_HELPDESK,employee,hardware,2026-08-05
+What is the SLA for docking station issues?,The SLA for docking station issues is replacement within 2 business days.,IT_HELPDESK,employee,hardware,2026-08-05
+What should I know before raising a docking station ticket?,Before raising a docking station ticket: report the model name in the ticket.,IT_HELPDESK,employee,hardware,2026-08-05
+Will I get a loaner docking station?,Loaners are available for critical roles while the device is under repair.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I track my docking station ticket?,Track it in Unidesk; escalate to the desk lead if the SLA breaches.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I report a headset issue?,Log a Unidesk ticket under IT Helpdesk > Hardware with the asset tag and a description.,IT_HELPDESK,employee,hardware,2026-08-05
+What is the SLA for headset issues?,The SLA for headset issues is immediate swap at the IT counter for contact-centre staff.,IT_HELPDESK,employee,hardware,2026-08-05
+What should I know before raising a headset ticket?,"Before raising a headset ticket: walk-in counter, no ticket needed.",IT_HELPDESK,employee,hardware,2026-08-05
+Will I get a loaner headset?,Loaners are available for critical roles while the device is under repair.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I track my headset ticket?,Track it in Unidesk; escalate to the desk lead if the SLA breaches.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I report a printer issue?,Log a Unidesk ticket under IT Helpdesk > Hardware with the asset tag and a description.,IT_HELPDESK,employee,hardware,2026-08-05
+What is the SLA for printer issues?,The SLA for printer issues is attended within 4 business hours for branches.,IT_HELPDESK,employee,hardware,2026-08-05
+What should I know before raising a printer ticket?,Before raising a printer ticket: quote the printer asset tag.,IT_HELPDESK,employee,hardware,2026-08-05
+Will I get a loaner printer?,Loaners are available for critical roles while the device is under repair.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I track my printer ticket?,Track it in Unidesk; escalate to the desk lead if the SLA breaches.,IT_HELPDESK,employee,hardware,2026-08-05
+How do I get approved software?,To get approved software: install from the self-service software centre; no ticket is needed.,IT_HELPDESK,employee,software,2026-08-10
+What is the approval flow for approved software?,"Reporting manager first, then InfoSec; licences are procured by IT.",IT_HELPDESK,employee,software,2026-08-10
+How long does a approved software request take?,Standard requests complete within 3 business days; procurements can take 10 business days.,IT_HELPDESK,employee,software,2026-08-10
+What if my approved software request is rejected?,The rejection notes the reason; address it and resubmit.,IT_HELPDESK,employee,software,2026-08-10
+How do I get new software request?,To get new software request: raise IT-SW-01 with business justification; InfoSec reviews and the licence is procured.,IT_HELPDESK,employee,software,2026-08-10
+What is the approval flow for new software request?,"Reporting manager first, then InfoSec; licences are procured by IT.",IT_HELPDESK,employee,software,2026-08-10
+How long does a new software request request take?,Standard requests complete within 3 business days; procurements can take 10 business days.,IT_HELPDESK,employee,software,2026-08-10
+What if my new software request request is rejected?,The rejection notes the reason; address it and resubmit.,IT_HELPDESK,employee,software,2026-08-10
+How do I get licence management?,To get licence management: licences are tracked centrally; unused licences are reclaimed after 90 days of non-use.,IT_HELPDESK,employee,software,2026-08-10
+What is the approval flow for licence management?,"Reporting manager first, then InfoSec; licences are procured by IT.",IT_HELPDESK,employee,software,2026-08-10
+How long does a licence management request take?,Standard requests complete within 3 business days; procurements can take 10 business days.,IT_HELPDESK,employee,software,2026-08-10
+What if my licence management request is rejected?,The rejection notes the reason; address it and resubmit.,IT_HELPDESK,employee,software,2026-08-10
+How do I get version upgrades?,To get version upgrades: upgrades are pushed remotely with 48 hours notice; unsupported versions are blocked.,IT_HELPDESK,employee,software,2026-08-10
+What is the approval flow for version upgrades?,"Reporting manager first, then InfoSec; licences are procured by IT.",IT_HELPDESK,employee,software,2026-08-10
+How long does a version upgrades request take?,Standard requests complete within 3 business days; procurements can take 10 business days.,IT_HELPDESK,employee,software,2026-08-10
+What if my version upgrades request is rejected?,The rejection notes the reason; address it and resubmit.,IT_HELPDESK,employee,software,2026-08-10
+How do I get software removal?,To get software removal: raise a ticket for removal; data is backed up before the uninstall.,IT_HELPDESK,employee,software,2026-08-10
+What is the approval flow for software removal?,"Reporting manager first, then InfoSec; licences are procured by IT.",IT_HELPDESK,employee,software,2026-08-10
+How long does a software removal request take?,Standard requests complete within 3 business days; procurements can take 10 business days.,IT_HELPDESK,employee,software,2026-08-10
+What if my software removal request is rejected?,The rejection notes the reason; address it and resubmit.,IT_HELPDESK,employee,software,2026-08-10
+How do I get open-source tools?,To get open-source tools: open-source tools need a security scan before approval; approval is valid for one year.,IT_HELPDESK,employee,software,2026-08-10
+What is the approval flow for open-source tools?,"Reporting manager first, then InfoSec; licences are procured by IT.",IT_HELPDESK,employee,software,2026-08-10
+How long does a open-source tools request take?,Standard requests complete within 3 business days; procurements can take 10 business days.,IT_HELPDESK,employee,software,2026-08-10
+What if my open-source tools request is rejected?,The rejection notes the reason; address it and resubmit.,IT_HELPDESK,employee,software,2026-08-10
+How do I use VPN access?,To use VPN access: approved roles get VPN after manager and InfoSec approval; use the managed device only.,IT_HELPDESK,employee,connectivity,2026-08-15
+What approval is needed for VPN access?,Manager approval plus InfoSec for access to internal systems.,IT_HELPDESK,employee,connectivity,2026-08-15
+What do I do when VPN access is down?,Retry after reconnecting; raise a P2 incident with the error code if it persists.,IT_HELPDESK,employee,connectivity,2026-08-15
+Is VPN access available on personal devices?,"No, VPN access is limited to bank-managed devices.",IT_HELPDESK,employee,connectivity,2026-08-15
+How do I use office Wi-Fi?,To use office Wi-Fi: connect with corporate credentials on the staff SSID; the guest SSID is for visitors.,IT_HELPDESK,employee,connectivity,2026-08-15
+What approval is needed for office Wi-Fi?,Manager approval plus InfoSec for access to internal systems.,IT_HELPDESK,employee,connectivity,2026-08-15
+What do I do when office Wi-Fi is down?,Retry after reconnecting; raise a P2 incident with the error code if it persists.,IT_HELPDESK,employee,connectivity,2026-08-15
+Is office Wi-Fi available on personal devices?,"No, office Wi-Fi is limited to bank-managed devices.",IT_HELPDESK,employee,connectivity,2026-08-15
+How do I use remote desktop?,To use remote desktop: remote desktop into office machines is enabled for approved roles via the corporate tool.,IT_HELPDESK,employee,connectivity,2026-08-15
+What approval is needed for remote desktop?,Manager approval plus InfoSec for access to internal systems.,IT_HELPDESK,employee,connectivity,2026-08-15
+What do I do when remote desktop is down?,Retry after reconnecting; raise a P2 incident with the error code if it persists.,IT_HELPDESK,employee,connectivity,2026-08-15
+Is remote desktop available on personal devices?,"No, remote desktop is limited to bank-managed devices.",IT_HELPDESK,employee,connectivity,2026-08-15
+How do I use branch connectivity?,To use branch connectivity: branch links are monitored; outages raise P2 incidents automatically.,IT_HELPDESK,employee,connectivity,2026-08-15
+What approval is needed for branch connectivity?,Manager approval plus InfoSec for access to internal systems.,IT_HELPDESK,employee,connectivity,2026-08-15
+What do I do when branch connectivity is down?,Retry after reconnecting; raise a P2 incident with the error code if it persists.,IT_HELPDESK,employee,connectivity,2026-08-15
+Is branch connectivity available on personal devices?,"No, branch connectivity is limited to bank-managed devices.",IT_HELPDESK,employee,connectivity,2026-08-15
+How do I use hotspot tethering?,To use hotspot tethering: mobile hotspot use is permitted only when VPN and corporate Wi-Fi are unavailable.,IT_HELPDESK,employee,connectivity,2026-08-15
+What approval is needed for hotspot tethering?,Manager approval plus InfoSec for access to internal systems.,IT_HELPDESK,employee,connectivity,2026-08-15
+What do I do when hotspot tethering is down?,Retry after reconnecting; raise a P2 incident with the error code if it persists.,IT_HELPDESK,employee,connectivity,2026-08-15
+Is hotspot tethering available on personal devices?,"No, hotspot tethering is limited to bank-managed devices.",IT_HELPDESK,employee,connectivity,2026-08-15
+How do I use guest network?,To use guest network: visitors receive a time-bound code from the front desk; the network has internet only.,IT_HELPDESK,employee,connectivity,2026-08-15
+What approval is needed for guest network?,Manager approval plus InfoSec for access to internal systems.,IT_HELPDESK,employee,connectivity,2026-08-15
+What do I do when guest network is down?,Retry after reconnecting; raise a P2 incident with the error code if it persists.,IT_HELPDESK,employee,connectivity,2026-08-15
+Is guest network available on personal devices?,"No, guest network is limited to bank-managed devices.",IT_HELPDESK,employee,connectivity,2026-08-15
+What is the policy for Teams?,The Teams policy: create teams per project or department with a named owner; use groups for permissions.,IT_HELPDESK,employee,collaboration,2026-08-20
+How do I request a new Teams?,"Raise a Unidesk request with the owner, purpose and member list.",IT_HELPDESK,employee,collaboration,2026-08-20
+Who manages Teams?,Each Teams has a named owner; the Collaboration Services team administers.,IT_HELPDESK,employee,collaboration,2026-08-20
+What happens to inactive Teams?,Inactive resources are archived after 180 days with a 30-day owner notice.,IT_HELPDESK,employee,collaboration,2026-08-20
+What is the policy for SharePoint?,The SharePoint policy: team sites are for shared documents; labels enforce sharing rules.,IT_HELPDESK,employee,collaboration,2026-08-20
+How do I request a new SharePoint?,"Raise a Unidesk request with the owner, purpose and member list.",IT_HELPDESK,employee,collaboration,2026-08-20
+Who manages SharePoint?,Each SharePoint has a named owner; the Collaboration Services team administers.,IT_HELPDESK,employee,collaboration,2026-08-20
+What happens to inactive SharePoint?,Inactive resources are archived after 180 days with a 30-day owner notice.,IT_HELPDESK,employee,collaboration,2026-08-20
+What is the policy for OneDrive?,The OneDrive policy: personal work storage with known-folder backup; team files belong in Teams.,IT_HELPDESK,employee,collaboration,2026-08-20
+How do I request a new OneDrive?,"Raise a Unidesk request with the owner, purpose and member list.",IT_HELPDESK,employee,collaboration,2026-08-20
+Who manages OneDrive?,Each OneDrive has a named owner; the Collaboration Services team administers.,IT_HELPDESK,employee,collaboration,2026-08-20
+What happens to inactive OneDrive?,Inactive resources are archived after 180 days with a 30-day owner notice.,IT_HELPDESK,employee,collaboration,2026-08-20
+What is the policy for shared mailbox?,The shared mailbox policy: request via Unidesk with an owner and members; ownership is reviewed quarterly.,IT_HELPDESK,employee,collaboration,2026-08-20
+How do I request a new shared mailbox?,"Raise a Unidesk request with the owner, purpose and member list.",IT_HELPDESK,employee,collaboration,2026-08-20
+Who manages shared mailbox?,Each shared mailbox has a named owner; the Collaboration Services team administers.,IT_HELPDESK,employee,collaboration,2026-08-20
+What happens to inactive shared mailbox?,Inactive resources are archived after 180 days with a 30-day owner notice.,IT_HELPDESK,employee,collaboration,2026-08-20
+What is the policy for distribution list?,The distribution list policy: request DLs with an owner; membership reviews happen quarterly.,IT_HELPDESK,employee,collaboration,2026-08-20
+How do I request a new distribution list?,"Raise a Unidesk request with the owner, purpose and member list.",IT_HELPDESK,employee,collaboration,2026-08-20
+Who manages distribution list?,Each distribution list has a named owner; the Collaboration Services team administers.,IT_HELPDESK,employee,collaboration,2026-08-20
+What happens to inactive distribution list?,Inactive resources are archived after 180 days with a 30-day owner notice.,IT_HELPDESK,employee,collaboration,2026-08-20
+What is the policy for mailbox quota?,The mailbox quota policy: archive or delete mail above the default quota; sending blocks at 100 percent.,IT_HELPDESK,employee,collaboration,2026-08-20
+How do I request a new mailbox quota?,"Raise a Unidesk request with the owner, purpose and member list.",IT_HELPDESK,employee,collaboration,2026-08-20
+Who manages mailbox quota?,Each mailbox quota has a named owner; the Collaboration Services team administers.,IT_HELPDESK,employee,collaboration,2026-08-20
+What happens to inactive mailbox quota?,Inactive resources are archived after 180 days with a 30-day owner notice.,IT_HELPDESK,employee,collaboration,2026-08-20
+What do I do about a phishing email?,For a phishing email: use the report button in the mail client; do not click links or attachments.,IT_HELPDESK,employee,security,2026-08-25
+How quickly must I report a phishing email?,Report immediately; some reports carry a 24-hour policy or statutory window.,IT_HELPDESK,employee,security,2026-08-25
+Who do I contact for a phishing email?,"The security operations centre hotline, available 24x7.",IT_HELPDESK,employee,security,2026-08-25
+What happens after I report a phishing email?,"Security investigates, guides remediation and may involve HR or regulators.",IT_HELPDESK,employee,security,2026-08-25
+What do I do about a lost device?,For a lost device: report within 24 hours; IT wipes the device remotely.,IT_HELPDESK,employee,security,2026-08-25
+How quickly must I report a lost device?,Report immediately; some reports carry a 24-hour policy or statutory window.,IT_HELPDESK,employee,security,2026-08-25
+Who do I contact for a lost device?,"The security operations centre hotline, available 24x7.",IT_HELPDESK,employee,security,2026-08-25
+What happens after I report a lost device?,"Security investigates, guides remediation and may involve HR or regulators.",IT_HELPDESK,employee,security,2026-08-25
+What do I do about a malware alert?,For a malware alert: disconnect from the network and call the security operations centre.,IT_HELPDESK,employee,security,2026-08-25
+How quickly must I report a malware alert?,Report immediately; some reports carry a 24-hour policy or statutory window.,IT_HELPDESK,employee,security,2026-08-25
+Who do I contact for a malware alert?,"The security operations centre hotline, available 24x7.",IT_HELPDESK,employee,security,2026-08-25
+What happens after I report a malware alert?,"Security investigates, guides remediation and may involve HR or regulators.",IT_HELPDESK,employee,security,2026-08-25
+What do I do about a suspicious USB drive?,For a suspicious USB drive: do not plug it in; hand it to IT security.,IT_HELPDESK,employee,security,2026-08-25
+How quickly must I report a suspicious USB drive?,Report immediately; some reports carry a 24-hour policy or statutory window.,IT_HELPDESK,employee,security,2026-08-25
+Who do I contact for a suspicious USB drive?,"The security operations centre hotline, available 24x7.",IT_HELPDESK,employee,security,2026-08-25
+What happens after I report a suspicious USB drive?,"Security investigates, guides remediation and may involve HR or regulators.",IT_HELPDESK,employee,security,2026-08-25
+What do I do about password sharing?,For password sharing: never share credentials; report any request for your password.,IT_HELPDESK,employee,security,2026-08-25
+How quickly must I report password sharing?,Report immediately; some reports carry a 24-hour policy or statutory window.,IT_HELPDESK,employee,security,2026-08-25
+Who do I contact for password sharing?,"The security operations centre hotline, available 24x7.",IT_HELPDESK,employee,security,2026-08-25
+What happens after I report password sharing?,"Security investigates, guides remediation and may involve HR or regulators.",IT_HELPDESK,employee,security,2026-08-25
+What do I do about a suspected data leak?,For a suspected data leak: report to the security hotline; do not forward the data further.,IT_HELPDESK,employee,security,2026-08-25
+How quickly must I report a suspected data leak?,Report immediately; some reports carry a 24-hour policy or statutory window.,IT_HELPDESK,employee,security,2026-08-25
+Who do I contact for a suspected data leak?,"The security operations centre hotline, available 24x7.",IT_HELPDESK,employee,security,2026-08-25
+What happens after I report a suspected data leak?,"Security investigates, guides remediation and may involve HR or regulators.",IT_HELPDESK,employee,security,2026-08-25
+What is CDD documentation?,"For KYC, CDD documentation means: collect Officially Valid Documents, PAN or Form 60, and a live photograph as per the Master Direction.",LAW,relationship-manager,kyc,2026-01-15
+Which documents are needed for CDD documentation?,Officially Valid Documents plus PAN or Form 60; non-individuals need constitutional documents.,LAW,relationship-manager,kyc,2026-01-15
+How often does CDD documentation apply?,As per the customer risk category; the Master Direction sets minimum frequencies.,LAW,relationship-manager,kyc,2026-01-15
+What happens if CDD documentation is incomplete?,Account opening or updation is deferred until documents are complete.,LAW,relationship-manager,kyc,2026-01-15
+Where do I record CDD documentation?,Record in the KYC system with the checklist; documents attach to the customer record.,LAW,relationship-manager,kyc,2026-01-15
+What is re-KYC timelines?,"For KYC, re-KYC timelines means: high-risk every 2 years, medium every 8 years, low every 10 years.",LAW,relationship-manager,kyc,2026-01-15
+Which documents are needed for re-KYC timelines?,Officially Valid Documents plus PAN or Form 60; non-individuals need constitutional documents.,LAW,relationship-manager,kyc,2026-01-15
+How often does re-KYC timelines apply?,As per the customer risk category; the Master Direction sets minimum frequencies.,LAW,relationship-manager,kyc,2026-01-15
+What happens if re-KYC timelines is incomplete?,Account opening or updation is deferred until documents are complete.,LAW,relationship-manager,kyc,2026-01-15
+Where do I record re-KYC timelines?,Record in the KYC system with the checklist; documents attach to the customer record.,LAW,relationship-manager,kyc,2026-01-15
+What is PEP checks?,"For KYC, PEP checks means: screen for politically exposed persons and apply enhanced due diligence.",LAW,relationship-manager,kyc,2026-01-15
+Which documents are needed for PEP checks?,Officially Valid Documents plus PAN or Form 60; non-individuals need constitutional documents.,LAW,relationship-manager,kyc,2026-01-15
+How often does PEP checks apply?,As per the customer risk category; the Master Direction sets minimum frequencies.,LAW,relationship-manager,kyc,2026-01-15
+What happens if PEP checks is incomplete?,Account opening or updation is deferred until documents are complete.,LAW,relationship-manager,kyc,2026-01-15
+Where do I record PEP checks?,Record in the KYC system with the checklist; documents attach to the customer record.,LAW,relationship-manager,kyc,2026-01-15
+What is beneficial ownership?,"For KYC, beneficial ownership means: identify beneficial owners holding 25 percent or more for non-individual customers.",LAW,relationship-manager,kyc,2026-01-15
+Which documents are needed for beneficial ownership?,Officially Valid Documents plus PAN or Form 60; non-individuals need constitutional documents.,LAW,relationship-manager,kyc,2026-01-15
+How often does beneficial ownership apply?,As per the customer risk category; the Master Direction sets minimum frequencies.,LAW,relationship-manager,kyc,2026-01-15
+What happens if beneficial ownership is incomplete?,Account opening or updation is deferred until documents are complete.,LAW,relationship-manager,kyc,2026-01-15
+Where do I record beneficial ownership?,Record in the KYC system with the checklist; documents attach to the customer record.,LAW,relationship-manager,kyc,2026-01-15
+What is video KYC?,"For KYC, video KYC means: use approved V-CIP for eligible savings accounts with geo-tagging and liveness checks.",LAW,relationship-manager,kyc,2026-01-15
+Which documents are needed for video KYC?,Officially Valid Documents plus PAN or Form 60; non-individuals need constitutional documents.,LAW,relationship-manager,kyc,2026-01-15
+How often does video KYC apply?,As per the customer risk category; the Master Direction sets minimum frequencies.,LAW,relationship-manager,kyc,2026-01-15
+What happens if video KYC is incomplete?,Account opening or updation is deferred until documents are complete.,LAW,relationship-manager,kyc,2026-01-15
+Where do I record video KYC?,Record in the KYC system with the checklist; documents attach to the customer record.,LAW,relationship-manager,kyc,2026-01-15
+What is enhanced due diligence?,"For KYC, enhanced due diligence means: apply to PEPs, high-risk jurisdictions and high-value accounts, including source of funds.",LAW,relationship-manager,kyc,2026-01-15
+Which documents are needed for enhanced due diligence?,Officially Valid Documents plus PAN or Form 60; non-individuals need constitutional documents.,LAW,relationship-manager,kyc,2026-01-15
+How often does enhanced due diligence apply?,As per the customer risk category; the Master Direction sets minimum frequencies.,LAW,relationship-manager,kyc,2026-01-15
+What happens if enhanced due diligence is incomplete?,Account opening or updation is deferred until documents are complete.,LAW,relationship-manager,kyc,2026-01-15
+Where do I record enhanced due diligence?,Record in the KYC system with the checklist; documents attach to the customer record.,LAW,relationship-manager,kyc,2026-01-15
+What is CTR?,CTR: file cash transaction reports within prescribed timelines for cash above the threshold per customer per day.,LAW,compliance-officer,aml,2026-01-20
+Who files CTR?,The Principal Officer files with FIU-IND; branches route details to Financial Crime Compliance.,LAW,compliance-officer,aml,2026-01-20
+What is the timeline for CTR?,Follow the statutory timeline; late filing is a compliance breach.,LAW,compliance-officer,aml,2026-01-20
+Where can I learn more about CTR?,The AML intranet page and the annual e-learning module.,LAW,compliance-officer,aml,2026-01-20
+What is STR?,STR: file suspicious transaction reports within 7 working days of confirming suspicion.,LAW,compliance-officer,aml,2026-01-20
+Who files STR?,The Principal Officer files with FIU-IND; branches route details to Financial Crime Compliance.,LAW,compliance-officer,aml,2026-01-20
+What is the timeline for STR?,Follow the statutory timeline; late filing is a compliance breach.,LAW,compliance-officer,aml,2026-01-20
+Where can I learn more about STR?,The AML intranet page and the annual e-learning module.,LAW,compliance-officer,aml,2026-01-20
+What is CCR?,CCR: report counterfeit currency detected at branches promptly to the nodal officer.,LAW,compliance-officer,aml,2026-01-20
+Who files CCR?,The Principal Officer files with FIU-IND; branches route details to Financial Crime Compliance.,LAW,compliance-officer,aml,2026-01-20
+What is the timeline for CCR?,Follow the statutory timeline; late filing is a compliance breach.,LAW,compliance-officer,aml,2026-01-20
+Where can I learn more about CCR?,The AML intranet page and the annual e-learning module.,LAW,compliance-officer,aml,2026-01-20
+What is CBWTR?,CBWTR: report cross-border wire transfers above the threshold with remitter and beneficiary detail.,LAW,compliance-officer,aml,2026-01-20
+Who files CBWTR?,The Principal Officer files with FIU-IND; branches route details to Financial Crime Compliance.,LAW,compliance-officer,aml,2026-01-20
+What is the timeline for CBWTR?,Follow the statutory timeline; late filing is a compliance breach.,LAW,compliance-officer,aml,2026-01-20
+Where can I learn more about CBWTR?,The AML intranet page and the annual e-learning module.,LAW,compliance-officer,aml,2026-01-20
+What is AML training?,AML training: all customer-facing staff complete the annual AML e-learning with a passing score.,LAW,compliance-officer,aml,2026-01-20
+Who files AML training?,The Principal Officer files with FIU-IND; branches route details to Financial Crime Compliance.,LAW,compliance-officer,aml,2026-01-20
+What is the timeline for AML training?,Follow the statutory timeline; late filing is a compliance breach.,LAW,compliance-officer,aml,2026-01-20
+Where can I learn more about AML training?,The AML intranet page and the annual e-learning module.,LAW,compliance-officer,aml,2026-01-20
+What is record retention?,record retention: maintain KYC and transaction records for the prescribed period after account closure.,LAW,compliance-officer,aml,2026-01-20
+Who files record retention?,The Principal Officer files with FIU-IND; branches route details to Financial Crime Compliance.,LAW,compliance-officer,aml,2026-01-20
+What is the timeline for record retention?,Follow the statutory timeline; late filing is a compliance breach.,LAW,compliance-officer,aml,2026-01-20
+Where can I learn more about record retention?,The AML intranet page and the annual e-learning module.,LAW,compliance-officer,aml,2026-01-20
+What should I do about cheque fraud?,"For cheque fraud: verify signatures, crossings and alterations; escalate to the fraud desk for irregular items.",LAW,branch-staff,fraud,2026-02-01
+Who investigates cheque fraud?,"The fraud risk management unit, with Internal Audit for staff-related cases.",LAW,branch-staff,fraud,2026-02-01
+What is the escalation for cheque fraud?,Escalate to the zonal fraud desk same-day with the evidence pack.,LAW,branch-staff,fraud,2026-02-01
+Can I inform the customer about cheque fraud?,"Yes, except where an STR is involved — never tip off customers.",LAW,branch-staff,fraud,2026-02-01
+What should I do about card fraud?,For card fraud: block the card on customer confirmation and register the dispute with the card team.,LAW,branch-staff,fraud,2026-02-01
+Who investigates card fraud?,"The fraud risk management unit, with Internal Audit for staff-related cases.",LAW,branch-staff,fraud,2026-02-01
+What is the escalation for card fraud?,Escalate to the zonal fraud desk same-day with the evidence pack.,LAW,branch-staff,fraud,2026-02-01
+Can I inform the customer about card fraud?,"Yes, except where an STR is involved — never tip off customers.",LAW,branch-staff,fraud,2026-02-01
+What should I do about phishing victims?,For phishing victims: guide customers to report within 3 days to limit liability under RBI rules.,LAW,branch-staff,fraud,2026-02-01
+Who investigates phishing victims?,"The fraud risk management unit, with Internal Audit for staff-related cases.",LAW,branch-staff,fraud,2026-02-01
+What is the escalation for phishing victims?,Escalate to the zonal fraud desk same-day with the evidence pack.,LAW,branch-staff,fraud,2026-02-01
+Can I inform the customer about phishing victims?,"Yes, except where an STR is involved — never tip off customers.",LAW,branch-staff,fraud,2026-02-01
+What should I do about internal fraud?,For internal fraud: report through the whistleblower channel; preserve records for investigation.,LAW,branch-staff,fraud,2026-02-01
+Who investigates internal fraud?,"The fraud risk management unit, with Internal Audit for staff-related cases.",LAW,branch-staff,fraud,2026-02-01
+What is the escalation for internal fraud?,Escalate to the zonal fraud desk same-day with the evidence pack.,LAW,branch-staff,fraud,2026-02-01
+Can I inform the customer about internal fraud?,"Yes, except where an STR is involved — never tip off customers.",LAW,branch-staff,fraud,2026-02-01
+What should I do about early warning signals?,"For early warning signals: apply branch EWS alerts: sudden balance spikes, frequent large cash, dormant-account revival.",LAW,branch-staff,fraud,2026-02-01
+Who investigates early warning signals?,"The fraud risk management unit, with Internal Audit for staff-related cases.",LAW,branch-staff,fraud,2026-02-01
+What is the escalation for early warning signals?,Escalate to the zonal fraud desk same-day with the evidence pack.,LAW,branch-staff,fraud,2026-02-01
+Can I inform the customer about early warning signals?,"Yes, except where an STR is involved — never tip off customers.",LAW,branch-staff,fraud,2026-02-01
+What should I do about fraud reporting?,For fraud reporting: report frauds above thresholds to the RBI within the prescribed timelines.,LAW,branch-staff,fraud,2026-02-01
+Who investigates fraud reporting?,"The fraud risk management unit, with Internal Audit for staff-related cases.",LAW,branch-staff,fraud,2026-02-01
+What is the escalation for fraud reporting?,Escalate to the zonal fraud desk same-day with the evidence pack.,LAW,branch-staff,fraud,2026-02-01
+Can I inform the customer about fraud reporting?,"Yes, except where an STR is involved — never tip off customers.",LAW,branch-staff,fraud,2026-02-01
+What does DPDP require for consent?,"For consent, DPDP requires: obtain free, specific, informed and unambiguous consent before processing personal data.",LAW,compliance-officer,dpdp,2026-02-10
+Who handles consent at the bank?,The Data Protection Office; route customer or internal requests to the privacy desk.,LAW,compliance-officer,dpdp,2026-02-10
+What is the timeline for consent?,Respond within the prescribed window and log the action in the privacy register.,LAW,compliance-officer,dpdp,2026-02-10
+What happens if we miss consent?,Regulatory penalty exposure and escalation to the Data Protection Office.,LAW,compliance-officer,dpdp,2026-02-10
+What does DPDP require for consent withdrawal?,"For consent withdrawal, DPDP requires: honour withdrawal as easily as consent was given and stop processing.",LAW,compliance-officer,dpdp,2026-02-10
+Who handles consent withdrawal at the bank?,The Data Protection Office; route customer or internal requests to the privacy desk.,LAW,compliance-officer,dpdp,2026-02-10
+What is the timeline for consent withdrawal?,Respond within the prescribed window and log the action in the privacy register.,LAW,compliance-officer,dpdp,2026-02-10
+What happens if we miss consent withdrawal?,Regulatory penalty exposure and escalation to the Data Protection Office.,LAW,compliance-officer,dpdp,2026-02-10
+What does DPDP require for breach notification?,"For breach notification, DPDP requires: notify the Data Protection Board within 72 hours of a notifiable breach.",LAW,compliance-officer,dpdp,2026-02-10
+Who handles breach notification at the bank?,The Data Protection Office; route customer or internal requests to the privacy desk.,LAW,compliance-officer,dpdp,2026-02-10
+What is the timeline for breach notification?,Respond within the prescribed window and log the action in the privacy register.,LAW,compliance-officer,dpdp,2026-02-10
+What happens if we miss breach notification?,Regulatory penalty exposure and escalation to the Data Protection Office.,LAW,compliance-officer,dpdp,2026-02-10
+What does DPDP require for children's data?,"For children's data, DPDP requires: obtain verifiable parental consent before processing data of minors.",LAW,compliance-officer,dpdp,2026-02-10
+Who handles children's data at the bank?,The Data Protection Office; route customer or internal requests to the privacy desk.,LAW,compliance-officer,dpdp,2026-02-10
+What is the timeline for children's data?,Respond within the prescribed window and log the action in the privacy register.,LAW,compliance-officer,dpdp,2026-02-10
+What happens if we miss children's data?,Regulatory penalty exposure and escalation to the Data Protection Office.,LAW,compliance-officer,dpdp,2026-02-10
+What does DPDP require for data principal rights?,"For data principal rights, DPDP requires: support access, correction, erasure and grievance rights within prescribed timelines.",LAW,compliance-officer,dpdp,2026-02-10
+Who handles data principal rights at the bank?,The Data Protection Office; route customer or internal requests to the privacy desk.,LAW,compliance-officer,dpdp,2026-02-10
+What is the timeline for data principal rights?,Respond within the prescribed window and log the action in the privacy register.,LAW,compliance-officer,dpdp,2026-02-10
+What happens if we miss data principal rights?,Regulatory penalty exposure and escalation to the Data Protection Office.,LAW,compliance-officer,dpdp,2026-02-10
+What does DPDP require for consent records?,"For consent records, DPDP requires: retain consent records with timestamps as evidence of lawful processing.",LAW,compliance-officer,dpdp,2026-02-10
+Who handles consent records at the bank?,The Data Protection Office; route customer or internal requests to the privacy desk.,LAW,compliance-officer,dpdp,2026-02-10
+What is the timeline for consent records?,Respond within the prescribed window and log the action in the privacy register.,LAW,compliance-officer,dpdp,2026-02-10
+What happens if we miss consent records?,Regulatory penalty exposure and escalation to the Data Protection Office.,LAW,compliance-officer,dpdp,2026-02-10
+What is the rule on grievance acknowledgement?,On grievance acknowledgement: acknowledge every complaint immediately with a reference number.,LAW,branch-staff,consumer,2026-02-15
+Who owns grievance acknowledgement?,Customer Advocacy owns the process; branches use the grievance system.,LAW,branch-staff,consumer,2026-02-15
+What are the timelines for grievance acknowledgement?,As per the Consumer Protection Act and the internal grievance policy.,LAW,branch-staff,consumer,2026-02-15
+Where do I record grievance acknowledgement?,In the complaint management system with category and resolution notes.,LAW,branch-staff,consumer,2026-02-15
+What is the rule on complaint resolution?,On complaint resolution: resolve standard complaints within 7 working days and complex ones within 30 days.,LAW,branch-staff,consumer,2026-02-15
+Who owns complaint resolution?,Customer Advocacy owns the process; branches use the grievance system.,LAW,branch-staff,consumer,2026-02-15
+What are the timelines for complaint resolution?,As per the Consumer Protection Act and the internal grievance policy.,LAW,branch-staff,consumer,2026-02-15
+Where do I record complaint resolution?,In the complaint management system with category and resolution notes.,LAW,branch-staff,consumer,2026-02-15
+What is the rule on ombudsman escalation?,On ombudsman escalation: inform customers of the ombudsman route if the bank rejects or delays beyond 30 days.,LAW,branch-staff,consumer,2026-02-15
+Who owns ombudsman escalation?,Customer Advocacy owns the process; branches use the grievance system.,LAW,branch-staff,consumer,2026-02-15
+What are the timelines for ombudsman escalation?,As per the Consumer Protection Act and the internal grievance policy.,LAW,branch-staff,consumer,2026-02-15
+Where do I record ombudsman escalation?,In the complaint management system with category and resolution notes.,LAW,branch-staff,consumer,2026-02-15
+What is the rule on deficiency in service?,On deficiency in service: log and rectify service gaps; repeat gaps feed the root-cause review.,LAW,branch-staff,consumer,2026-02-15
+Who owns deficiency in service?,Customer Advocacy owns the process; branches use the grievance system.,LAW,branch-staff,consumer,2026-02-15
+What are the timelines for deficiency in service?,As per the Consumer Protection Act and the internal grievance policy.,LAW,branch-staff,consumer,2026-02-15
+Where do I record deficiency in service?,In the complaint management system with category and resolution notes.,LAW,branch-staff,consumer,2026-02-15
+What is the rule on unfair contract terms?,On unfair contract terms: avoid terms that significantly change consumer rights; use approved documents.,LAW,branch-staff,consumer,2026-02-15
+Who owns unfair contract terms?,Customer Advocacy owns the process; branches use the grievance system.,LAW,branch-staff,consumer,2026-02-15
+What are the timelines for unfair contract terms?,As per the Consumer Protection Act and the internal grievance policy.,LAW,branch-staff,consumer,2026-02-15
+Where do I record unfair contract terms?,In the complaint management system with category and resolution notes.,LAW,branch-staff,consumer,2026-02-15
+What is the rule on e-filing?,On e-filing: guide customers to e-daakhil for consumer commission filings.,LAW,branch-staff,consumer,2026-02-15
+Who owns e-filing?,Customer Advocacy owns the process; branches use the grievance system.,LAW,branch-staff,consumer,2026-02-15
+What are the timelines for e-filing?,As per the Consumer Protection Act and the internal grievance policy.,LAW,branch-staff,consumer,2026-02-15
+Where do I record e-filing?,In the complaint management system with category and resolution notes.,LAW,branch-staff,consumer,2026-02-15
+What is required for materiality assessment?,"For materiality assessment: assess outsourcing arrangements for customer impact, data, reporting and continuity.",LAW,compliance-officer,outsourcing,2026-02-20
+Who enforces materiality assessment?,The Vendor Risk Office with Compliance oversight.,LAW,compliance-officer,outsourcing,2026-02-20
+How often is materiality assessment reviewed?,"Annually at minimum, and on material change.",LAW,compliance-officer,outsourcing,2026-02-20
+What is required for vendor audits?,"For vendor audits: audit critical vendors at least annually, including data security and sub-contracting.",LAW,compliance-officer,outsourcing,2026-02-20
+Who enforces vendor audits?,The Vendor Risk Office with Compliance oversight.,LAW,compliance-officer,outsourcing,2026-02-20
+How often is vendor audits reviewed?,"Annually at minimum, and on material change.",LAW,compliance-officer,outsourcing,2026-02-20
+What is required for exit clauses?,"For exit clauses: contracts include data return, destruction certification and transition support.",LAW,compliance-officer,outsourcing,2026-02-20
+Who enforces exit clauses?,The Vendor Risk Office with Compliance oversight.,LAW,compliance-officer,outsourcing,2026-02-20
+How often is exit clauses reviewed?,"Annually at minimum, and on material change.",LAW,compliance-officer,outsourcing,2026-02-20
+What is required for sub-contracting?,For sub-contracting: restrict sub-contracting without bank consent and re-assessment.,LAW,compliance-officer,outsourcing,2026-02-20
+Who enforces sub-contracting?,The Vendor Risk Office with Compliance oversight.,LAW,compliance-officer,outsourcing,2026-02-20
+How often is sub-contracting reviewed?,"Annually at minimum, and on material change.",LAW,compliance-officer,outsourcing,2026-02-20
+What is required for the outsourcing register?,For the outsourcing register: maintain a central register for audit and supervisory review.,LAW,compliance-officer,outsourcing,2026-02-20
+Who enforces the outsourcing register?,The Vendor Risk Office with Compliance oversight.,LAW,compliance-officer,outsourcing,2026-02-20
+How often is the outsourcing register reviewed?,"Annually at minimum, and on material change.",LAW,compliance-officer,outsourcing,2026-02-20
+What is required for board approval?,For board approval: material outsourcing requires board or committee approval.,LAW,compliance-officer,outsourcing,2026-02-20
+Who enforces board approval?,The Vendor Risk Office with Compliance oversight.,LAW,compliance-officer,outsourcing,2026-02-20
+How often is board approval reviewed?,"Annually at minimum, and on material change.",LAW,compliance-officer,outsourcing,2026-02-20
+What are the features of basic savings?,The basic savings account: zero-balance account per RBI basic savings guidelines; no minimum balance.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+Who is eligible for basic savings?,Eligibility follows the product one-pager; KYC applies to all applicants.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+How is interest calculated on basic savings?,Interest is calculated on daily balances and credited quarterly at prevailing rates.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What documents are needed for basic savings?,KYC documents plus any variant-specific proof shown in the product guide.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What are the features of regular savings?,The regular savings account: tiered interest credited quarterly on daily balances; minimum balance as per tariff.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+Who is eligible for regular savings?,Eligibility follows the product one-pager; KYC applies to all applicants.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+How is interest calculated on regular savings?,Interest is calculated on daily balances and credited quarterly at prevailing rates.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What documents are needed for regular savings?,KYC documents plus any variant-specific proof shown in the product guide.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What are the features of salary account?,The salary account account: zero-balance with bundled insurance and offers; no minimum balance.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+Who is eligible for salary account?,Eligibility follows the product one-pager; KYC applies to all applicants.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+How is interest calculated on salary account?,Interest is calculated on daily balances and credited quarterly at prevailing rates.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What documents are needed for salary account?,KYC documents plus any variant-specific proof shown in the product guide.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What are the features of premium savings?,"The premium savings account: priority service, lounge access and enhanced limits; a higher relationship balance.",FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+Who is eligible for premium savings?,Eligibility follows the product one-pager; KYC applies to all applicants.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+How is interest calculated on premium savings?,Interest is calculated on daily balances and credited quarterly at prevailing rates.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What documents are needed for premium savings?,KYC documents plus any variant-specific proof shown in the product guide.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What are the features of minor savings?,The minor savings account: operated by the guardian until majority; no minimum balance for the basic variant.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+Who is eligible for minor savings?,Eligibility follows the product one-pager; KYC applies to all applicants.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+How is interest calculated on minor savings?,Interest is calculated on daily balances and credited quarterly at prevailing rates.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What documents are needed for minor savings?,KYC documents plus any variant-specific proof shown in the product guide.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What are the features of NRI savings?,The NRI savings account: NRE/NRO variants with repatriation rules per FEMA; variant-specific.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+Who is eligible for NRI savings?,Eligibility follows the product one-pager; KYC applies to all applicants.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+How is interest calculated on NRI savings?,Interest is calculated on daily balances and credited quarterly at prevailing rates.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What documents are needed for NRI savings?,KYC documents plus any variant-specific proof shown in the product guide.,FINANCIAL_ADVISOR,relationship-manager,savings-accounts,2026-03-01
+What is the rule for card eligibility?,"For card eligibility: age 21 to 65, an income threshold by variant and a good bureau score.",FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+Where can a customer check card eligibility?,"The mobile app, statements and the cardholder agreement.",FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+How do I explain card eligibility to a customer?,Use the approved one-pager and quote exact terms from the agreement.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the SLA for card eligibility queries?,Card services respond within 2 business days.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the rule for the interest-free period?,For the interest-free period: up to the prescribed days from purchase to due date when the full bill is paid.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+Where can a customer check the interest-free period?,"The mobile app, statements and the cardholder agreement.",FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+How do I explain the interest-free period to a customer?,Use the approved one-pager and quote exact terms from the agreement.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the SLA for the interest-free period queries?,Card services respond within 2 business days.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the rule for EMI conversion?,For EMI conversion: convert qualifying purchases into EMIs with the published processing fee.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+Where can a customer check EMI conversion?,"The mobile app, statements and the cardholder agreement.",FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+How do I explain EMI conversion to a customer?,Use the approved one-pager and quote exact terms from the agreement.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the SLA for EMI conversion queries?,Card services respond within 2 business days.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the rule for credit limit review?,For credit limit review: limits are reviewed periodically based on usage and repayment behaviour.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+Where can a customer check credit limit review?,"The mobile app, statements and the cardholder agreement.",FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+How do I explain credit limit review to a customer?,Use the approved one-pager and quote exact terms from the agreement.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the SLA for credit limit review queries?,Card services respond within 2 business days.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the rule for card disputes?,For card disputes: raise disputes within the prescribed days; provisional credit applies per policy.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+Where can a customer check card disputes?,"The mobile app, statements and the cardholder agreement.",FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+How do I explain card disputes to a customer?,Use the approved one-pager and quote exact terms from the agreement.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the SLA for card disputes queries?,Card services respond within 2 business days.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the rule for rewards redemption?,For rewards redemption: redeem points on the rewards portal; points expire per the programme terms.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+Where can a customer check rewards redemption?,"The mobile app, statements and the cardholder agreement.",FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+How do I explain rewards redemption to a customer?,Use the approved one-pager and quote exact terms from the agreement.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What is the SLA for rewards redemption queries?,Card services respond within 2 business days.,FINANCIAL_ADVISOR,relationship-manager,credit-cards,2026-03-05
+What are the key terms of a personal loan?,"For a personal loan: unsecured, up to the approved multiple of income, tenure up to the prescribed years.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What documents are needed for a personal loan?,"KYC, income proof, and security or purpose documents as per the checklist.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+How is a personal loan disbursed?,"Disbursement follows credit approval, agreement execution and security creation.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What should I flag to a personal loan customer?,"Charges, prepayment terms and insurance options from the tariff.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What are the key terms of a home loan?,"For a home loan: LTV up to the RBI-permitted ratio, tenure up to the prescribed years, legal and technical evaluation.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What documents are needed for a home loan?,"KYC, income proof, and security or purpose documents as per the checklist.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+How is a home loan disbursed?,"Disbursement follows credit approval, agreement execution and security creation.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What should I flag to a home loan customer?,"Charges, prepayment terms and insurance options from the tariff.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What are the key terms of a car loan?,For a car loan: funding up to the prescribed percentage of on-road price for new cars.,FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What documents are needed for a car loan?,"KYC, income proof, and security or purpose documents as per the checklist.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+How is a car loan disbursed?,"Disbursement follows credit approval, agreement execution and security creation.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What should I flag to a car loan customer?,"Charges, prepayment terms and insurance options from the tariff.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What are the key terms of a education loan?,For a education loan: moratorium of course duration plus the grace period; co-applicant required.,FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What documents are needed for a education loan?,"KYC, income proof, and security or purpose documents as per the checklist.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+How is a education loan disbursed?,"Disbursement follows credit approval, agreement execution and security creation.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What should I flag to a education loan customer?,"Charges, prepayment terms and insurance options from the tariff.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What are the key terms of a gold loan?,"For a gold loan: LTV as per RBI limits, quick disbursal against pledged ornaments.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What documents are needed for a gold loan?,"KYC, income proof, and security or purpose documents as per the checklist.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+How is a gold loan disbursed?,"Disbursement follows credit approval, agreement execution and security creation.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What should I flag to a gold loan customer?,"Charges, prepayment terms and insurance options from the tariff.",FINANCIAL_ADVISOR,relationship-manager,loans,2026-03-10
+What are the basics of PPF?,The basics of PPF: 15-year tenure extendable in 5-year blocks; interest is government-notified and compounded annually.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+Who is eligible for PPF?,Eligibility follows the scheme or product terms; KYC applies.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the tax rules for PPF?,Deposits may qualify under Section 80C; interest treatment varies by scheme.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+How do I recommend PPF?,"Match the scheme to the customer's horizon, liquidity and tax position.",FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the basics of NPS?,The basics of NPS: defined-contribution retirement account with tier-I and tier-II; regulated by PFRDA.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+Who is eligible for NPS?,Eligibility follows the scheme or product terms; KYC applies.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the tax rules for NPS?,Deposits may qualify under Section 80C; interest treatment varies by scheme.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+How do I recommend NPS?,"Match the scheme to the customer's horizon, liquidity and tax position.",FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the basics of Sukanya Samriddhi?,The basics of Sukanya Samriddhi: for the girl child below age 10; matures at 21 or on marriage after 18.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+Who is eligible for Sukanya Samriddhi?,Eligibility follows the scheme or product terms; KYC applies.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the tax rules for Sukanya Samriddhi?,Deposits may qualify under Section 80C; interest treatment varies by scheme.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+How do I recommend Sukanya Samriddhi?,"Match the scheme to the customer's horizon, liquidity and tax position.",FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the basics of SCSS?,The basics of SCSS: for citizens 60 and above; 5-year tenure extendable once; quarterly interest.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+Who is eligible for SCSS?,Eligibility follows the scheme or product terms; KYC applies.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the tax rules for SCSS?,Deposits may qualify under Section 80C; interest treatment varies by scheme.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+How do I recommend SCSS?,"Match the scheme to the customer's horizon, liquidity and tax position.",FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the basics of fixed deposit?,"The basics of fixed deposit: ladderable tenures with monthly, quarterly or cumulative interest options.",FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+Who is eligible for fixed deposit?,Eligibility follows the scheme or product terms; KYC applies.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the tax rules for fixed deposit?,Deposits may qualify under Section 80C; interest treatment varies by scheme.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+How do I recommend fixed deposit?,"Match the scheme to the customer's horizon, liquidity and tax position.",FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the basics of recurring deposit?,The basics of recurring deposit: monthly deposits with the same rate as term deposits at opening.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+Who is eligible for recurring deposit?,Eligibility follows the scheme or product terms; KYC applies.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What are the tax rules for recurring deposit?,Deposits may qualify under Section 80C; interest treatment varies by scheme.,FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+How do I recommend recurring deposit?,"Match the scheme to the customer's horizon, liquidity and tax position.",FINANCIAL_ADVISOR,relationship-manager,investments,2026-03-15
+What should I know about term insurance?,"About term insurance: pure protection with level, increasing or return-of-premium variants.",FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+How is term insurance sold through the bank?,Through the corporate agency arrangement with approved insurers.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What disclosures are mandatory for term insurance?,IRDAI-compliant disclosures from the product brochure; no promises beyond terms.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What is the service SLA for term insurance?,Insurance support responds within 3 business days.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What should I know about ULIP?,About ULIP: market-linked plan with a 5-year lock-in and fund switching.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+How is ULIP sold through the bank?,Through the corporate agency arrangement with approved insurers.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What disclosures are mandatory for ULIP?,IRDAI-compliant disclosures from the product brochure; no promises beyond terms.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What is the service SLA for ULIP?,Insurance support responds within 3 business days.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What should I know about health insurance?,About health insurance: individual and family floater plans; explain waiting periods and exclusions.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+How is health insurance sold through the bank?,Through the corporate agency arrangement with approved insurers.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What disclosures are mandatory for health insurance?,IRDAI-compliant disclosures from the product brochure; no promises beyond terms.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What is the service SLA for health insurance?,Insurance support responds within 3 business days.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What should I know about motor insurance?,About motor insurance: comprehensive and third-party; premium depends on IDV and add-ons.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+How is motor insurance sold through the bank?,Through the corporate agency arrangement with approved insurers.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What disclosures are mandatory for motor insurance?,IRDAI-compliant disclosures from the product brochure; no promises beyond terms.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What is the service SLA for motor insurance?,Insurance support responds within 3 business days.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What should I know about claims support?,About claims support: assist with documentation and insurer follow-up; do not promise claim outcomes.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+How is claims support sold through the bank?,Through the corporate agency arrangement with approved insurers.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What disclosures are mandatory for claims support?,IRDAI-compliant disclosures from the product brochure; no promises beyond terms.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What is the service SLA for claims support?,Insurance support responds within 3 business days.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What should I know about riders?,About riders: critical illness and accidental death riders enhance base cover.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+How is riders sold through the bank?,Through the corporate agency arrangement with approved insurers.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What disclosures are mandatory for riders?,IRDAI-compliant disclosures from the product brochure; no promises beyond terms.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What is the service SLA for riders?,Insurance support responds within 3 business days.,FINANCIAL_ADVISOR,relationship-manager,insurance,2026-03-20
+What is wealth tiers?,"For wealth management, wealth tiers: Classic, Priority and Burgundy tiers by relationship value.",FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+How does wealth tiers work in practice?,Follow the advisory playbook; record recommendations and client decisions.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+Who reviews wealth tiers?,The quality assurance team samples cases; Compliance owns policy.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is the escalation for wealth tiers issues?,Escalate to the wealth desk lead within one business day.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is portfolio review?,"For wealth management, portfolio review: at least annually, semi-annually for Priority and Burgundy.",FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+How does portfolio review work in practice?,Follow the advisory playbook; record recommendations and client decisions.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+Who reviews portfolio review?,The quality assurance team samples cases; Compliance owns policy.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is the escalation for portfolio review issues?,Escalate to the wealth desk lead within one business day.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is risk profiling?,"For wealth management, risk profiling: capacity, tolerance and experience map to Conservative, Moderate and Aggressive bands.",FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+How does risk profiling work in practice?,Follow the advisory playbook; record recommendations and client decisions.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+Who reviews risk profiling?,The quality assurance team samples cases; Compliance owns policy.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is the escalation for risk profiling issues?,Escalate to the wealth desk lead within one business day.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is suitability?,"For wealth management, suitability: products outside the risk band need written client acknowledgement.",FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+How does suitability work in practice?,Follow the advisory playbook; record recommendations and client decisions.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+Who reviews suitability?,The quality assurance team samples cases; Compliance owns policy.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is the escalation for suitability issues?,Escalate to the wealth desk lead within one business day.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is RM coverage?,"For wealth management, RM coverage: Priority and Burgundy clients get dedicated relationship managers.",FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+How does RM coverage work in practice?,Follow the advisory playbook; record recommendations and client decisions.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+Who reviews RM coverage?,The quality assurance team samples cases; Compliance owns policy.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is the escalation for RM coverage issues?,Escalate to the wealth desk lead within one business day.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is governance?,"For wealth management, governance: advisory conversations are recorded and sampled for mis-selling.",FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+How does governance work in practice?,Follow the advisory playbook; record recommendations and client decisions.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+Who reviews governance?,The quality assurance team samples cases; Compliance owns policy.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What is the escalation for governance issues?,Escalate to the wealth desk lead within one business day.,FINANCIAL_ADVISOR,wealth-manager,wealth,2026-03-25
+What happens in the draft stage?,In the draft stage: complete the template with the business case and impact assessment.,CR,change-owner,change-lifecycle,2026-04-01
+Who is responsible in the draft stage?,The change owner drives the stage; the Change Management Office governs.,CR,change-owner,change-lifecycle,2026-04-01
+What blocks the draft stage?,Incomplete fields or missing evidence return the change to the previous stage.,CR,change-owner,change-lifecycle,2026-04-01
+What happens in the review stage?,In the review stage: peer review plus technical and risk review before submission.,CR,change-owner,change-lifecycle,2026-04-01
+Who is responsible in the review stage?,The change owner drives the stage; the Change Management Office governs.,CR,change-owner,change-lifecycle,2026-04-01
+What blocks the review stage?,Incomplete fields or missing evidence return the change to the previous stage.,CR,change-owner,change-lifecycle,2026-04-01
+What happens in the approval stage?,In the approval stage: route by risk score through the approval matrix.,CR,change-owner,change-lifecycle,2026-04-01
+Who is responsible in the approval stage?,The change owner drives the stage; the Change Management Office governs.,CR,change-owner,change-lifecycle,2026-04-01
+What blocks the approval stage?,Incomplete fields or missing evidence return the change to the previous stage.,CR,change-owner,change-lifecycle,2026-04-01
+What happens in the implementation stage?,In the implementation stage: execute within the approved window with rollback readiness.,CR,change-owner,change-lifecycle,2026-04-01
+Who is responsible in the implementation stage?,The change owner drives the stage; the Change Management Office governs.,CR,change-owner,change-lifecycle,2026-04-01
+What blocks the implementation stage?,Incomplete fields or missing evidence return the change to the previous stage.,CR,change-owner,change-lifecycle,2026-04-01
+What happens in the post-implementation review stage?,In the post-implementation review stage: complete within 5 to 10 working days per change type.,CR,change-owner,change-lifecycle,2026-04-01
+Who is responsible in the post-implementation review stage?,The change owner drives the stage; the Change Management Office governs.,CR,change-owner,change-lifecycle,2026-04-01
+What blocks the post-implementation review stage?,Incomplete fields or missing evidence return the change to the previous stage.,CR,change-owner,change-lifecycle,2026-04-01
+What happens in the closure stage?,In the closure stage: close only after successful implementation and documentation.,CR,change-owner,change-lifecycle,2026-04-01
+Who is responsible in the closure stage?,The change owner drives the stage; the Change Management Office governs.,CR,change-owner,change-lifecycle,2026-04-01
+What blocks the closure stage?,Incomplete fields or missing evidence return the change to the previous stage.,CR,change-owner,change-lifecycle,2026-04-01
+How is certificate renewal treated?,For certificate renewal: pre-approved template with annual recurrence; implement in the standard window.,CR,change-owner,standard-changes,2026-04-05
+What approvals are needed for certificate renewal?,Pre-approved by CAB through the standard-change template.,CR,change-owner,standard-changes,2026-04-05
+What evidence is required for certificate renewal?,Automated logs plus a post-change confirmation note.,CR,change-owner,standard-changes,2026-04-05
+How is server patching treated?,For server patching: follow the monthly patch cycle with the change ID per server group.,CR,change-owner,standard-changes,2026-04-05
+What approvals are needed for server patching?,Pre-approved by CAB through the standard-change template.,CR,change-owner,standard-changes,2026-04-05
+What evidence is required for server patching?,Automated logs plus a post-change confirmation note.,CR,change-owner,standard-changes,2026-04-05
+How is configuration change treated?,For configuration change: pre-approved for defined parameters; deviations need CAB review.,CR,change-owner,standard-changes,2026-04-05
+What approvals are needed for configuration change?,Pre-approved by CAB through the standard-change template.,CR,change-owner,standard-changes,2026-04-05
+What evidence is required for configuration change?,Automated logs plus a post-change confirmation note.,CR,change-owner,standard-changes,2026-04-05
+How is scheduled reboot treated?,For scheduled reboot: use the maintenance window and the standard template.,CR,change-owner,standard-changes,2026-04-05
+What approvals are needed for scheduled reboot?,Pre-approved by CAB through the standard-change template.,CR,change-owner,standard-changes,2026-04-05
+What evidence is required for scheduled reboot?,Automated logs plus a post-change confirmation note.,CR,change-owner,standard-changes,2026-04-05
+How is routine deploys treated?,For routine deploys: CI/CD pipeline deploys with automated gates for pre-approved paths.,CR,change-owner,standard-changes,2026-04-05
+What approvals are needed for routine deploys?,Pre-approved by CAB through the standard-change template.,CR,change-owner,standard-changes,2026-04-05
+What evidence is required for routine deploys?,Automated logs plus a post-change confirmation note.,CR,change-owner,standard-changes,2026-04-05
+How is housekeeping tasks treated?,For housekeeping tasks: log rotation and cleanup tasks follow the standard-change template.,CR,change-owner,standard-changes,2026-04-05
+What approvals are needed for housekeeping tasks?,Pre-approved by CAB through the standard-change template.,CR,change-owner,standard-changes,2026-04-05
+What evidence is required for housekeeping tasks?,Automated logs plus a post-change confirmation note.,CR,change-owner,standard-changes,2026-04-05
+What is the rule for emergency initiation?,For emergency initiation: open the emergency CR linked to the incident ID.,CR,incident-commander,emergency-changes,2026-04-10
+Who authorises emergency initiation?,The on-call approvers per the emergency matrix.,CR,incident-commander,emergency-changes,2026-04-10
+What happens after emergency initiation?,The retrospective reviews effectiveness and control gaps.,CR,incident-commander,emergency-changes,2026-04-10
+What is the rule for emergency approval?,"For emergency approval: two on-call approvers, one manager or above.",CR,incident-commander,emergency-changes,2026-04-10
+Who authorises emergency approval?,The on-call approvers per the emergency matrix.,CR,incident-commander,emergency-changes,2026-04-10
+What happens after emergency approval?,The retrospective reviews effectiveness and control gaps.,CR,incident-commander,emergency-changes,2026-04-10
+What is the rule for emergency execution?,For emergency execution: execute immediately with the rollback plan documented.,CR,incident-commander,emergency-changes,2026-04-10
+Who authorises emergency execution?,The on-call approvers per the emergency matrix.,CR,incident-commander,emergency-changes,2026-04-10
+What happens after emergency execution?,The retrospective reviews effectiveness and control gaps.,CR,incident-commander,emergency-changes,2026-04-10
+What is the rule for emergency retrospective?,For emergency retrospective: post-implementation review within 5 working days.,CR,incident-commander,emergency-changes,2026-04-10
+Who authorises emergency retrospective?,The on-call approvers per the emergency matrix.,CR,incident-commander,emergency-changes,2026-04-10
+What happens after emergency retrospective?,The retrospective reviews effectiveness and control gaps.,CR,incident-commander,emergency-changes,2026-04-10
+What is the rule for emergency abuse prevention?,For emergency abuse prevention: pre-planned work must never use the emergency route.,CR,incident-commander,emergency-changes,2026-04-10
+Who authorises emergency abuse prevention?,The on-call approvers per the emergency matrix.,CR,incident-commander,emergency-changes,2026-04-10
+What happens after emergency abuse prevention?,The retrospective reviews effectiveness and control gaps.,CR,incident-commander,emergency-changes,2026-04-10
+What is the rule for emergency communication?,For emergency communication: notify stakeholders and the service desk before execution.,CR,incident-commander,emergency-changes,2026-04-10
+Who authorises emergency communication?,The on-call approvers per the emergency matrix.,CR,incident-commander,emergency-changes,2026-04-10
+What happens after emergency communication?,The retrospective reviews effectiveness and control gaps.,CR,incident-commander,emergency-changes,2026-04-10
+What is the year-end freeze?,"The year-end freeze: last 5 business days of March, no non-essential changes.",CR,change-owner,change-freeze,2026-04-15
+How do I request an exception during the year-end freeze?,Use the emergency route with CIO approval.,CR,change-owner,change-freeze,2026-04-15
+Who enforces the year-end freeze?,The Change Management Office with release management.,CR,change-owner,change-freeze,2026-04-15
+What is the half-year freeze?,The half-year freeze: last 3 business days of September.,CR,change-owner,change-freeze,2026-04-15
+How do I request an exception during the half-year freeze?,Use the emergency route with CIO approval.,CR,change-owner,change-freeze,2026-04-15
+Who enforces the half-year freeze?,The Change Management Office with release management.,CR,change-owner,change-freeze,2026-04-15
+What is the festival freeze?,The festival freeze: major sale periods for customer-facing systems.,CR,change-owner,change-freeze,2026-04-15
+How do I request an exception during the festival freeze?,Use the emergency route with CIO approval.,CR,change-owner,change-freeze,2026-04-15
+Who enforces the festival freeze?,The Change Management Office with release management.,CR,change-owner,change-freeze,2026-04-15
+What is the RBI window?,The RBI window: regulatory reporting windows require CIO-approved exceptions.,CR,change-owner,change-freeze,2026-04-15
+How do I request an exception during the RBI window?,Use the emergency route with CIO approval.,CR,change-owner,change-freeze,2026-04-15
+Who enforces the RBI window?,The Change Management Office with release management.,CR,change-owner,change-freeze,2026-04-15
+What is the exception route?,The exception route: freeze exceptions route as emergency changes with CIO approval.,CR,change-owner,change-freeze,2026-04-15
+How do I request an exception during the exception route?,Use the emergency route with CIO approval.,CR,change-owner,change-freeze,2026-04-15
+Who enforces the exception route?,The Change Management Office with release management.,CR,change-owner,change-freeze,2026-04-15
+What is the freeze communication?,The freeze communication: the freeze calendar publishes annually and revises as needed.,CR,change-owner,change-freeze,2026-04-15
+How do I request an exception during the freeze communication?,Use the emergency route with CIO approval.,CR,change-owner,change-freeze,2026-04-15
+Who enforces the freeze communication?,The Change Management Office with release management.,CR,change-owner,change-freeze,2026-04-15
+What is required for test results?,"For test results: unit, integration and regression outcomes with environment and date.",CR,change-owner,change-evidence,2026-04-20
+When must test results be attached?,Before CAB review; late evidence returns the change to draft.,CR,change-owner,change-evidence,2026-04-20
+Who validates test results?,A reviewer outside the delivery team validates completeness.,CR,change-owner,change-evidence,2026-04-20
+What is required for UAT sign-off?,For UAT sign-off: business stakeholder approval with test case coverage.,CR,change-owner,change-evidence,2026-04-20
+When must UAT sign-off be attached?,Before CAB review; late evidence returns the change to draft.,CR,change-owner,change-evidence,2026-04-20
+Who validates UAT sign-off?,A reviewer outside the delivery team validates completeness.,CR,change-owner,change-evidence,2026-04-20
+What is required for performance tests?,For performance tests: required for changes affecting critical paths.,CR,change-owner,change-evidence,2026-04-20
+When must performance tests be attached?,Before CAB review; late evidence returns the change to draft.,CR,change-owner,change-evidence,2026-04-20
+Who validates performance tests?,A reviewer outside the delivery team validates completeness.,CR,change-owner,change-evidence,2026-04-20
+What is required for rollback drills?,For rollback drills: a validated rollback plan for high-risk changes.,CR,change-owner,change-evidence,2026-04-20
+When must rollback drills be attached?,Before CAB review; late evidence returns the change to draft.,CR,change-owner,change-evidence,2026-04-20
+Who validates rollback drills?,A reviewer outside the delivery team validates completeness.,CR,change-owner,change-evidence,2026-04-20
+What is required for approval records?,For approval records: recorded in the tool with timestamps and approver identity.,CR,change-owner,change-evidence,2026-04-20
+When must approval records be attached?,Before CAB review; late evidence returns the change to draft.,CR,change-owner,change-evidence,2026-04-20
+Who validates approval records?,A reviewer outside the delivery team validates completeness.,CR,change-owner,change-evidence,2026-04-20
+What is required for communication evidence?,For communication evidence: stakeholder and service desk notifications before the window.,CR,change-owner,change-evidence,2026-04-20
+When must communication evidence be attached?,Before CAB review; late evidence returns the change to draft.,CR,change-owner,change-evidence,2026-04-20
+Who validates communication evidence?,A reviewer outside the delivery team validates completeness.,CR,change-owner,change-evidence,2026-04-20
+How is success rate measured?,The success rate metric: percentage of changes implemented without incident.,CR,cab-member,change-metrics,2026-04-25
+Who reviews success rate?,"The CAB monthly, with the Change Management Office dashboard.",CR,cab-member,change-metrics,2026-04-25
+What is the target for success rate?,Targets are set annually and tracked on the monthly dashboard.,CR,cab-member,change-metrics,2026-04-25
+How is emergency ratio measured?,The emergency ratio metric: emergency changes as a share of all changes.,CR,cab-member,change-metrics,2026-04-25
+Who reviews emergency ratio?,"The CAB monthly, with the Change Management Office dashboard.",CR,cab-member,change-metrics,2026-04-25
+What is the target for emergency ratio?,Targets are set annually and tracked on the monthly dashboard.,CR,cab-member,change-metrics,2026-04-25
+How is PIR completion measured?,The PIR completion metric: post-implementation reviews completed on time.,CR,cab-member,change-metrics,2026-04-25
+Who reviews PIR completion?,"The CAB monthly, with the Change Management Office dashboard.",CR,cab-member,change-metrics,2026-04-25
+What is the target for PIR completion?,Targets are set annually and tracked on the monthly dashboard.,CR,cab-member,change-metrics,2026-04-25
+How is calendar adherence measured?,The calendar adherence metric: changes executed inside the approved window.,CR,cab-member,change-metrics,2026-04-25
+Who reviews calendar adherence?,"The CAB monthly, with the Change Management Office dashboard.",CR,cab-member,change-metrics,2026-04-25
+What is the target for calendar adherence?,Targets are set annually and tracked on the monthly dashboard.,CR,cab-member,change-metrics,2026-04-25
+How is incident linkage measured?,"The incident linkage metric: every production change linked to an incident, problem or feature.",CR,cab-member,change-metrics,2026-04-25
+Who reviews incident linkage?,"The CAB monthly, with the Change Management Office dashboard.",CR,cab-member,change-metrics,2026-04-25
+What is the target for incident linkage?,Targets are set annually and tracked on the monthly dashboard.,CR,cab-member,change-metrics,2026-04-25
+How is automation adoption measured?,The automation adoption metric: share of standard changes executed through automation.,CR,cab-member,change-metrics,2026-04-25
+Who reviews automation adoption?,"The CAB monthly, with the Change Management Office dashboard.",CR,cab-member,change-metrics,2026-04-25
+What is the target for automation adoption?,Targets are set annually and tracked on the monthly dashboard.,CR,cab-member,change-metrics,2026-04-25
+What are bubbles?,"For the assistant, bubbles: knowledge domains that scope the answer; leave unselected to search all.",GENERAL,employee,assistant,2026-08-20
+How do I use bubbles?,Follow the getting-started guide on the intranet assistant page.,GENERAL,employee,assistant,2026-08-20
+Who owns bubbles?,The ADI Program Office coordinates; each bubble has an owner.,GENERAL,employee,assistant,2026-08-20
+Can bubbles be changed?,Requests route through the ADI Program Office for review.,GENERAL,employee,assistant,2026-08-20
+Where can I learn more about bubbles?,See the assistant FAQ and the usage guidelines.,GENERAL,employee,assistant,2026-08-20
+What are feedback?,"For the assistant, feedback: use thumbs up or down; feedback routes to bubble owners.",GENERAL,employee,assistant,2026-08-20
+How do I use feedback?,Follow the getting-started guide on the intranet assistant page.,GENERAL,employee,assistant,2026-08-20
+Who owns feedback?,The ADI Program Office coordinates; each bubble has an owner.,GENERAL,employee,assistant,2026-08-20
+Can feedback be changed?,Requests route through the ADI Program Office for review.,GENERAL,employee,assistant,2026-08-20
+Where can I learn more about feedback?,See the assistant FAQ and the usage guidelines.,GENERAL,employee,assistant,2026-08-20
+What are citations?,"For the assistant, citations: answers cite sources; open a source to verify details.",GENERAL,employee,assistant,2026-08-20
+How do I use citations?,Follow the getting-started guide on the intranet assistant page.,GENERAL,employee,assistant,2026-08-20
+Who owns citations?,The ADI Program Office coordinates; each bubble has an owner.,GENERAL,employee,assistant,2026-08-20
+Can citations be changed?,Requests route through the ADI Program Office for review.,GENERAL,employee,assistant,2026-08-20
+Where can I learn more about citations?,See the assistant FAQ and the usage guidelines.,GENERAL,employee,assistant,2026-08-20
+What are data masking?,"For the assistant, data masking: customer PII is masked in answers per data policy.",GENERAL,employee,assistant,2026-08-20
+How do I use data masking?,Follow the getting-started guide on the intranet assistant page.,GENERAL,employee,assistant,2026-08-20
+Who owns data masking?,The ADI Program Office coordinates; each bubble has an owner.,GENERAL,employee,assistant,2026-08-20
+Can data masking be changed?,Requests route through the ADI Program Office for review.,GENERAL,employee,assistant,2026-08-20
+Where can I learn more about data masking?,See the assistant FAQ and the usage guidelines.,GENERAL,employee,assistant,2026-08-20
+What are session logs?,"For the assistant, session logs: conversations are logged with user ID for audit.",GENERAL,employee,assistant,2026-08-20
+How do I use session logs?,Follow the getting-started guide on the intranet assistant page.,GENERAL,employee,assistant,2026-08-20
+Who owns session logs?,The ADI Program Office coordinates; each bubble has an owner.,GENERAL,employee,assistant,2026-08-20
+Can session logs be changed?,Requests route through the ADI Program Office for review.,GENERAL,employee,assistant,2026-08-20
+Where can I learn more about session logs?,See the assistant FAQ and the usage guidelines.,GENERAL,employee,assistant,2026-08-20
+What are limitations?,"For the assistant, limitations: knowledge is limited to indexed documents and their freshness dates.",GENERAL,employee,assistant,2026-08-20
+How do I use limitations?,Follow the getting-started guide on the intranet assistant page.,GENERAL,employee,assistant,2026-08-20
+Who owns limitations?,The ADI Program Office coordinates; each bubble has an owner.,GENERAL,employee,assistant,2026-08-20
+Can limitations be changed?,Requests route through the ADI Program Office for review.,GENERAL,employee,assistant,2026-08-20
+Where can I learn more about limitations?,See the assistant FAQ and the usage guidelines.,GENERAL,employee,assistant,2026-08-20
+What is the rule for document ownership?,The rule for document ownership: every document has an owner and a review date.,GENERAL,employee,knowledge-management,2026-08-25
+Who approves document ownership?,The process owner plus compliance review where applicable.,GENERAL,employee,knowledge-management,2026-08-25
+How do I request document ownership?,Through the KM portal with the owning team copied.,GENERAL,employee,knowledge-management,2026-08-25
+Where is document ownership documented?,In the document standards and process governance guides.,GENERAL,employee,knowledge-management,2026-08-25
+What is the rule for content contribution?,The rule for content contribution: propose documents through the owning team.,GENERAL,employee,knowledge-management,2026-08-25
+Who approves content contribution?,The process owner plus compliance review where applicable.,GENERAL,employee,knowledge-management,2026-08-25
+How do I request content contribution?,Through the KM portal with the owning team copied.,GENERAL,employee,knowledge-management,2026-08-25
+Where is content contribution documented?,In the document standards and process governance guides.,GENERAL,employee,knowledge-management,2026-08-25
+What is the rule for the review cycle?,The rule for the review cycle: documents are reviewed at least annually.,GENERAL,employee,knowledge-management,2026-08-25
+Who approves the review cycle?,The process owner plus compliance review where applicable.,GENERAL,employee,knowledge-management,2026-08-25
+How do I request the review cycle?,Through the KM portal with the owning team copied.,GENERAL,employee,knowledge-management,2026-08-25
+Where is the review cycle documented?,In the document standards and process governance guides.,GENERAL,employee,knowledge-management,2026-08-25
+What is the rule for versioning?,The rule for versioning: minor edits bump the version; structural changes create a new code.,GENERAL,employee,knowledge-management,2026-08-25
+Who approves versioning?,The process owner plus compliance review where applicable.,GENERAL,employee,knowledge-management,2026-08-25
+How do I request versioning?,Through the KM portal with the owning team copied.,GENERAL,employee,knowledge-management,2026-08-25
+Where is versioning documented?,In the document standards and process governance guides.,GENERAL,employee,knowledge-management,2026-08-25
+What is the rule for archival?,The rule for archival: superseded documents archive with a pointer to the successor.,GENERAL,employee,knowledge-management,2026-08-25
+Who approves archival?,The process owner plus compliance review where applicable.,GENERAL,employee,knowledge-management,2026-08-25
+How do I request archival?,Through the KM portal with the owning team copied.,GENERAL,employee,knowledge-management,2026-08-25
+Where is archival documented?,In the document standards and process governance guides.,GENERAL,employee,knowledge-management,2026-08-25
+What is the rule for search?,The rule for search: use exact terms and department plus topic keywords.,GENERAL,employee,knowledge-management,2026-08-25
+Who approves search?,The process owner plus compliance review where applicable.,GENERAL,employee,knowledge-management,2026-08-25
+How do I request search?,Through the KM portal with the owning team copied.,GENERAL,employee,knowledge-management,2026-08-25
+Where is search documented?,In the document standards and process governance guides.,GENERAL,employee,knowledge-management,2026-08-25
+What is the policy on mandatory training?,"The policy on mandatory training: AML, information security, POSH and code of conduct, with tracked completion.",GENERAL,employee,learning,2026-08-30
+How do I complete mandatory training?,"Log in to the LMS, finish the module and pass the assessment.",GENERAL,employee,learning,2026-08-30
+Who tracks mandatory training?,Learning & Development with the HR operations team.,GENERAL,employee,learning,2026-08-30
+What if I miss mandatory training?,Overdue completions flag to the manager and HR.,GENERAL,employee,learning,2026-08-30
+What is the policy on enrolment?,The policy on enrolment: enrol through the learning management system.,GENERAL,employee,learning,2026-08-30
+How do I complete enrolment?,"Log in to the LMS, finish the module and pass the assessment.",GENERAL,employee,learning,2026-08-30
+Who tracks enrolment?,Learning & Development with the HR operations team.,GENERAL,employee,learning,2026-08-30
+What if I miss enrolment?,Overdue completions flag to the manager and HR.,GENERAL,employee,learning,2026-08-30
+What is the policy on certification?,The policy on certification: approved certifications reimburse per policy with a service commitment.,GENERAL,employee,learning,2026-08-30
+How do I complete certification?,"Log in to the LMS, finish the module and pass the assessment.",GENERAL,employee,learning,2026-08-30
+Who tracks certification?,Learning & Development with the HR operations team.,GENERAL,employee,learning,2026-08-30
+What if I miss certification?,Overdue completions flag to the manager and HR.,GENERAL,employee,learning,2026-08-30
+What is the policy on learning paths?,The policy on learning paths: role-based paths from onboarding to leadership.,GENERAL,employee,learning,2026-08-30
+How do I complete learning paths?,"Log in to the LMS, finish the module and pass the assessment.",GENERAL,employee,learning,2026-08-30
+Who tracks learning paths?,Learning & Development with the HR operations team.,GENERAL,employee,learning,2026-08-30
+What if I miss learning paths?,Overdue completions flag to the manager and HR.,GENERAL,employee,learning,2026-08-30
+What is the policy on training records?,The policy on training records: completions reflect in the employee profile.,GENERAL,employee,learning,2026-08-30
+How do I complete training records?,"Log in to the LMS, finish the module and pass the assessment.",GENERAL,employee,learning,2026-08-30
+Who tracks training records?,Learning & Development with the HR operations team.,GENERAL,employee,learning,2026-08-30
+What if I miss training records?,Overdue completions flag to the manager and HR.,GENERAL,employee,learning,2026-08-30
+What is the policy on nomination?,The policy on nomination: managers nominate for external programmes via the L&D portal.,GENERAL,employee,learning,2026-08-30
+How do I complete nomination?,"Log in to the LMS, finish the module and pass the assessment.",GENERAL,employee,learning,2026-08-30
+Who tracks nomination?,Learning & Development with the HR operations team.,GENERAL,employee,learning,2026-08-30
+What if I miss nomination?,Overdue completions flag to the manager and HR.,GENERAL,employee,learning,2026-08-30
+What is the news feed?,"the news feed: leadership notes, circulars and events publish on the intranet.",GENERAL,employee,corporate,2026-09-01
+How do I access the news feed?,From the intranet home page under the relevant section.,GENERAL,employee,corporate,2026-09-01
+Who owns the news feed?,"Corporate Communications, except facility and travel services.",GENERAL,employee,corporate,2026-09-01
+What is the SLA for the news feed queries?,2 business days for routine requests.,GENERAL,employee,corporate,2026-09-01
+What is the corporate directory?,the corporate directory: contact details of teams; do not share externally.,GENERAL,employee,corporate,2026-09-01
+How do I access the corporate directory?,From the intranet home page under the relevant section.,GENERAL,employee,corporate,2026-09-01
+Who owns the corporate directory?,"Corporate Communications, except facility and travel services.",GENERAL,employee,corporate,2026-09-01
+What is the SLA for the corporate directory queries?,2 business days for routine requests.,GENERAL,employee,corporate,2026-09-01
+What is brand assets?,brand assets: templates and logos available from the brand desk.,GENERAL,employee,corporate,2026-09-01
+How do I access brand assets?,From the intranet home page under the relevant section.,GENERAL,employee,corporate,2026-09-01
+Who owns brand assets?,"Corporate Communications, except facility and travel services.",GENERAL,employee,corporate,2026-09-01
+What is the SLA for brand assets queries?,2 business days for routine requests.,GENERAL,employee,corporate,2026-09-01
+What is the town hall?,the town hall: quarterly all-hands with Q&A through the events portal.,GENERAL,employee,corporate,2026-09-01
+How do I access the town hall?,From the intranet home page under the relevant section.,GENERAL,employee,corporate,2026-09-01
+Who owns the town hall?,"Corporate Communications, except facility and travel services.",GENERAL,employee,corporate,2026-09-01
+What is the SLA for the town hall queries?,2 business days for routine requests.,GENERAL,employee,corporate,2026-09-01
+What is the facilities desk?,"the facilities desk: seating, power and housekeeping requests.",GENERAL,employee,corporate,2026-09-01
+How do I access the facilities desk?,From the intranet home page under the relevant section.,GENERAL,employee,corporate,2026-09-01
+Who owns the facilities desk?,"Corporate Communications, except facility and travel services.",GENERAL,employee,corporate,2026-09-01
+What is the SLA for the facilities desk queries?,2 business days for routine requests.,GENERAL,employee,corporate,2026-09-01
+What is the travel desk?,the travel desk: domestic and international booking support with policy checks.,GENERAL,employee,corporate,2026-09-01
+How do I access the travel desk?,From the intranet home page under the relevant section.,GENERAL,employee,corporate,2026-09-01
+Who owns the travel desk?,"Corporate Communications, except facility and travel services.",GENERAL,employee,corporate,2026-09-01
+What is the SLA for the travel desk queries?,2 business days for routine requests.,GENERAL,employee,corporate,2026-09-01
+What does CASA mean?,"CASA stands for current account savings account, the low-cost deposit base of the bank.",GENERAL,employee,glossary,2026-09-05
+What does NPA mean?,"NPA stands for non-performing asset, a loan overdue beyond 90 days.",GENERAL,employee,glossary,2026-09-05
+What does CRR mean?,"CRR stands for cash reserve ratio, the share of deposits kept with the RBI.",GENERAL,employee,glossary,2026-09-05
+What does SLR mean?,"SLR stands for statutory liquidity ratio, the share of deposits held in liquid assets.",GENERAL,employee,glossary,2026-09-05
+What does MCLR mean?,MCLR stands for marginal cost of funds based lending rate.,GENERAL,employee,glossary,2026-09-05
+What does NIM mean?,"NIM stands for net interest margin, interest income over interest-earning assets.",GENERAL,employee,glossary,2026-09-05
+What does UPI mean?,UPI stands for unified payments interface for instant account-to-account transfers.,GENERAL,employee,glossary,2026-09-05
+What does NEFT mean?,NEFT stands for national electronic funds transfer in half-hourly batches.,GENERAL,employee,glossary,2026-09-05
+What does RTGS mean?,RTGS stands for real-time gross settlement for high-value transfers.,GENERAL,employee,glossary,2026-09-05
+What does CTS mean?,CTS stands for cheque truncation system for image-based clearing.,GENERAL,employee,glossary,2026-09-05
+What does PEP mean?,PEP stands for politically exposed person requiring enhanced due diligence.,GENERAL,employee,glossary,2026-09-05
+What does STR mean?,STR stands for suspicious transaction report filed with FIU-IND.,GENERAL,employee,glossary,2026-09-05
+What does VPN mean?,VPN stands for virtual private network for secure remote access.,GENERAL,employee,glossary,2026-09-05
+What does MFA mean?,MFA stands for multi-factor authentication combining a password with a second factor.,GENERAL,employee,glossary,2026-09-05
+What does CMDB mean?,CMDB stands for configuration management database of production assets.,GENERAL,employee,glossary,2026-09-05
+What does PIR mean?,PIR stands for post-implementation review of a change.,GENERAL,employee,glossary,2026-09-05
+What is the SLA for IT incidents?,"The SLA for IT incidents: P1 within 2 hours, P2 within 8 hours, P3 within 2 business days.",GENERAL,employee,service-standards,2026-09-10
+How do I escalate IT incidents?,Use the escalation contact directory for the owning desk.,GENERAL,employee,service-standards,2026-09-10
+How is IT incidents quality measured?,Through closure confirmations and periodic surveys.,GENERAL,employee,service-standards,2026-09-10
+Where can I track IT incidents?,In the ticketing system with the reference number.,GENERAL,employee,service-standards,2026-09-10
+What is the SLA for HR queries?,The SLA for HR queries: 2 business days through the HR portal.,GENERAL,employee,service-standards,2026-09-10
+How do I escalate HR queries?,Use the escalation contact directory for the owning desk.,GENERAL,employee,service-standards,2026-09-10
+How is HR queries quality measured?,Through closure confirmations and periodic surveys.,GENERAL,employee,service-standards,2026-09-10
+Where can I track HR queries?,In the ticketing system with the reference number.,GENERAL,employee,service-standards,2026-09-10
+What is the SLA for compliance interpretations?,The SLA for compliance interpretations: 5 business days via the compliance desk.,GENERAL,employee,service-standards,2026-09-10
+How do I escalate compliance interpretations?,Use the escalation contact directory for the owning desk.,GENERAL,employee,service-standards,2026-09-10
+How is compliance interpretations quality measured?,Through closure confirmations and periodic surveys.,GENERAL,employee,service-standards,2026-09-10
+Where can I track compliance interpretations?,In the ticketing system with the reference number.,GENERAL,employee,service-standards,2026-09-10
+What is the SLA for facilities requests?,The SLA for facilities requests: next business day for routine requests.,GENERAL,employee,service-standards,2026-09-10
+How do I escalate facilities requests?,Use the escalation contact directory for the owning desk.,GENERAL,employee,service-standards,2026-09-10
+How is facilities requests quality measured?,Through closure confirmations and periodic surveys.,GENERAL,employee,service-standards,2026-09-10
+Where can I track facilities requests?,In the ticketing system with the reference number.,GENERAL,employee,service-standards,2026-09-10
+What is the SLA for escalations?,The SLA for escalations: missed SLAs escalate to the desk lead automatically.,GENERAL,employee,service-standards,2026-09-10
+How do I escalate escalations?,Use the escalation contact directory for the owning desk.,GENERAL,employee,service-standards,2026-09-10
+How is escalations quality measured?,Through closure confirmations and periodic surveys.,GENERAL,employee,service-standards,2026-09-10
+Where can I track escalations?,In the ticketing system with the reference number.,GENERAL,employee,service-standards,2026-09-10
+What is the SLA for service feedback?,The SLA for service feedback: rate services through pulse surveys or ticket ratings.,GENERAL,employee,service-standards,2026-09-10
+How do I escalate service feedback?,Use the escalation contact directory for the owning desk.,GENERAL,employee,service-standards,2026-09-10
+How is service feedback quality measured?,Through closure confirmations and periodic surveys.,GENERAL,employee,service-standards,2026-09-10
+Where can I track service feedback?,In the ticketing system with the reference number.,GENERAL,employee,service-standards,2026-09-10
+What is the best practice for asking questions?,"For asking questions: name the measure, dimensions and time window.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Where do I learn asking questions?,The BI training guide and the data dictionary.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Who supports asking questions?,The Business Analytics CoE via the BI support queue.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What if my asking questions fails?,"Rephrase with the measure and period, or raise a BI ticket.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What is the best practice for data-as-of?,For data-as-of: answers cite the model timestamp; verify against the dashboard.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Where do I learn data-as-of?,The BI training guide and the data dictionary.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Who supports data-as-of?,The Business Analytics CoE via the BI support queue.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What if my data-as-of fails?,"Rephrase with the measure and period, or raise a BI ticket.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What is the best practice for guardrails?,"For guardrails: read-only queries, row limits and timeouts protect the warehouse.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Where do I learn guardrails?,The BI training guide and the data dictionary.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Who supports guardrails?,The Business Analytics CoE via the BI support queue.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What if my guardrails fails?,"Rephrase with the measure and period, or raise a BI ticket.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What is the best practice for citations?,For citations: answers cite the semantic model and refresh time.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Where do I learn citations?,The BI training guide and the data dictionary.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Who supports citations?,The Business Analytics CoE via the BI support queue.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What if my citations fails?,"Rephrase with the measure and period, or raise a BI ticket.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What is the best practice for bubble scope?,For bubble scope: select the Conversational BI bubble for analytics questions.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Where do I learn bubble scope?,The BI training guide and the data dictionary.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Who supports bubble scope?,The Business Analytics CoE via the BI support queue.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What if my bubble scope fails?,"Rephrase with the measure and period, or raise a BI ticket.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What is the best practice for feedback?,For feedback: rate answers to improve the assistant's BI accuracy.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Where do I learn feedback?,The BI training guide and the data dictionary.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+Who supports feedback?,The Business Analytics CoE via the BI support queue.,CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+What if my feedback fails?,"Rephrase with the measure and period, or raise a BI ticket.",CONVERSATIONAL_BI,analyst,bi-usage,2026-09-15
+How is CASA ratio calculated?,The CASA ratio is calculated as CASA deposits divided by total deposits.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Who owns CASA ratio?,Finance analytics owns the definition and the dashboard.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Where can I see CASA ratio?,"The executive dashboard, or ask the assistant for the trend.",CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+How is net interest margin calculated?,The net interest margin is calculated as net interest income over average interest-earning assets.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Who owns net interest margin?,Finance analytics owns the definition and the dashboard.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Where can I see net interest margin?,"The executive dashboard, or ask the assistant for the trend.",CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+How is cost-to-income calculated?,The cost-to-income is calculated as operating expenses over operating income.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Who owns cost-to-income?,Finance analytics owns the definition and the dashboard.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Where can I see cost-to-income?,"The executive dashboard, or ask the assistant for the trend.",CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+How is credit cost calculated?,The credit cost is calculated as provisions over average advances.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Who owns credit cost?,Risk analytics owns the definition and the dashboard.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Where can I see credit cost?,"The executive dashboard, or ask the assistant for the trend.",CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+How is digital adoption calculated?,The digital adoption is calculated as digital transactors over active customers.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Who owns digital adoption?,Digital analytics owns the definition and the dashboard.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Where can I see digital adoption?,"The executive dashboard, or ask the assistant for the trend.",CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+How is net promoter score calculated?,The net promoter score is calculated as promoters minus detractors from surveys.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Who owns net promoter score?,Customer experience owns the definition and the dashboard.,CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+Where can I see net promoter score?,"The executive dashboard, or ask the assistant for the trend.",CONVERSATIONAL_BI,analyst,bi-metrics,2026-09-20
+What is the process for access requests?,For access requests: route through the data access workflow with owner approval.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+Who approves access requests?,The data owner with the Data Governance team.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+How long does access requests take?,Standard approvals complete within 5 business days.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+What is the process for roles?,"For roles: viewer, analyst and advanced-analyst roles scope the toolset.",CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+Who approves roles?,The data owner with the Data Governance team.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+How long does roles take?,Standard approvals complete within 5 business days.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+What is the process for row-level security?,"For row-level security: geography, business and customer-tier dimensions filter data.",CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+Who approves row-level security?,The data owner with the Data Governance team.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+How long does row-level security take?,Standard approvals complete within 5 business days.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+What is the process for training?,For training: complete data literacy and conversational BI training first.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+Who approves training?,The data owner with the Data Governance team.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+How long does training take?,Standard approvals complete within 5 business days.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+What is the process for certification?,For certification: analyst certification unlocks the advanced tools.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+Who approves certification?,The data owner with the Data Governance team.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+How long does certification take?,Standard approvals complete within 5 business days.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+What is the process for audit?,For audit: all queries and exports are logged for review.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+Who approves audit?,The data owner with the Data Governance team.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+How long does audit take?,Standard approvals complete within 5 business days.,CONVERSATIONAL_BI,analyst,bi-access,2026-09-25
+What is the policy on data freshness?,"The policy on data freshness: T0 within 15 minutes, T1 daily by 09:00 IST, T2 weekly or monthly.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Where do I check freshness?,The data quality dashboard or the data dictionary.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Who fixes freshness issues?,"The data engineering on-call, tracked to resolution.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+What is the policy on data quality?,The policy on data quality: data-quality rules run at load and publish scores.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Where do I check quality?,The data quality dashboard or the data dictionary.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Who fixes quality issues?,"The data engineering on-call, tracked to resolution.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+What is the policy on data lineage?,The policy on data lineage: the data dictionary records source-to-metric lineage.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Where do I check lineage?,The data quality dashboard or the data dictionary.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Who fixes lineage issues?,"The data engineering on-call, tracked to resolution.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+What is the policy on data ownership?,The policy on data ownership: every metric has an owner and refresh timestamp.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Where do I check ownership?,The data quality dashboard or the data dictionary.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Who fixes ownership issues?,"The data engineering on-call, tracked to resolution.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+What is the policy on data change control?,The policy on data change control: metric definition changes go through the KPI council.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Where do I check change control?,The data quality dashboard or the data dictionary.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Who fixes change control issues?,"The data engineering on-call, tracked to resolution.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+What is the policy on data the dictionary?,"The policy on data the dictionary: the dictionary lists definitions, owners and caveats.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Where do I check the dictionary?,The data quality dashboard or the data dictionary.,CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+Who fixes the dictionary issues?,"The data engineering on-call, tracked to resolution.",CONVERSATIONAL_BI,analyst,bi-data,2026-09-30
+What is the rule on point earning?,"The rule on point earning: referrals, cross-sell wins, certifications and recognition earn points per the matrix.",AHA,employee,aha-points,2026-10-01
+Where do I see earning?,On the Aha dashboard under My Points.,AHA,employee,aha-points,2026-10-01
+Who handles earning?,The Rewards & Recognition team.,AHA,employee,aha-points,2026-10-01
+How do I raise a earning request?,Use the portal form with the transaction reference.,AHA,employee,aha-points,2026-10-01
+What is the rule on point expiry?,The rule on point expiry: points expire 24 months after award with 60-day dashboard warnings.,AHA,employee,aha-points,2026-10-01
+Where do I see expiry?,On the Aha dashboard under My Points.,AHA,employee,aha-points,2026-10-01
+Who handles expiry?,The Rewards & Recognition team.,AHA,employee,aha-points,2026-10-01
+How do I raise a expiry request?,Use the portal form with the transaction reference.,AHA,employee,aha-points,2026-10-01
+What is the rule on point reversal?,The rule on point reversal: points reverse when the underlying transaction reverses.,AHA,employee,aha-points,2026-10-01
+Where do I see reversal?,On the Aha dashboard under My Points.,AHA,employee,aha-points,2026-10-01
+Who handles reversal?,The Rewards & Recognition team.,AHA,employee,aha-points,2026-10-01
+How do I raise a reversal request?,Use the portal form with the transaction reference.,AHA,employee,aha-points,2026-10-01
+What is the rule on point disputes?,The rule on point disputes: raise disputes in the portal; the SLA is 5 business days.,AHA,employee,aha-points,2026-10-01
+Where do I see disputes?,On the Aha dashboard under My Points.,AHA,employee,aha-points,2026-10-01
+Who handles disputes?,The Rewards & Recognition team.,AHA,employee,aha-points,2026-10-01
+How do I raise a disputes request?,Use the portal form with the transaction reference.,AHA,employee,aha-points,2026-10-01
+What is the rule on point taxation?,The rule on point taxation: redemptions may attract perquisite tax reflected in payroll.,AHA,employee,aha-points,2026-10-01
+Where do I see taxation?,On the Aha dashboard under My Points.,AHA,employee,aha-points,2026-10-01
+Who handles taxation?,The Rewards & Recognition team.,AHA,employee,aha-points,2026-10-01
+How do I raise a taxation request?,Use the portal form with the transaction reference.,AHA,employee,aha-points,2026-10-01
+What is the rule on point transfer?,The rule on point transfer: points are non-transferable; giving to approved causes is supported.,AHA,employee,aha-points,2026-10-01
+Where do I see transfer?,On the Aha dashboard under My Points.,AHA,employee,aha-points,2026-10-01
+Who handles transfer?,The Rewards & Recognition team.,AHA,employee,aha-points,2026-10-01
+How do I raise a transfer request?,Use the portal form with the transaction reference.,AHA,employee,aha-points,2026-10-01
+How does e-vouchers redemption work?,For e-vouchers: deliver instantly by email after checkout.,AHA,employee,aha-redemption,2026-10-05
+What is the SLA for e-vouchers?,Standard delivery timelines apply; disputes resolve in 5 business days.,AHA,employee,aha-redemption,2026-10-05
+Who do I contact about e-vouchers?,The Aha support desk through the portal.,AHA,employee,aha-redemption,2026-10-05
+How does merchandise redemption work?,For merchandise: ships in 7 to 10 business days to the registered address.,AHA,employee,aha-redemption,2026-10-05
+What is the SLA for merchandise?,Standard delivery timelines apply; disputes resolve in 5 business days.,AHA,employee,aha-redemption,2026-10-05
+Who do I contact about merchandise?,The Aha support desk through the portal.,AHA,employee,aha-redemption,2026-10-05
+How does experiences redemption work?,"For experiences: curated events with limited seats, first-come.",AHA,employee,aha-redemption,2026-10-05
+What is the SLA for experiences?,Standard delivery timelines apply; disputes resolve in 5 business days.,AHA,employee,aha-redemption,2026-10-05
+Who do I contact about experiences?,The Aha support desk through the portal.,AHA,employee,aha-redemption,2026-10-05
+How does giving redemption work?,For giving: donate points to approved causes with a receipt.,AHA,employee,aha-redemption,2026-10-05
+What is the SLA for giving?,Standard delivery timelines apply; disputes resolve in 5 business days.,AHA,employee,aha-redemption,2026-10-05
+Who do I contact about giving?,The Aha support desk through the portal.,AHA,employee,aha-redemption,2026-10-05
+How does exchanges redemption work?,For exchanges: e-vouchers are non-exchangeable once issued.,AHA,employee,aha-redemption,2026-10-05
+What is the SLA for exchanges?,Standard delivery timelines apply; disputes resolve in 5 business days.,AHA,employee,aha-redemption,2026-10-05
+Who do I contact about exchanges?,The Aha support desk through the portal.,AHA,employee,aha-redemption,2026-10-05
+How does delivery issues redemption work?,For delivery issues: report within 7 days for redelivery or point credit.,AHA,employee,aha-redemption,2026-10-05
+What is the SLA for delivery issues?,Standard delivery timelines apply; disputes resolve in 5 business days.,AHA,employee,aha-redemption,2026-10-05
+Who do I contact about delivery issues?,The Aha support desk through the portal.,AHA,employee,aha-redemption,2026-10-05
+How do spot awards work?,For spot awards: managers issue up to the quarterly cap with a citation.,AHA,employee,aha-awards,2026-10-10
+Who can nominate for spot awards?,"Managers and peers through the portal, with endorsement rules.",AHA,employee,aha-awards,2026-10-10
+How are spot awards decided?,A panel scores nominations on impact and collaboration.,AHA,employee,aha-awards,2026-10-10
+How do milestone awards work?,"For milestone awards: granted at 5, 10, 15, 20 and 25 years of service.",AHA,employee,aha-awards,2026-10-10
+Who can nominate for milestone awards?,"Managers and peers through the portal, with endorsement rules.",AHA,employee,aha-awards,2026-10-10
+How are milestone awards decided?,A panel scores nominations on impact and collaboration.,AHA,employee,aha-awards,2026-10-10
+How do team of the quarter work?,For team of the quarter: nominate with a delivery narrative and business-head endorsement.,AHA,employee,aha-awards,2026-10-10
+Who can nominate for team of the quarter?,"Managers and peers through the portal, with endorsement rules.",AHA,employee,aha-awards,2026-10-10
+How are team of the quarter decided?,A panel scores nominations on impact and collaboration.,AHA,employee,aha-awards,2026-10-10
+How do collaboration awards work?,For collaboration awards: recognise cross-functional delivery with customer impact.,AHA,employee,aha-awards,2026-10-10
+Who can nominate for collaboration awards?,"Managers and peers through the portal, with endorsement rules.",AHA,employee,aha-awards,2026-10-10
+How are collaboration awards decided?,A panel scores nominations on impact and collaboration.,AHA,employee,aha-awards,2026-10-10
+How do approvals work?,For approvals: awards above the manager cap need the next-level approver.,AHA,employee,aha-awards,2026-10-10
+Who can nominate for approvals?,"Managers and peers through the portal, with endorsement rules.",AHA,employee,aha-awards,2026-10-10
+How are approvals decided?,A panel scores nominations on impact and collaboration.,AHA,employee,aha-awards,2026-10-10
+How do ceremonies work?,For ceremonies: awards present at town halls or regional events.,AHA,employee,aha-awards,2026-10-10
+Who can nominate for ceremonies?,"Managers and peers through the portal, with endorsement rules.",AHA,employee,aha-awards,2026-10-10
+How are ceremonies decided?,A panel scores nominations on impact and collaboration.,AHA,employee,aha-awards,2026-10-10
+How does campaign enrolment work?,For campaign enrolment: campaigns auto-track eligible actions unless stated.,AHA,employee,aha-campaigns,2026-10-15
+Where do I track enrolment?,On the Aha campaign page.,AHA,employee,aha-campaigns,2026-10-15
+Who resolves enrolment issues?,The Rewards & Recognition team.,AHA,employee,aha-campaigns,2026-10-15
+How does campaign leaderboards work?,For campaign leaderboards: optional standings published with consent.,AHA,employee,aha-campaigns,2026-10-15
+Where do I track leaderboards?,On the Aha campaign page.,AHA,employee,aha-campaigns,2026-10-15
+Who resolves leaderboards issues?,The Rewards & Recognition team.,AHA,employee,aha-campaigns,2026-10-15
+How does campaign payout work?,For campaign payout: points credit within 30 days of campaign close.,AHA,employee,aha-campaigns,2026-10-15
+Where do I track payout?,On the Aha campaign page.,AHA,employee,aha-campaigns,2026-10-15
+Who resolves payout issues?,The Rewards & Recognition team.,AHA,employee,aha-campaigns,2026-10-15
+How does campaign boosts work?,For campaign boosts: limited-period multipliers on selected categories.,AHA,employee,aha-campaigns,2026-10-15
+Where do I track boosts?,On the Aha campaign page.,AHA,employee,aha-campaigns,2026-10-15
+Who resolves boosts issues?,The Rewards & Recognition team.,AHA,employee,aha-campaigns,2026-10-15
+How does campaign eligibility work?,For campaign eligibility: eligibility follows the campaign brief.,AHA,employee,aha-campaigns,2026-10-15
+Where do I track eligibility?,On the Aha campaign page.,AHA,employee,aha-campaigns,2026-10-15
+Who resolves eligibility issues?,The Rewards & Recognition team.,AHA,employee,aha-campaigns,2026-10-15
+How does campaign queries work?,For campaign queries: the campaign helpdesk responds within 3 business days.,AHA,employee,aha-campaigns,2026-10-15
+Where do I track queries?,On the Aha campaign page.,AHA,employee,aha-campaigns,2026-10-15
+Who resolves queries issues?,The Rewards & Recognition team.,AHA,employee,aha-campaigns,2026-10-15
+How does slot booking work?,For slot booking: 30-minute slots between 09:00 and 20:00 IST over the next five working days.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+Where can customers manage slot booking?,"The mobile app, internet banking or the assistant.",AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+What is the SLA around slot booking?,Priority within 15 minutes of the slot; retail within 60 minutes.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How do I handle a slot booking query?,Use the agent console and the booking playbook.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How does confirmation work?,For confirmation: an SMS confirms the slot with a callback reference ID.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+Where can customers manage confirmation?,"The mobile app, internet banking or the assistant.",AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+What is the SLA around confirmation?,Priority within 15 minutes of the slot; retail within 60 minutes.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How do I handle a confirmation query?,Use the agent console and the booking playbook.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How does rescheduling work?,For rescheduling: reschedule up to 30 minutes before the slot.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+Where can customers manage rescheduling?,"The mobile app, internet banking or the assistant.",AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+What is the SLA around rescheduling?,Priority within 15 minutes of the slot; retail within 60 minutes.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How do I handle a rescheduling query?,Use the agent console and the booking playbook.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How does cancellation work?,For cancellation: cancel via the app or the SMS link; slots free up for other customers.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+Where can customers manage cancellation?,"The mobile app, internet banking or the assistant.",AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+What is the SLA around cancellation?,Priority within 15 minutes of the slot; retail within 60 minutes.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How do I handle a cancellation query?,Use the agent console and the booking playbook.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How does missed callbacks work?,"For missed callbacks: one automatic retry, then supervisor follow-up.",AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+Where can customers manage missed callbacks?,"The mobile app, internet banking or the assistant.",AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+What is the SLA around missed callbacks?,Priority within 15 minutes of the slot; retail within 60 minutes.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How do I handle a missed callbacks query?,Use the agent console and the booking playbook.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How does no-shows work?,For no-shows: customers can rebook without penalty.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+Where can customers manage no-shows?,"The mobile app, internet banking or the assistant.",AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+What is the SLA around no-shows?,Priority within 15 minutes of the slot; retail within 60 minutes.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How do I handle a no-shows query?,Use the agent console and the booking playbook.,AXIS_PHONE,contact-centre-agent,axis-phone-booking,2026-10-20
+How does topic routing work?,"For topic routing: accounts, cards, loans, wealth and complaints route to topic queues.",AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+Who configures topic routing?,Contact Centre Technology with the Assisted Channels team.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+What if topic routing fails?,Escalate to the routing support queue and log the interaction ID.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+How does language preference work?,For language preference: captured at booking and honoured in routing.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+Who configures language preference?,Contact Centre Technology with the Assisted Channels team.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+What if language preference fails?,Escalate to the routing support queue and log the interaction ID.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+How does priority handling work?,For priority handling: Priority and Burgundy customers use dedicated queues.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+Who configures priority handling?,Contact Centre Technology with the Assisted Channels team.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+What if priority handling fails?,Escalate to the routing support queue and log the interaction ID.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+How does the IVR tree work?,"For the IVR tree: language, service, authentication, then queue.",AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+Who configures the IVR tree?,Contact Centre Technology with the Assisted Channels team.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+What if the IVR tree fails?,Escalate to the routing support queue and log the interaction ID.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+How does transfers work?,For transfers: warm transfers preserve context; cold transfers need supervisor approval for priority.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+Who configures transfers?,Contact Centre Technology with the Assisted Channels team.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+What if transfers fails?,Escalate to the routing support queue and log the interaction ID.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+How does repeat callers work?,For repeat callers: routed to the same agent when available.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+Who configures repeat callers?,Contact Centre Technology with the Assisted Channels team.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+What if repeat callers fails?,Escalate to the routing support queue and log the interaction ID.,AXIS_PHONE,contact-centre-agent,axis-phone-routing,2026-10-22
+What is the standard for disposition codes?,The standard for disposition codes: every call ends with a code and a CRM summary.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Who audits disposition codes?,Quality assurance samples calls and scores against the rubric.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Where do I find disposition codes guidance?,The contact-centre playbook on the intranet.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+What is the standard for wrap-up?,The standard for wrap-up: complete within the defined wrap-up time before the next interaction.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Who audits wrap-up?,Quality assurance samples calls and scores against the rubric.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Where do I find wrap-up guidance?,The contact-centre playbook on the intranet.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+What is the standard for scripts?,The standard for scripts: mandatory scripts apply to disclosures and verifications.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Who audits scripts?,Quality assurance samples calls and scores against the rubric.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Where do I find scripts guidance?,The contact-centre playbook on the intranet.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+What is the standard for recording?,The standard for recording: calls are recorded for quality and compliance.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Who audits recording?,Quality assurance samples calls and scores against the rubric.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Where do I find recording guidance?,The contact-centre playbook on the intranet.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+What is the standard for the agent console?,The standard for the agent console: shows the customer card and interaction history.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Who audits the agent console?,Quality assurance samples calls and scores against the rubric.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Where do I find the agent console guidance?,The contact-centre playbook on the intranet.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+What is the standard for etiquette?,"The standard for etiquette: greet with name and bank, verify identity, confirm actions.",AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Who audits etiquette?,Quality assurance samples calls and scores against the rubric.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+Where do I find etiquette guidance?,The contact-centre playbook on the intranet.,AXIS_PHONE,contact-centre-agent,axis-phone-service,2026-10-24
+How does the CSAT survey work?,For the CSAT survey: an SMS survey follows every completed call and callback.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+Who owns the CSAT survey?,The Assisted Channels quality team.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How do I improve on the CSAT survey?,Review audit scores and complete coaching actions.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How does quality audits work?,For quality audits: sampled calls are scored monthly against the rubric.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+Who owns quality audits?,The Assisted Channels quality team.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How do I improve on quality audits?,Review audit scores and complete coaching actions.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How does coaching work?,For coaching: scores feed coaching plans with team leads.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+Who owns coaching?,The Assisted Channels quality team.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How do I improve on coaching?,Review audit scores and complete coaching actions.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How does calibration work?,For calibration: monthly sessions align auditor scoring.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+Who owns calibration?,The Assisted Channels quality team.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How do I improve on calibration?,Review audit scores and complete coaching actions.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How does the detractor loop work?,For the detractor loop: detractors receive follow-up within 48 hours.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+Who owns the detractor loop?,The Assisted Channels quality team.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How do I improve on the detractor loop?,Review audit scores and complete coaching actions.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How does targets work?,For targets: channel CSAT targets are set quarterly.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+Who owns targets?,The Assisted Channels quality team.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How do I improve on targets?,Review audit scores and complete coaching actions.,AXIS_PHONE,contact-centre-agent,axis-phone-quality,2026-10-26
+How does search work on the portal?,"For search: search by form name, code or process; results show version and owner.",DOWNLOAD,employee,download-portal,2026-10-27
+Who supports search?,Corporate Communications with the owning department.,DOWNLOAD,employee,download-portal,2026-10-27
+What if search fails?,Raise a portal ticket; the SLA is 2 business days.,DOWNLOAD,employee,download-portal,2026-10-27
+Where do I learn search?,The portal user guide.,DOWNLOAD,employee,download-portal,2026-10-27
+How does watermarking work on the portal?,For watermarking: downloaded PDFs watermark with the employee ID.,DOWNLOAD,employee,download-portal,2026-10-27
+Who supports watermarking?,Corporate Communications with the owning department.,DOWNLOAD,employee,download-portal,2026-10-27
+What if watermarking fails?,Raise a portal ticket; the SLA is 2 business days.,DOWNLOAD,employee,download-portal,2026-10-27
+Where do I learn watermarking?,The portal user guide.,DOWNLOAD,employee,download-portal,2026-10-27
+How does versions work on the portal?,For versions: only the latest version is served; older versions are archived.,DOWNLOAD,employee,download-portal,2026-10-27
+Who supports versions?,Corporate Communications with the owning department.,DOWNLOAD,employee,download-portal,2026-10-27
+What if versions fails?,Raise a portal ticket; the SLA is 2 business days.,DOWNLOAD,employee,download-portal,2026-10-27
+Where do I learn versions?,The portal user guide.,DOWNLOAD,employee,download-portal,2026-10-27
+How does form requests work on the portal?,For form requests: new forms route through the owning team with governance review.,DOWNLOAD,employee,download-portal,2026-10-27
+Who supports form requests?,Corporate Communications with the owning department.,DOWNLOAD,employee,download-portal,2026-10-27
+What if form requests fails?,Raise a portal ticket; the SLA is 2 business days.,DOWNLOAD,employee,download-portal,2026-10-27
+Where do I learn form requests?,The portal user guide.,DOWNLOAD,employee,download-portal,2026-10-27
+How does mobile access work on the portal?,For mobile access: the portal works on managed mobile devices via the intranet.,DOWNLOAD,employee,download-portal,2026-10-27
+Who supports mobile access?,Corporate Communications with the owning department.,DOWNLOAD,employee,download-portal,2026-10-27
+What if mobile access fails?,Raise a portal ticket; the SLA is 2 business days.,DOWNLOAD,employee,download-portal,2026-10-27
+Where do I learn mobile access?,The portal user guide.,DOWNLOAD,employee,download-portal,2026-10-27
+How does feedback work on the portal?,For feedback: report form errors through the portal feedback link.,DOWNLOAD,employee,download-portal,2026-10-27
+What if feedback fails?,Raise a portal ticket; the SLA is 2 business days.,DOWNLOAD,employee,download-portal,2026-10-27
+What is HR-LEAVE-01 used for?,The form HR-LEAVE-01 is the special leave application with manager approval.,DOWNLOAD,employee,forms,2026-10-28
+Where do I submit HR-LEAVE-01?,Through the owning system per the form instructions.,DOWNLOAD,employee,forms,2026-10-28
+What version of HR-LEAVE-01 is valid?,Only the latest version on the portal is valid.,DOWNLOAD,employee,forms,2026-10-28
+What is HR-TRVL-01 used for?,The form HR-TRVL-01 is the travel expense statement with receipts.,DOWNLOAD,employee,forms,2026-10-28
+Where do I submit HR-TRVL-01?,Through the owning system per the form instructions.,DOWNLOAD,employee,forms,2026-10-28
+What version of HR-TRVL-01 is valid?,Only the latest version on the portal is valid.,DOWNLOAD,employee,forms,2026-10-28
+What is IT-SW-01 used for?,The form IT-SW-01 is the new software request with justification.,DOWNLOAD,employee,forms,2026-10-28
+Where do I submit IT-SW-01?,Through the owning system per the form instructions.,DOWNLOAD,employee,forms,2026-10-28
+What version of IT-SW-01 is valid?,Only the latest version on the portal is valid.,DOWNLOAD,employee,forms,2026-10-28
+What is KYC-INDV-01 used for?,The form KYC-INDV-01 is the individual KYC application with Officially Valid Documents.,DOWNLOAD,employee,forms,2026-10-28
+Where do I submit KYC-INDV-01?,Through the owning system per the form instructions.,DOWNLOAD,employee,forms,2026-10-28
+What version of KYC-INDV-01 is valid?,Only the latest version on the portal is valid.,DOWNLOAD,employee,forms,2026-10-28
+What is FIN-VEND-01 used for?,The form FIN-VEND-01 is the new vendor setup with bank details and GST.,DOWNLOAD,employee,forms,2026-10-28
+Where do I submit FIN-VEND-01?,Through the owning system per the form instructions.,DOWNLOAD,employee,forms,2026-10-28
+What version of FIN-VEND-01 is valid?,Only the latest version on the portal is valid.,DOWNLOAD,employee,forms,2026-10-28
+What is GRV-01 used for?,The form GRV-01 is the customer grievance form with resolution notes.,DOWNLOAD,employee,forms,2026-10-28
+Where do I submit GRV-01?,Through the owning system per the form instructions.,DOWNLOAD,employee,forms,2026-10-28
+What version of GRV-01 is valid?,Only the latest version on the portal is valid.,DOWNLOAD,employee,forms,2026-10-28
+How does submission validation work?,For submission validation: forms validate mandatory fields before submission.,DOWNLOAD,employee,submissions,2026-10-28
+Who handles validation?,The owning team of the form.,DOWNLOAD,employee,submissions,2026-10-28
+What if validation breaks?,Raise a portal ticket with the submission reference.,DOWNLOAD,employee,submissions,2026-10-28
+How does submission rejection work?,For submission rejection: rejections state the reason; correct and resubmit.,DOWNLOAD,employee,submissions,2026-10-28
+Who handles rejection?,The owning team of the form.,DOWNLOAD,employee,submissions,2026-10-28
+What if rejection breaks?,Raise a portal ticket with the submission reference.,DOWNLOAD,employee,submissions,2026-10-28
+How does submission routing work?,For submission routing: submissions route to the owning team automatically.,DOWNLOAD,employee,submissions,2026-10-28
+Who handles routing?,The owning team of the form.,DOWNLOAD,employee,submissions,2026-10-28
+What if routing breaks?,Raise a portal ticket with the submission reference.,DOWNLOAD,employee,submissions,2026-10-28
+How does submission status tracking work?,For submission status tracking: track status with the submission reference.,DOWNLOAD,employee,submissions,2026-10-28
+Who handles status tracking?,The owning team of the form.,DOWNLOAD,employee,submissions,2026-10-28
+What if status tracking breaks?,Raise a portal ticket with the submission reference.,DOWNLOAD,employee,submissions,2026-10-28
+How does submission SLA work?,For submission SLA: owning teams respond per their service standards.,DOWNLOAD,employee,submissions,2026-10-28
+Who handles SLA?,The owning team of the form.,DOWNLOAD,employee,submissions,2026-10-28
+What if SLA breaks?,Raise a portal ticket with the submission reference.,DOWNLOAD,employee,submissions,2026-10-28
+How does submission evidence work?,For submission evidence: attach supporting documents in the accepted formats.,DOWNLOAD,employee,submissions,2026-10-28
+Who handles evidence?,The owning team of the form.,DOWNLOAD,employee,submissions,2026-10-28
+What if evidence breaks?,Raise a portal ticket with the submission reference.,DOWNLOAD,employee,submissions,2026-10-28
