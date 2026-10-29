@@ -1,0 +1,49 @@
+{
+  "sessions": 360,
+  "queries": 1080,
+  "dev_sessions": 288,
+  "test_sessions": 72,
+  "gt_rows": 1004,
+  "wrong_rows": 100,
+  "mode": "gt",
+  "capture": "http://localhost:8011",
+  "domains": {
+    "HR": 136,
+    "IT Helpdesk": 123,
+    "LAW": 118,
+    "CR": 109,
+    "Download": 71,
+    "Financial Advisor": 110,
+    "Conversational BI": 83,
+    "Aha": 88,
+    "Axis Phone": 71,
+    "Status": 76,
+    "GENERAL": 50,
+    "Guardrails": 45
+  },
+  "use_cases": {
+    "generic_rag": 936,
+    "text2sql": 23,
+    "status_api": 64,
+    "status_db": 12,
+    "guardrailed": 45
+  },
+  "scenarios": {
+    "unsupported_added_claim": 25,
+    "contradicted_key_number": 25,
+    "off_topic_answer": 25,
+    "rude_tone_correct_facts": 25,
+    "correct_faithful": 683,
+    "text2sql_correct": 41,
+    "mock_status": 76,
+    "faq_direct_correct": 135,
+    "guardrailed_refusal": 45
+  },
+  "hinglish_queries": 22,
+  "outputs": {
+    "data_csv": "D:\\Github\\ADI\\jev_judge_eval\\data\\vartalap_bulk_360_sessions_1080_queries.csv",
+    "gold_csv": "D:\\Github\\ADI\\jev_judge_eval\\data\\vartalap_bulk_360_sessions_1080_queries_gold.csv",
+    "raw_jsonl": "D:\\Github\\ADI\\jev_judge_eval\\results\\bulk_vartalap\\vartalap_bulk_raw_responses.jsonl",
+    "summary_json": "D:\\Github\\ADI\\jev_judge_eval\\results\\bulk_vartalap\\vartalap_bulk_summary.json"
+  }
+}
